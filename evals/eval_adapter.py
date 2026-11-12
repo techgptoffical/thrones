@@ -140,14 +140,16 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--label", required=True)
     ap.add_argument("--lora", default="")
+    ap.add_argument("--heldout", default=str(HELD))
     args = ap.parse_args()
-    held = [json.loads(line) for line in HELD.open(encoding="utf-8")]
+    held = [json.loads(line) for line in Path(args.heldout).open(encoding="utf-8")]
+    ood_rows = [r for r in held if r["meta"]["kind"] == "tool_use_ood"]
     tool_rows = [r for r in held if r["meta"]["kind"] == "tool_use"]
     hing_rows = [r for r in held if r["meta"]["kind"] == "hinglish"]
     entry = next(e for e in config.load_catalog() if e["id"] == "qwen3.5-4b-q4km")
     extra = ["--lora", str(ROOT / args.lora)] if args.lora else []
     free_app_engine()
-    report = {"label": args.label, "lora": args.lora, "date": dt.datetime.now().isoformat(timespec="seconds"),
+    report = {"label": args.label, "lora": args.lora, "heldout": Path(args.heldout).name, "date": dt.datetime.now().isoformat(timespec="seconds"),
               "base_gguf": entry["file"]}
     with Server(entry, 8192, 99, extra) as srv:
         report["load_s"] = round(srv.load_s, 2)
@@ -155,6 +157,10 @@ def main() -> None:
         report["tool_use"] = eval_tool_use(tool_rows)
         print(f"  correct {report['tool_use']['correct']}/{report['tool_use']['n']}, called tool "
               f"{report['tool_use']['called_tool']}", flush=True)
+        if ood_rows:
+            report["tool_use_ood"] = eval_tool_use(ood_rows)
+            print(f"  unseen question types: correct {report['tool_use_ood']['correct']}/{report['tool_use_ood']['n']}, "
+                  f"called tool {report['tool_use_ood']['called_tool']}", flush=True)
         print("hinglish…", flush=True)
         report["hinglish"] = eval_hinglish(hing_rows)
         print(f"  chrF {report['hinglish']['chrF']}", flush=True)

@@ -70,6 +70,17 @@ What this shows, honestly: on these 26 questions **Think mode does not score hig
 
 Caveats: 26–39 items give roughly ±8–10 points of noise, the items were written by the same team that built the prompts, and greedy decoding hides run-to-run variation. Treat differences of one or two items as ties.
 
+### Public test sets through the app setup
+
+Same configuration as Thrones' Fast mode (system prompt + calculator, thinking off, greedy), on random samples of the **test** splits (seed 7): GSM8K (MIT), MATH problems with integer answers (MIT), MBPP (CC-BY-4.0, graded by its own unit tests).
+
+| Model | GSM8K (250) | MATH (150) | MBPP (150) |
+|---|---|---|---|
+| Qwen3.5 9B | 95.6% | 84.7% | **66.0%** |
+| Qwen3.5 4B | 95.2% | 84.0% | 60.0% |
+
+On standard maths the 4B is within one item of the 9B; the gap is in code (6 points, ≈ 9 problems — near the noise level for 150 items) and on our harder puzzle set (24 vs 21 of 26). These public sets are widely used in training data, so absolute scores may be inflated by contamination; comparisons between models on identical items are the useful part.
+
 ## 5. System RAM — the real constraint on this PC
 
 Measured on the reference PC with a normal desktop session open (browser ≈ 4 GB, other apps ≈ 6 GB; 5.6–8 GB free before loading):

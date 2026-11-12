@@ -45,6 +45,9 @@ def main() -> None:
     ap.add_argument("--max-seq", type=int, default=2048)
     ap.add_argument("--grad-accum", type=int, default=8)
     ap.add_argument("--max-steps", type=int, default=-1, help="override epochs (for a quick pilot)")
+    ap.add_argument("--data", default=str(DATA))
+    ap.add_argument("--linear-attn", action="store_true",
+                    help="also adapt the Gated DeltaNet projections (in_proj_qkv, in_proj_z, out_proj)")
     args = ap.parse_args()
 
     import torch
@@ -61,9 +64,13 @@ def main() -> None:
         model_name=str(BASE_DIR), max_seq_length=args.max_seq,
         load_in_4bit=False, load_in_16bit=True, full_finetuning=False,
     )
+    targets = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+    if args.linear_attn:
+        targets += ["in_proj_qkv", "in_proj_z", "out_proj"]
+    data_path = Path(args.data)
     model = FastLanguageModel.get_peft_model(
         model, r=args.rank, lora_alpha=args.rank, lora_dropout=0, bias="none",
-        target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+        target_modules=targets,
         use_gradient_checkpointing="unsloth", random_state=3407,
     )
 
@@ -71,7 +78,7 @@ def main() -> None:
     # text makes it look for images; all text work goes through its inner tokenizer instead.
     text_tok = getattr(tokenizer, "tokenizer", tokenizer)
 
-    raw = load_dataset("json", data_files={"train": str(DATA)}, split="train")
+    raw = load_dataset("json", data_files={"train": str(data_path)}, split="train")
 
     def render(example: dict) -> dict:
         msgs = []
@@ -122,10 +129,10 @@ def main() -> None:
     base_files = {p.name: sha256(p) for p in sorted(BASE_DIR.glob("*.safetensors"))}
     (out / "config.json").write_text(json.dumps({
         "run": args.run, "method": "bf16 LoRA (Unsloth)", "base_model": "Qwen/Qwen3.5-4B",
-        "base_weights_sha256": base_files, "dataset": DATA.name, "dataset_sha256": sha256(DATA),
+        "base_weights_sha256": base_files, "dataset": data_path.name, "dataset_sha256": sha256(data_path),
         "rank": args.rank, "alpha": args.rank, "dropout": 0, "lr": args.lr, "epochs": args.epochs,
         "max_steps": args.max_steps, "grad_accum": args.grad_accum, "batch": 1, "max_seq": args.max_seq,
-        "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+        "target_modules": targets,
         "loss": "assistant tokens only", "chat_template": "Qwen3.5, enable_thinking=False",
         "torch": torch.__version__, "cuda": torch.version.cuda, "gpu": torch.cuda.get_device_name(0),
         "python": platform.python_version(), "command": " ".join(sys.argv),
