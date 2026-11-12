@@ -14,11 +14,12 @@ A test is reported as passing only when it actually ran and its assertion held. 
 
 Unit tests use a temporary data directory (`THRONES_DATA`); they never touch the user's database.
 
-## 2. Unit tests (55 cases)
+## 2. Unit tests (74 cases)
 
 - **Calculator:** correct values (including the EMI formula and thousands separators); rejects names, attributes, calls outside the whitelist, strings, lambdas, and exponent/factorial bombs.
 - **Tool registry:** identical-call refusal, call budget, bad JSON, unknown tool, timeout reported as a tool error rather than raised.
 - **Research safety:** public/non-public IP classification (loopback, RFC1918, link-local incl. cloud metadata, CGNAT, IPv6 ULA/link-local, IPv4-mapped); URL guard rejects `file:`, `ftp:`, localhost, private hosts, `.local`, credentials, non-default ports; URL normalisation for de-duplication; citation sanitizer drops invented `[n]` and links to unfetched pages; tolerant JSON extraction; relevance window keeps the planted fact.
+- **Eval graders:** number parser (fractions, mixed numbers, separators), every item has a unique id and grader, graders accept a correct and reject a wrong answer, code grader runs hidden asserts.
 - **Persistence:** settings defaults and unknown-key filtering; message round-trip with JSON fields; regenerate truncation; search over titles and content; project deletion keeps chats; memory CRUD; failed DB initialisation is not cached; document ingest → chunk → BM25 search → context building (whole vs passages) → delete; unsupported and empty files rejected.
 
 ## 3. End-to-end checks (real model, real API)
@@ -45,7 +46,12 @@ Unit tests use a temporary data directory (`THRONES_DATA`); they never touch the
 
 ## 4. Model evaluation
 
-`evals/items.py` holds 39 items written for this project in six categories: maths (10), logic (8), code (5, graded by running hidden asserts), instruction following (5), Hindi/Hinglish (5), knowledge (6). Graders are deterministic. Settings: greedy decoding (temperature 0, top-k 1), same prompts for every model, thinking on/off recorded per run.
+`evals/items.py` holds two sets written for this project:
+
+- **base** (39 items): maths (10), logic (8), code (5, graded by running hidden asserts), instruction following (5), Hindi/Hinglish (5), knowledge (6).
+- **hard** (26 items): multi-step maths (10), letter-level and calendar logic (6), harder code (5), strict format (3), Hindi↔English (2). Added after the 4B and 9B both scored 37/39 on the base set, which was too easy to tell them apart. Answer keys were computed in Python.
+
+Graders are deterministic and unit-tested (`backend/tests/test_eval_graders.py`). Settings: greedy decoding (temperature 0, top-k 1), same prompts for every model, thinking on/off recorded per run. `evals/run_app_eval.py` runs the same items through the app's Fast or Think mode (app sampling, not greedy) to measure what Thrones adds over the raw model.
 
 Performance is measured in the same run: load time, VRAM taken at load, generation speed on a ~300-token answer, prompt-processing speed and first-token latency on a ~10.8 k-token document, and whether a fact planted two-thirds of the way into that document is retrieved.
 

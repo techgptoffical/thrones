@@ -23,9 +23,17 @@ def _answer(text: str) -> str:
 
 
 def _num(text: str) -> float | None:
-    a = _answer(text).replace(",", "").replace("₹", "")
-    m = re.findall(r"-?\d+(?:\.\d+)?", a)
-    return float(m[0]) if m else None
+    """First number in the answer line. Understands decimals, fractions (18/5) and mixed numbers (3 3/5)."""
+    a = _answer(text).replace(",", "").replace("₹", "").replace("\\frac{", "").replace("}{", "/").replace("}", "")
+    mixed = re.search(r"(-?\d+)\s+(\d+)\s*/\s*(\d+)", a)
+    if mixed and int(mixed.group(3)):
+        whole, n, d = (int(x) for x in mixed.groups())
+        return whole + (n / d if whole >= 0 else -n / d)
+    frac = re.search(r"(-?\d+(?:\.\d+)?)\s*/\s*(\d+(?:\.\d+)?)", a)
+    m = re.search(r"-?\d+(?:\.\d+)?", a)
+    if frac and m and frac.start() == m.start() and float(frac.group(2)):
+        return float(frac.group(1)) / float(frac.group(2))
+    return float(m.group(0)) if m else None
 
 
 def num(target: float, tol: float = 1e-6) -> Callable[[str], bool]:

@@ -129,7 +129,7 @@ class LoadBody(BaseModel):
 async def engine_load(body: LoadBody) -> dict[str, Any]:
     if manager.gen_lock.locked():
         raise HTTPException(409, "A response is being generated. Stop it before switching models.")
-    await manager.ensure_loaded(db.get_settings(), body.model_id)
+    await manager.ensure_loaded(db.get_settings(), body.model_id, force=True)
     return manager.status()
 
 

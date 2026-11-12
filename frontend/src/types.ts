@@ -123,6 +123,8 @@ export interface EngineStatus {
   load_seconds?: number;
   model_vram_mb?: number | null;
   warnings?: string[];
+  fallback?: boolean;
+  last_load_failure?: string;
   busy?: boolean;
 }
 

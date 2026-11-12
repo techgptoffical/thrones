@@ -1,4 +1,4 @@
-import { ArrowUp, Check, ChevronDown, FileText, Globe, Lightbulb, Loader2, Paperclip, Square, X, Zap } from "lucide-react";
+import { ArrowUp, Check, ChevronDown, Cpu, FileText, Globe, Lightbulb, Loader2, Paperclip, Square, X, Zap } from "lucide-react";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 import { bytes } from "../lib/format";
 import { useStore } from "../store";
@@ -166,7 +166,8 @@ export const Composer = forwardRef<ComposerHandle>(function Composer(_, ref) {
               <button key={m.id} role="radio" aria-checked={mode === m.id} className={mode === m.id ? "on" : ""}
                 title={m.hint} disabled={streaming} onClick={() => setMode(m.id)}>
                 <m.icon size={14} />
-                {m.label}
+                <span className="lbl-full">{m.label}</span>
+                <span className="lbl-short">{m.short}</span>
               </button>
             ))}
           </div>
@@ -174,7 +175,7 @@ export const Composer = forwardRef<ComposerHandle>(function Composer(_, ref) {
           <Popover side="up" align="right"
             trigger={(toggle) => (
               <button className="model-btn" onClick={toggle} aria-label="Choose model" disabled={switching}>
-                {switching && <Loader2 size={13} className="spin" />}
+                {switching ? <Loader2 size={13} className="spin" /> : <Cpu size={14} className="model-icon" />}
                 <span>{switching ? "Loading model…" : current?.name ?? (noModel ? "No model" : "Choose model")}</span>
                 <ChevronDown size={14} />
               </button>

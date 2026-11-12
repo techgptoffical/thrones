@@ -106,8 +106,14 @@ class Server:
         kwargs: dict = {"enable_thinking": thinking}
         if self.entry["family"] == "gpt-oss":
             kwargs = {"reasoning_effort": "low"}
-        body = {"messages": messages, "max_tokens": max_tokens, "temperature": temperature, "top_p": 1.0,
-                "top_k": 1 if temperature == 0 else 20, "stream": True, "chat_template_kwargs": kwargs}
+        if thinking and self.entry["family"] != "gpt-oss":
+            # Greedy decoding makes Qwen3.5's thinking loop until the token cap (observed 12 Nov 2026,
+            # 5 of 7 items hit 6000 tokens); Qwen recommends temp 0.6 / top-p 0.95 / top-k 20 for precise thinking.
+            temperature, top_p, top_k = 0.6, 0.95, 20
+        else:
+            top_p, top_k = 1.0, (1 if temperature == 0 else 20)
+        body = {"messages": messages, "max_tokens": max_tokens, "temperature": temperature, "top_p": top_p,
+                "top_k": top_k, "stream": True, "chat_template_kwargs": kwargs}
         t0 = time.perf_counter()
         first = None
         content, reasoning, timings, finish = "", "", {}, ""
@@ -177,7 +183,7 @@ def evaluate(server: Server, thinking: bool, items: list) -> dict:
             ok = False
         rows.append({"id": item["id"], "cat": item["cat"], "ok": ok, "finish": r["finish"],
                      "gen_tokens": r["timings"].get("predicted_n", 0), "seconds": round(r["total_s"], 2),
-                     "answer": r["content"].strip()[-400:]})
+                     "answer": r["content"].strip()[-6000:]})
         print(f"    {item['id']:<9} {'PASS' if ok else 'fail'}  {r['timings'].get('predicted_n', 0):>5} tok  {r['total_s']:5.1f}s",
               flush=True)
     by_cat = {c: [x["ok"] for x in rows if x["cat"] == c] for c in CATEGORIES}

@@ -1,0 +1,1089 @@
+{
+  "date": "2026-11-12T12:53:24",
+  "hardware": {
+    "os": "Windows 11",
+    "cpu": "Intel(R) Core(TM) i3-10105F CPU @ 3.70GHz",
+    "cpu_cores": 4,
+    "cpu_threads": 8,
+    "ram_total_gb": 15.9,
+    "ram_available_gb": 8.2,
+    "gpus": [
+      {
+        "name": "NVIDIA GeForce RTX 5060 Ti",
+        "vram_total_mb": 16311,
+        "vram_used_mb": 1642,
+        "vram_free_mb": 14409,
+        "driver": "621.01",
+        "utilization": 9,
+        "vendor": "nvidia"
+      }
+    ],
+    "has_gpu": true
+  },
+  "python": "3.12.10",
+  "ctx": 16384,
+  "gpu_layers": 99,
+  "eval_set": "hard",
+  "runs": [
+    {
+      "model_id": "qwen3.5-9b-q4km",
+      "model": "Qwen3.5 9B",
+      "quant": "Q4_K_M",
+      "file_gb": 6.17,
+      "load_s": 5.96,
+      "vram_at_load_mb": 5884,
+      "perf": {},
+      "evals": {
+        "direct": {
+          "score": 24,
+          "total": 26,
+          "by_category": {
+            "math": "9/10",
+            "logic": "5/6",
+            "code": "5/5",
+            "instruction": "3/3",
+            "hindi": "2/2",
+            "knowledge": "0/0"
+          },
+          "mean_seconds": 7.13,
+          "mean_gen_tokens": 377,
+          "truncated": 1,
+          "items": [
+            {
+              "id": "hm-01",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 967,
+              "seconds": 17.87,
+              "answer": "$|A \\cup B| = |A| + |B| - |A \\cap B| = 333 + 200 - 66 = 467$.\nThis is the total count of numbers divisible by 3 or 5.\nFrom this total, we must remove those divisible by 15 (since the condition is \"NOT by 15\").\nSince all multiples of 15 are included in the union (as they are divisible by 3 and 5), we simply subtract $|C|$.\nResult = $467 - 66 = 401$.\n\nBoth methods yield the same result.\n\nAnswer: 401"
+            },
+            {
+              "id": "hm-02",
+              "cat": "math",
+              "ok": false,
+              "finish": "length",
+              "gen_tokens": 1200,
+              "seconds": 21.75,
+              "answer": "ouble check the addition.\nDigits: 1, 1, 2, 5, 8, 9, 9, 9, 9, 0, 6, 8, 4, 2, 6, 2, 4\nSum = $1+1+2+5+8+9+9+9+9+0+6+8+4+2+6+2+4$\nSum = $2 + 2 + 5 + 8 + 36 + 0 + 6 + 8 + 4 + 2 + 6 + 2 + 4$\nSum = $4 + 5 + 8 + 36 + 6 + 8 + 4 + 2 + 6 + 2 + 4$\nSum = $9 + 8 + 36 + 6 + 8 + 4 + 2 + 6 + 2 + 4$\nSum = $17 + 36 + 6 + 8 + 4 + 2 + 6 + 2 + 4$\nSum = $53 + 6 + 8 + 4 + 2 + 6 + 2 + 4$\nSum = $59 + 8 + 4 + 2 + 6 + 2 + 4$"
+            },
+            {
+              "id": "hm-03",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 642,
+              "seconds": 12.48,
+              "answer": "heck if 23 satisfies all original conditions:\n1.  $23 \\div 3 = 7$ with a remainder of $2$. (Correct)\n2.  $23 \\div 5 = 4$ with a remainder of $3$. (Correct)\n3.  $23 \\div 7 = 3$ with a remainder of $2$. (Correct)\n\nThe number is positive and satisfies all conditions. Since we started with the smallest possible $k$ derived from the modular arithmetic, this is the smallest positive integer.\n\nAnswer: 23"
+            },
+            {
+              "id": "hm-04",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 553,
+              "seconds": 10.29,
+              "answer": "1 $$\nSo, there is 1 multiple of 125 (contributing yet another factor of 5).\n\nStep 4: Calculate $\\left\\lfloor \\frac{125}{5^4} \\right\\rfloor = \\left\\lfloor \\frac{125}{625} \\right\\rfloor$\n$$ \\frac{125}{625} = 0.2 \\implies \\lfloor 0.2 \\rfloor = 0 $$\nThe sum stops here.\n\nTotal count of factor 5:\n$$ 25 + 5 + 1 = 31 $$\n\nThus, there are 31 factors of 5, which means there are 31 trailing zeros.\n\nAnswer: 31"
+            },
+            {
+              "id": "hm-05",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 510,
+              "seconds": 10.2,
+              "answer": "ees where $A$ and $B$ serve together.\n\n**Step 3: Subtract the restricted cases from the total.**\nTo find the number of valid committees, we subtract the number of invalid committees (where $A$ and $B$ are together) from the total number of committees.\n$$ \\text{Valid Committees} = \\text{Total Committees} - \\text{Committees with A and B} $$\n$$ \\text{Valid Committees} = 220 - 10 = 210 $$\n\nAnswer: 210"
+            },
+            {
+              "id": "hm-06",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 561,
+              "seconds": 10.27,
+              "answer": "e}}{\\text{Total Time}}$\n    *   Average Speed = $\\frac{2d}{\\frac{d}{24}}$\n    *   Average Speed = $2d \\times \\frac{24}{d}$\n    *   Average Speed = $48$ km/h\n\nAlternatively, for a round trip with equal distances, the average speed is the harmonic mean of the two speeds:\n$$ v_{avg} = \\frac{2v_1v_2}{v_1 + v_2} = \\frac{2 \\times 60 \\times 40}{60 + 40} = \\frac{4800}{100} = 48 \\text{ km/h} $$\n\nAnswer: 48"
+            },
+            {
+              "id": "hm-07",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 858,
+              "seconds": 15.46,
+              "answer": "6765$\n21. $F_{21} = 4181 + 6765 = 10946$\n22. $F_{22} = 6765 + 10946 = 17711$\n23. $F_{23} = 10946 + 17711 = 28657$\n24. $F_{24} = 17711 + 28657 = 46368$\n25. $F_{25} = 28657 + 46368 = 75025$\n26. $F_{26} = 46368 + 75025 = 121393$\n27. $F_{27} = 75025 + 121393 = 196418$\n28. $F_{28} = 121393 + 196418 = 317811$\n29. $F_{29} = 196418 + 317811 = 514229$\n30. $F_{30} = 317811 + 514229 = 832040$\n\nAnswer: 832040"
+            },
+            {
+              "id": "hm-08",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 504,
+              "seconds": 9.1,
+              "answer": "   $$P(\\text{at least one six}) = 1 - P(\\text{no six in 4 rolls})$$\n    $$P(\\text{at least one six}) = 1 - \\frac{625}{1296} = \\frac{1296 - 625}{1296} = \\frac{671}{1296}$$\n\n5.  **Convert to decimal and round:**\n    $$\\frac{671}{1296} \\approx 0.5177469...$$\n    Rounding to 4 decimal places, we look at the fifth decimal digit (4), which is less than 5, so we round down.\n    $$0.5177$$\n\nAnswer: 0.5177"
+            },
+            {
+              "id": "hm-09",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 231,
+              "seconds": 4.37,
+              "answer": ": $x + 4$\n\nThe problem states that their sum is 222. We can set up the following equation:\n$$x + (x + 2) + (x + 4) = 222$$\n\nCombine like terms:\n$$3x + 6 = 222$$\n\nSubtract 6 from both sides:\n$$3x = 216$$\n\nDivide by 3:\n$$x = 72$$\n\nSo, the three integers are:\n1. First integer: $72$\n2. Second integer: $72 + 2 = 74$\n3. Third integer: $72 + 4 = 76$\n\nThe largest of these three integers is 76.\n\nAnswer: 76"
+            },
+            {
+              "id": "hm-10",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 476,
+              "seconds": 8.47,
+              "answer": "irc - 110^\\circ| = 130^\\circ $$\n\n**4. Determine the smaller angle:**\nThe angle between the hands can be the calculated angle or its supplement (since the hands form two angles that add up to $360^\\circ$, but usually we consider the reflex angle vs the inner angle). The two possible angles are $130^\\circ$ and $360^\\circ - 130^\\circ = 230^\\circ$.\nThe smaller of these two is $130^\\circ$.\n\nAnswer: 130"
+            },
+            {
+              "id": "hl-01",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 491,
+              "seconds": 8.7,
+              "answer": "      3.  **s**\n        4.  **s**\n        5.  i\n        6.  **s**\n        7.  **s**\n        8.  i\n        9.  p\n        10. p\n        11. i\n    *   Count in \"mississippi\": 4 's's.\n\n2.  **assess**:\n    *   **a**\n    *   **s** (1)\n    *   **s** (2)\n    *   **e**\n    *   **s** (3)\n    *   **s** (4)\n    *   Count in \"assess\": 4 's's.\n\nTotal count: 4 (from mississippi) + 4 (from assess) = 8.\n\nAnswer: 8"
+            },
+            {
+              "id": "hl-02",
+              "cat": "logic",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 171,
+              "seconds": 3.32,
+              "answer": "idoscope\" backwards, we simply reverse the order of the letters:\n\n1.  Start with the last letter: **e**\n2.  Next: **o**\n3.  Next: **c**\n4.  Next: **s**\n5.  Next: **o**\n6.  Next: **i**\n7.  Next: **d**\n8.  Next: **o**\n9.  Next: **i**\n10. Next: **l**\n11. Next: **e**\n12. Next: **a**\n13. Finally, the first letter: **k**\n\nPutting them together in reverse order gives: **eocsidoliek**\n\nAnswer: eocsidoliek"
+            },
+            {
+              "id": "hl-03",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 192,
+              "seconds": 3.67,
+              "answer": ", 27, 8, 19, 3, 11.\n2.  **Sort the numbers in ascending order**:\n    *   3\n    *   3\n    *   8\n    *   11\n    *   14\n    *   19\n    *   27\n3.  **Find the middle number**:\n    *   There are 7 numbers in the list (an odd number).\n    *   The median is the number at the exact center position.\n    *   Position calculation: $(7 + 1) / 2 = 4$.\n    *   The 4th number in the sorted list is 11.\n\nAnswer: 11"
+            },
+            {
+              "id": "hl-04",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 1175,
+              "seconds": 20.38,
+              "answer": " + \\lfloor\\frac{20}{4}\\rfloor - 2(20)) \\pmod 7$\n$h = (1 + \\lfloor\\frac{52}{5}\\rfloor + 31 + 7 + 5 - 40) \\pmod 7$\n$h = (1 + 10 + 31 + 7 + 5 - 40) \\pmod 7$\n$h = (54 - 40) \\pmod 7$\n$h = 14 \\pmod 7$\n$h = 0$\n\nIn Zeller's congruence (for Gregorian calendar):\n0 = Saturday\n1 = Sunday\n2 = Monday\n3 = Tuesday\n4 = Wednesday\n5 = Thursday\n6 = Friday\n\nResult is 0, which corresponds to Saturday.\n\nAnswer: Saturday"
+            },
+            {
+              "id": "hl-05",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 111,
+              "seconds": 2.45,
+              "answer": "Let's break down the relationships step-by-step:\n\n1.  **\"A is B's brother\"**: This means A and B are siblings. They share the same parents.\n2.  **\"C is A's mother\"**: Since A and B are siblings, C is also B's mother.\n3.  **\"D is C's father\"**: D is the father of C. Since C is the mother of B, D is the maternal grandfather of B.\n\nTherefore, D is B's grandfather.\n\nAnswer: grandfather"
+            },
+            {
+              "id": "hl-06",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 53,
+              "seconds": 1.37,
+              "answer": "If you overtake the person in second place, you take their position. The person you overtake moves to third, and you move into the second spot. You do not take first place unless you also overtake the person in first.\n\nAnswer: Second"
+            },
+            {
+              "id": "hc-01",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 246,
+              "seconds": 5.09,
+              "answer": "le character center)\n        l1, r1 = expand_around_center(i, i)\n        # Even length palindromes (two character center)\n        l2, r2 = expand_around_center(i, i + 1)\n        \n        # Update the longest palindrome found so far\n        if r1 - l1 > end - start:\n            start, end = l1, r1\n        if r2 - l2 > end - start:\n            start, end = l2, r2\n    \n    return s[start:end + 1]\n```"
+            },
+            {
+              "id": "hc-02",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 96,
+              "seconds": 2.16,
+              "answer": "```python\ndef is_balanced(s):\n    stack = []\n    pairs = {')': '(', ']': '[', '}': '{'}\n    \n    for char in s:\n        if char in pairs.values():\n            stack.append(char)\n        elif char in pairs:\n            if not stack or stack[-1] != pairs[char]:\n                return False\n            stack.pop()\n    \n    return len(stack) == 0\n```"
+            },
+            {
+              "id": "hc-03",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 91,
+              "seconds": 1.98,
+              "answer": "```python\ndef lis_length(nums):\n    if not nums:\n        return 0\n    \n    n = len(nums)\n    dp = [1] * n\n    \n    for i in range(1, n):\n        for j in range(i):\n            if nums[j] < nums[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    \n    return max(dp)\n```"
+            },
+            {
+              "id": "hc-04",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 268,
+              "seconds": 4.99,
+              "answer": "ottom:\n            for col in range(right, left - 1, -1):\n                result.append(matrix[bottom][col])\n            bottom -= 1\n        \n        # Traverse from bottom to top along the left column (if applicable)\n        if left <= right:\n            for row in range(bottom, top - 1, -1):\n                result.append(matrix[row][left])\n            left += 1\n            \n    return result\n```"
+            },
+            {
+              "id": "hc-05",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 219,
+              "seconds": 4.3,
+              "answer": " len(s) and s[i].lower() == 'm':\n                total_seconds += num * 60\n                i += 1\n            elif i < len(s) and s[i].lower() == 's':\n                total_seconds += num\n                i += 1\n            else:\n                # No unit found after number, treat as seconds or ignore\n                total_seconds += num\n        else:\n            i += 1\n    return total_seconds\n```"
+            },
+            {
+              "id": "hi-h1",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 30,
+              "seconds": 1.36,
+              "answer": "Raindrops rhythmically roll down the windowpane.\nRunning through the rain feels refreshing.\nRainbow rays reveal themselves after the rain stops."
+            },
+            {
+              "id": "hi-h2",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 19,
+              "seconds": 1.18,
+              "answer": "2, 3, 5, 7, 11, 13"
+            },
+            {
+              "id": "hi-h3",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 3,
+              "seconds": 0.67,
+              "answer": "paris"
+            },
+            {
+              "id": "hh-01",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 13,
+              "seconds": 0.78,
+              "answer": "It rained this morning, so the match was cancelled."
+            },
+            {
+              "id": "hh-02",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 122,
+              "seconds": 2.62,
+              "answer": "Agar shirt ki price 800 rupaye hai aur 25% discount mil raha hai, toh pehle hum discount ki amount nikalte hain.\n\n25% ka matlab hai 800 ka quarter (1/4).\n800 / 4 = 200 rupaye.\n\nAb original price se discount subtract karte hain:\n800 - 200 = 600 rupaye.\n\nToh shirt ki nayi price 600 rupaye padegi.\n\nAnswer: 600"
+            }
+          ]
+        }
+      },
+      "peak_vram_mb_system": 7712,
+      "peak_engine_working_set_mb": 8152,
+      "peak_engine_private_mb": 10199
+    },
+    {
+      "model_id": "qwen3.5-4b-q4km",
+      "model": "Qwen3.5 4B",
+      "quant": "Q4_K_M",
+      "file_gb": 3.01,
+      "load_s": 3.96,
+      "vram_at_load_mb": 3571,
+      "perf": {},
+      "evals": {
+        "direct": {
+          "score": 21,
+          "total": 26,
+          "by_category": {
+            "math": "10/10",
+            "logic": "3/6",
+            "code": "3/5",
+            "instruction": "3/3",
+            "hindi": "2/2",
+            "knowledge": "0/0"
+          },
+          "mean_seconds": 4.94,
+          "mean_gen_tokens": 378,
+          "truncated": 1,
+          "items": [
+            {
+              "id": "hm-01",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 907,
+              "seconds": 10.85,
+              "answer": "sible by 15.\n$$\\text{Result} = |A \\cup B| - |C|$$\n$$\\text{Result} = 467 - 66 = 401$$\n\nAlternatively, we can think of it as:\n(Numbers divisible by 3 only) + (Numbers divisible by 5 only).\n- Numbers divisible by 3 only: $|A| - |A \\cap B| = 333 - 66 = 267$.\n- Numbers divisible by 5 only: $|B| - |A \\cap B| = 200 - 66 = 134$.\n- Total: $267 + 134 = 401$.\n\nBoth methods yield the same result.\n\nAnswer: 401"
+            },
+            {
+              "id": "hm-02",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 1159,
+              "seconds": 14.18,
+              "answer": " + 2 + 4 = 18$\n\n    Total sum: $9 + 35 + 14 + 18$\n    $9 + 35 = 44$\n    $44 + 14 = 58$\n    $58 + 18 = 76$\n\n    Let's double check by listing and adding sequentially:\n    $1+1=2$\n    $2+2=4$\n    $4+5=9$\n    $9+8=17$\n    $17+9=26$\n    $26+9=35$\n    $35+9=44$\n    $44+0=44$\n    $44+6=50$\n    $50+8=58$\n    $58+4=62$\n    $62+2=64$\n    $64+6=70$\n    $70+2=72$\n    $72+4=76$\n\n    The sum is 76.\n\nAnswer: 76"
+            },
+            {
+              "id": "hm-03",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 620,
+              "seconds": 8.02,
+              "answer": " = 1$ back into the expression for $x$:\n$x = 21(1) + 2$\n$x = 23$\n\n**Step 4: Verify the solution.**\nLet's check if $x = 23$ satisfies all conditions:\n1.  $23 \\div 3 = 7$ with a remainder of $2$. (Correct)\n2.  $23 \\div 5 = 4$ with a remainder of $3$. (Correct)\n3.  $23 \\div 7 = 3$ with a remainder of $2$. (Correct)\n\nThe number 23 is the smallest positive integer satisfying all conditions.\n\nAnswer: 23"
+            },
+            {
+              "id": "hm-04",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 684,
+              "seconds": 8.88,
+              "answer": "ntribute yet another extra factor of 5): 125.\n\n4.  **For $k=4$**:\n    $$ \\left\\lfloor \\frac{125}{5^4} \\right\\rfloor = \\left\\lfloor \\frac{125}{625} \\right\\rfloor = 0 $$\n    The sum stops here.\n\nNow, sum the results:\n$$ \\text{Total factors of 5} = 25 + 5 + 1 = 31 $$\n\nSince there are at least 31 factors of 2 available to pair with these 31 factors of 5, the number of trailing zeros is 31.\n\nAnswer: 31"
+            },
+            {
+              "id": "hm-05",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 679,
+              "seconds": 8.22,
+              "answer": "es 9 \\times 8}{3 \\times 2 \\times 1} = 120 $$\nCase 2: Exactly one of $A$ or $B$ is on the committee.\n- Choose $A$, then choose 2 from the remaining 10: $\\binom{1}{1} \\times \\binom{10}{2} = 1 \\times 45 = 45$.\n- Choose $B$, then choose 2 from the remaining 10: $\\binom{1}{1} \\times \\binom{10}{2} = 1 \\times 45 = 45$.\nTotal valid = $120 + 45 + 45 = 210$.\n\nBoth methods yield the same result.\n\nAnswer: 210"
+            },
+            {
+              "id": "hm-06",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 525,
+              "seconds": 6.36,
+              "answer": "}{\\text{Total Time}} = \\frac{2d}{\\frac{d}{24}}$$\n    $$\\text{Average Speed} = 2d \\times \\frac{24}{d} = 48 \\text{ km/h}$$\n\nAlternatively, for a round trip where the distances are equal, the average speed is the harmonic mean of the two speeds:\n$$\\text{Average Speed} = \\frac{2 \\times v_1 \\times v_2}{v_1 + v_2} = \\frac{2 \\times 60 \\times 40}{60 + 40} = \\frac{4800}{100} = 48 \\text{ km/h}$$\n\nAnswer: 48"
+            },
+            {
+              "id": "hm-07",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 951,
+              "seconds": 11.11,
+              "answer": "$\n22. $F_{22} = 10946 + 6765 = 17711$\n23. $F_{23} = 17711 + 10946 = 28657$\n24. $F_{24} = 28657 + 17711 = 46368$\n25. $F_{25} = 46368 + 28657 = 75025$\n26. $F_{26} = 75025 + 46368 = 121393$\n27. $F_{27} = 121393 + 75025 = 196418$\n28. $F_{28} = 196418 + 121393 = 317811$\n29. $F_{29} = 317811 + 196418 = 514229$\n30. $F_{30} = 514229 + 317811 = 832040$\n\nThe 30th Fibonacci number is 832,040.\n\nAnswer: 832040"
+            },
+            {
+              "id": "hm-08",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 444,
+              "seconds": 5.3,
+              "answer": "   The probability of the event \"at least one six\" is 1 minus the probability of \"no sixes\":\n    $$P(\\text{at least one 6}) = 1 - P(\\text{no 6 in 4 rolls})$$\n    $$P(\\text{at least one 6}) = 1 - 0.4822531$$\n    $$P(\\text{at least one 6}) = 0.5177469$$\n\n5.  **Round to 4 decimal places:**\n    The fifth decimal digit is 4, so we round down (keep the fourth digit as is).\n    $$0.5177$$\n\nAnswer: 0.5177"
+            },
+            {
+              "id": "hm-09",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 189,
+              "seconds": 2.52,
+              "answer": "nted as $x$, $x+2$, and $x+4$, where $x$ is an even integer.\n\nAccording to the problem, their sum is 222. We can set up the following equation:\n$$x + (x + 2) + (x + 4) = 222$$\n\nCombine like terms:\n$$3x + 6 = 222$$\n\nSubtract 6 from both sides:\n$$3x = 216$$\n\nDivide by 3:\n$$x = 72$$\n\nSo the three integers are:\n1. $72$\n2. $72 + 2 = 74$\n3. $74 + 2 = 76$\n\nThe largest of these integers is 76.\n\nAnswer: 76"
+            },
+            {
+              "id": "hm-10",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 447,
+              "seconds": 5.36,
+              "answer": "ference between the two positions:**\n    Subtract the position of the hour hand from the position of the minute hand:\n    $$|240^\\circ - 110^\\circ| = 130^\\circ$$\n\n4.  **Determine the smaller angle:**\n    The two hands form two angles that add up to $360^\\circ$. One is $130^\\circ$, and the other is $360^\\circ - 130^\\circ = 230^\\circ$.\n    The smaller of these two angles is $130^\\circ$.\n\nAnswer: 130"
+            },
+            {
+              "id": "hl-01",
+              "cat": "logic",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 156,
+              "seconds": 2.33,
+              "answer": "Let's break down the phrase \"mississippi assess\" to count the occurrences of the letter 's':\n\n1.  **mississippi**:\n    *   m-i-**s**-s-i-**s**-s-i-p-p-i\n    *   There are 4 's' letters here (the 3rd, 4th, 6th, and 7th letters).\n\n2.  **assess**:\n    *   **a**-**s**-**s**-**e**-**s**\n    *   There are 3 's' letters here (the 2nd, 3rd, and 5th letters).\n\nTotal count: 4 + 3 = 7.\n\nAnswer: 7"
+            },
+            {
+              "id": "hl-02",
+              "cat": "logic",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 112,
+              "seconds": 1.73,
+              "answer": "To write the word 'kaleidoscope' backwards, we simply reverse the order of the letters from right to left:\n\n1.  e\n2.  p\n3.  o\n4.  c\n5.  s\n6.  o\n7.  i\n8.  d\n9.  e\n10. l\n11. a\n12. e\n13. k\n\nCombining these gives us **epocsoidlaek**.\n\nAnswer: epocsoidlaek"
+            },
+            {
+              "id": "hl-03",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 332,
+              "seconds": 4.13,
+              "answer": "ount the total number of items: there are 7 numbers.\n    *   Since 7 is an odd number, the median is the number exactly in the middle.\n    *   The position of the median is $(7 + 1) / 2 = 4$th number.\n    *   Counting to the 4th number in the ordered list:\n        1.  3\n        2.  3\n        3.  8\n        4.  **11**\n        5.  14\n        6.  19\n        7.  27\n\nThe middle number is 11.\n\nAnswer: 11"
+            },
+            {
+              "id": "hl-04",
+              "cat": "logic",
+              "ok": false,
+              "finish": "length",
+              "gen_tokens": 1200,
+              "seconds": 15.64,
+              "answer": "5 + 6 = 11$.\n    *   $11 \\pmod 7 = 4$.\n    *   Day 4 is Thursday.\n\nLet's try a simpler anchor: **March 1, 2020**.\n*   March 1, 2020 was a Sunday.\n*   Years: 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030.\n*   Wait, from March 1, 2020 to March 1, 2031 is 11 years.\n*   Leap years in between: 2024, 2028. (2 leap years).\n*   Total shift = $11 \\text{ years} + 2 \\text{ extra days} = 13"
+            },
+            {
+              "id": "hl-05",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 127,
+              "seconds": 1.97,
+              "answer": "lationships step by step:\n\n1.  **C is A's mother**: This means C is the female parent of A.\n2.  **D is C's father**: This means D is the male parent of C.\n3.  **A is B's brother**: This means A and B share the same parents. Since C is A's mother, C is also B's mother.\n4.  Since D is C's father and C is B's mother, D is the father of B's parent. Therefore, D is B's grandfather.\n\nAnswer: Grandfather"
+            },
+            {
+              "id": "hl-06",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 42,
+              "seconds": 0.99,
+              "answer": "When you overtake the runner in second place, you take their spot. The runner who was in second is now in third, and you move into the position they just vacated.\n\nAnswer: Second"
+            },
+            {
+              "id": "hc-01",
+              "cat": "code",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 209,
+              "seconds": 3.06,
+              "answer": "+= 1\n        return right - left - 1  # length of the palindrome\n\n    for i in range(len(s)):\n        len1 = expand_around_center(i, i)      # odd length\n        len2 = expand_around_center(i, i + 1)  # even length\n        max_len = max(len1, len2)\n        \n        if max_len > end - start:\n            start = i - (max_len - 1) // 2\n            end = i + max_len // 2\n\n    return s[start:end+1]\n```"
+            },
+            {
+              "id": "hc-02",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 100,
+              "seconds": 1.58,
+              "answer": "```python\ndef is_balanced(s):\n    bracket_map = {')': '(', ']': '[', '}': '{'}\n    stack = []\n    \n    for char in s:\n        if char in bracket_map.values():\n            stack.append(char)\n        elif char in bracket_map:\n            if not stack or stack[-1] != bracket_map[char]:\n                return False\n            stack.pop()\n    \n    return len(stack) == 0\n```"
+            },
+            {
+              "id": "hc-03",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 110,
+              "seconds": 1.71,
+              "answer": "```python\ndef lis_length(nums):\n    if not nums:\n        return 0\n    \n    # dp[i] represents the length of the longest increasing subsequence\n    # ending at index i\n    dp = [1] * len(nums)\n    \n    for i in range(1, len(nums)):\n        for j in range(i):\n            if nums[j] < nums[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    \n    return max(dp)\n```"
+            },
+            {
+              "id": "hc-04",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 282,
+              "seconds": 4.05,
+              "answer": ", left - 1, -1):\n                result.append(matrix[bottom][col])\n            bottom -= 1\n        \n        # Check if we still have columns to traverse\n        if left <= right:\n            # Traverse from bottom to top along the left column\n            for row in range(bottom, top - 1, -1):\n                result.append(matrix[row][left])\n            left += 1\n            \n    return result\n```"
+            },
+            {
+              "id": "hc-05",
+              "cat": "code",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 286,
+              "seconds": 3.93,
+              "answer": "          total_seconds = value * multipliers[unit]\n        except ValueError:\n            raise ValueError(f\"Invalid duration format: {s}\")\n    else:\n        # Assume the whole string is a number of seconds if no unit is present\n        try:\n            total_seconds = int(s)\n        except ValueError:\n            raise ValueError(f\"Invalid duration format: {s}\")\n    \n    return total_seconds\n```"
+            },
+            {
+              "id": "hi-h1",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 32,
+              "seconds": 1.13,
+              "answer": "Rain falls gently from the gray sky.\nRivers swell as the water rushes toward the sea.\nRaincoats protect us from the wet ground."
+            },
+            {
+              "id": "hi-h2",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 19,
+              "seconds": 0.94,
+              "answer": "2, 3, 5, 7, 11, 13"
+            },
+            {
+              "id": "hi-h3",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 3,
+              "seconds": 1.1,
+              "answer": "paris"
+            },
+            {
+              "id": "hh-01",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 14,
+              "seconds": 0.63,
+              "answer": "It rained yesterday morning, so the match was called off."
+            },
+            {
+              "id": "hh-02",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 190,
+              "seconds": 2.71,
+              "answer": "r 25% discount hai. Sabse pehle hum discount ka amount nikalte hain: 800 ka 25% hai 200 rupaye (kyunki 800 ka 10% hai 80, aur 80 ka 2 baar hai 160... wait, sahi calculation hai: 800 ka 10% hai 80, to 25% hai 80 ka 2.5 baar, ya seedha 800 * 0.25 = 200). To discount 200 rupaye hai. Ab final price nikalne ke liye hum discount ko original price se katenge: 800 minus 200 equals 600 rupaye.\n\nAnswer: 600"
+            }
+          ]
+        }
+      },
+      "peak_vram_mb_system": 5360,
+      "peak_engine_working_set_mb": 6408,
+      "peak_engine_private_mb": 7805
+    },
+    {
+      "model_id": "qwen3.5-2b-q4km",
+      "model": "Qwen3.5 2B",
+      "quant": "Q4_K_M",
+      "file_gb": 1.4,
+      "load_s": 2.92,
+      "vram_at_load_mb": 1632,
+      "perf": {},
+      "evals": {
+        "direct": {
+          "score": 19,
+          "total": 26,
+          "by_category": {
+            "math": "9/10",
+            "logic": "3/6",
+            "code": "2/5",
+            "instruction": "3/3",
+            "hindi": "2/2",
+            "knowledge": "0/0"
+          },
+          "mean_seconds": 2.44,
+          "mean_gen_tokens": 304,
+          "truncated": 0,
+          "items": [
+            {
+              "id": "hm-01",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 883,
+              "seconds": 6.42,
+              "answer": " by 15.\nThis is $|A \\cup B| - |C|$.\n$467 - 66 = 401$.\n\nAlternatively, we can think of it as:\n(Number of multiples of 3) + (Number of multiples of 5) - 2 * (Number of multiples of 15).\nWhy 2? Because the multiples of 15 are counted in both the \"divisible by 3\" group and the \"divisible by 5\" group, so we subtract them twice to remove them entirely.\n$333 + 200 - 2(66) = 533 - 132 = 401$.\n\nAnswer: 401"
+            },
+            {
+              "id": "hm-02",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 385,
+              "seconds": 3.25,
+              "answer": " + 9 + 0 + 6 + 8 + 4 + 2 + 6 + 2 + 4$$\n\nLet's group the addition for clarity:\n- $1 + 1 = 2$\n- $2 + 2 = 4$\n- $4 + 5 = 9$\n- $9 + 8 = 17$\n- $17 + 9 = 26$\n- $26 + 9 = 35$\n- $35 + 9 = 44$\n- $44 + 0 = 44$\n- $44 + 6 = 50$\n- $50 + 8 = 58$\n- $58 + 4 = 62$\n- $62 + 2 = 64$\n- $64 + 6 = 70$\n- $70 + 2 = 72$\n- $72 + 4 = 76$\n\nAlternatively, summing them directly:\n$1+1+2+5+8+9+9+9+0+6+8+4+2+6+2+4 = 76$\n\nAnswer: 76"
+            },
+            {
+              "id": "hm-03",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 761,
+              "seconds": 5.26,
+              "answer": "solution is $x = 105p + 23$.\nTo find the smallest positive integer, we test values for $p$:\n- If $p = 0$, $x = 23$.\n  - Check mod 3: $23 = 3 \\times 7 + 2$ (Remainder 2) - OK\n  - Check mod 5: $23 = 5 \\times 4 + 3$ (Remainder 3) - OK\n  - Check mod 7: $23 = 7 \\times 3 + 2$ (Remainder 2) - OK\n- If $p = -1$, $x = 105(-1) + 23 = -82$ (Not positive)\n\nThus, the smallest positive integer is 23.\n\nAnswer: 23"
+            },
+            {
+              "id": "hm-04",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 281,
+              "seconds": 2.44,
+              "answer": "tion of $125!$.\n\nWe can do this by summing the integer part of $\\lfloor \\frac{125}{5} \\rfloor + \\lfloor \\frac{125}{25} \\rfloor + \\lfloor \\frac{125}{125} \\rfloor$:\n\n1.  Multiples of $5$: $\\lfloor \\frac{125}{5} \\rfloor = 25$\n2.  Multiples of $25$: $\\lfloor \\frac{125}{25} \\rfloor = 5$\n3.  Multiples of $125$: $\\lfloor \\frac{125}{125} \\rfloor = 1$\n\nAdding these together:\n$$25 + 5 + 1 = 31$$\n\nAnswer: 31"
+            },
+            {
+              "id": "hm-05",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 341,
+              "seconds": 3.3,
+              "answer": "from the remaining 10 people.\nThe number of ways to do this is:\n$$ \\binom{10}{1} = 10 $$\n\nNow, we subtract the number of invalid committees (those containing A and B) from the total number of committees to find the number of valid committees:\n$$ \\text{Valid Committees} = \\text{Total Committees} - \\text{Committees with A and B together} $$\n$$ \\text{Valid Committees} = 220 - 10 = 210 $$\n\nAnswer: 210"
+            },
+            {
+              "id": "hm-06",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 608,
+              "seconds": 4.45,
+              "answer": "ator (60 and 40). The least common multiple is 120.\n$$\\frac{1}{60} = \\frac{2}{120}$$\n$$\\frac{1}{40} = \\frac{3}{120}$$\n\nAdd the denominators:\n$$\\frac{2}{120} + \\frac{3}{120} = \\frac{5}{120}$$\n\nNow, divide the numerator by the result of the denominator:\n$$v_{avg} = \\frac{2}{\\frac{5}{120}} = 2 \\times \\frac{120}{5}$$\n$$v_{avg} = 2 \\times 24$$\n$$v_{avg} = 48$$\n\nThe average speed is 48 km/h.\n\nAnswer: 48"
+            },
+            {
+              "id": "hm-07",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 806,
+              "seconds": 5.5,
+              "answer": "20} = 2584 + 4181 = 6765$\n- $F_{21} = 4181 + 6765 = 10946$\n- $F_{22} = 6765 + 10946 = 17711$\n- $F_{23} = 10946 + 17711 = 28657$\n- $F_{24} = 17711 + 28657 = 46368$\n- $F_{25} = 28657 + 46368 = 75025$\n- $F_{26} = 46368 + 75025 = 121393$\n- $F_{27} = 75025 + 121393 = 196418$\n- $F_{28} = 121393 + 196418 = 317811$\n- $F_{29} = 196418 + 317811 = 514229$\n- $F_{30} = 317811 + 514229 = 832040$\n\nAnswer: 832040"
+            },
+            {
+              "id": "hm-08",
+              "cat": "math",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 491,
+              "seconds": 3.33,
+              "answer": "ext{at least one six}) = 1 - P(\\text{no sixes})$$\n$$P(\\text{at least one six}) = 1 - \\frac{625}{1296}$$\n$$P(\\text{at least one six}) = \\frac{1296 - 625}{1296} = \\frac{671}{1296}$$\n\n**Step 4: Convert to decimal and round.**\n$$\\frac{671}{1296} \\approx 0.5187159699...$$\n\nRounding to 4 decimal places:\nThe fifth decimal digit is 1, which is less than 5, so we do not round up.\n$$0.5187$$\n\nAnswer: 0.5187"
+            },
+            {
+              "id": "hm-09",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 157,
+              "seconds": 1.46,
+              "answer": " the three consecutive even integers be represented as $x$, $x+2$, and $x+4$.\nThe problem states that their sum is 222. We can set up the following equation:\n$$x + (x+2) + (x+4) = 222$$\n\nCombine like terms:\n$$3x + 6 = 222$$\n\nSubtract 6 from both sides:\n$$3x = 216$$\n\nDivide by 3:\n$$x = 72$$\n\nSo, the three consecutive even integers are 72, 74, and 76.\nThe largest of these integers is 76.\n\nAnswer: 76"
+            },
+            {
+              "id": "hm-10",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 745,
+              "seconds": 5.04,
+              "answer": " 90 + 20 = 110^\\circ$.\n\n3.  **Calculate the difference:**\n    The minute hand is at $240^\\circ$.\n    The hour hand is at $110^\\circ$.\n    The absolute difference is:\n    $$|240^\\circ - 110^\\circ| = 130^\\circ$$\n\n4.  **Identify the smaller angle:**\n    The total circle is $360^\\circ$.\n    The other angle would be $360^\\circ - 130^\\circ = 230^\\circ$.\n    The smaller angle is $130^\\circ$.\n\nAnswer: 130"
+            },
+            {
+              "id": "hl-01",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 204,
+              "seconds": 1.62,
+              "answer": "o count the letter 's':\n\n1.  **mississippi**:\n    *   m\n    *   i\n    *   **s** (1)\n    *   s (2)\n    *   i\n    *   s (3)\n    *   s (4)\n    *   i\n    *   p\n    *   p\n    *   i\n    *   **s** (5)\n    *   Total in \"mississippi\": 5\n\n2.  **assess**:\n    *   **a**\n    *   **s** (6)\n    *   **s** (7)\n    *   **e**\n    *   **s** (8)\n    *   Total in \"assess\": 3\n\nAdding them together: 5 + 3 = 8.\n\nAnswer: 8"
+            },
+            {
+              "id": "hl-02",
+              "cat": "logic",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 6,
+              "seconds": 0.56,
+              "answer": "ecosodilask"
+            },
+            {
+              "id": "hl-03",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 253,
+              "seconds": 2.1,
+              "answer": "19, 3, 11.\n2.  **Sort the numbers in ascending order**:\n    *   3\n    *   3\n    *   8\n    *   11\n    *   14\n    *   19\n    *   27\n3.  **Identify the middle number**: Since there are 7 numbers (an odd count), the median is the 4th number in the sorted list.\n    *   1st: 3\n    *   2nd: 3\n    *   3rd: 8\n    *   **4th: 11**\n    *   5th: 14\n    *   6th: 19\n    *   7th: 27\n\nThe median is 11.\n\nAnswer: 11"
+            },
+            {
+              "id": "hl-04",
+              "cat": "logic",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 601,
+              "seconds": 4.58,
+              "answer": " 5$\n    *   $-2J = -40$\n    *   $h = (1 + 33 + 31 + 3 + 5 - 40) \\mod 7$\n    *   $h = (73 - 40) \\mod 7$\n    *   $h = 33 \\mod 7$\n    *   $33 = 4 \\times 7 + 5$\n    *   $h = 5$\n\n5.  **Map the result**:\n    *   In Zeller's algorithm, 0 is Saturday, 1 is Sunday, 2 is Monday, 3 is Tuesday, 4 is Wednesday, 5 is Thursday, and 6 is Friday.\n    *   A result of 5 corresponds to **Thursday**.\n\nAnswer: Thursday"
+            },
+            {
+              "id": "hl-05",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 74,
+              "seconds": 1.13,
+              "answer": "Since A is B's brother, A and B are siblings.\nSince C is A's mother, C is the mother of A.\nSince D is C's father, D is the father of C.\nTherefore, D is the grandfather of A.\nBecause A and B are siblings, D is also the grandfather of B.\n\nAnswer: grandfather"
+            },
+            {
+              "id": "hl-06",
+              "cat": "logic",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 50,
+              "seconds": 0.78,
+              "answer": "When you overtake the runner in second place, you move into the position that was previously held by the runner in second. Since there are only two runners mentioned, the runner in second is now the runner in third.\n\nAnswer: 3"
+            },
+            {
+              "id": "hc-01",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 312,
+              "seconds": 2.33,
+              "answer": " length palindrome centered between i and i+1\n        left, right = i, i + 1\n        while left >= 0 and right < n and s[left] == s[right]:\n            left -= 1\n            right += 1\n        # Length is (right - left - 1)\n        current_len = right - left - 1\n        if current_len > max_len:\n            max_len = current_len\n            start = left + 1\n\n    return s[start:start + max_len]\n```"
+            },
+            {
+              "id": "hc-02",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 149,
+              "seconds": 1.33,
+              "answer": "cters are ignored.\n    \"\"\"\n    stack = []\n    bracket_map = {')': '(', ']': '[', '}': '{'}\n    open_brackets = set(bracket_map.values())\n\n    for char in s:\n        if char in open_brackets:\n            stack.append(char)\n        elif char in bracket_map:\n            if not stack or stack[-1] != bracket_map[char]:\n                return False\n            stack.pop()\n\n    return len(stack) == 0\n```"
+            },
+            {
+              "id": "hc-03",
+              "cat": "code",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 146,
+              "seconds": 1.37,
+              "answer": "   for num in nums:\n        # Binary search for the first element in tails >= num\n        idx = 0\n        for i in range(len(tails)):\n            if tails[i] >= num:\n                idx = i\n                break\n        # If num is greater than all tails, extend the LIS\n        if idx == len(tails):\n            tails.append(num)\n        else:\n            tails[idx] = num\n\n    return len(tails)\n```"
+            },
+            {
+              "id": "hc-04",
+              "cat": "code",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 243,
+              "seconds": 1.94,
+              "answer": "e)\n    # Start at top-left, move right, then down, then left, then up\n    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]\n\n    r, c = 0, 0\n    for _ in range(rows * cols):\n        for dr, dc in directions:\n            r += dr\n            c += dc\n            if 0 <= r < rows and 0 <= c < cols:\n                result.append(matrix[r][c])\n            else:\n                break\n\n    return result\n```"
+            },
+            {
+              "id": "hc-05",
+              "cat": "code",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 261,
+              "seconds": 2.09,
+              "answer": "it(':')\n    \n    if len(parts) != 3:\n        raise ValueError(\"Invalid duration format. Expected HH:MM:SS\")\n    \n    try:\n        hours = int(parts[0])\n        minutes = int(parts[1])\n        seconds = int(parts[2])\n    except ValueError:\n        raise ValueError(\"Invalid numeric values in duration string\")\n    \n    total_seconds = hours * 3600 + minutes * 60 + seconds\n    return total_seconds\n```"
+            },
+            {
+              "id": "hi-h1",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 31,
+              "seconds": 0.64,
+              "answer": "Raindrops fall silently from the gray sky.\nRainwater fills the puddles on the wet pavement.\nRain clouds gather before the storm begins."
+            },
+            {
+              "id": "hi-h2",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 19,
+              "seconds": 0.61,
+              "answer": "2, 3, 5, 7, 11, 13"
+            },
+            {
+              "id": "hi-h3",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 3,
+              "seconds": 0.54,
+              "answer": "paris"
+            },
+            {
+              "id": "hh-01",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 13,
+              "seconds": 0.61,
+              "answer": "Yesterday morning it rained, so the match was cancelled."
+            },
+            {
+              "id": "hh-02",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 73,
+              "seconds": 0.87,
+              "answer": "Agar shirt ka original price 800 rupaye hai aur aapko 25% discount mil jaye, toh discount ki amount 200 rupaye hoga (800 * 0.25). Isse naya price 600 rupaye banta hai.\n\nAnswer: 600"
+            }
+          ]
+        }
+      },
+      "peak_vram_mb_system": 3492,
+      "peak_engine_working_set_mb": 3099,
+      "peak_engine_private_mb": 4110
+    },
+    {
+      "model_id": "gpt-oss-20b-mxfp4",
+      "model": "gpt-oss 20B",
+      "quant": "MXFP4",
+      "file_gb": 12.11,
+      "load_s": 18.29,
+      "vram_at_load_mb": 11547,
+      "perf": {},
+      "evals": {
+        "reasoning-low": {
+          "score": 25,
+          "total": 26,
+          "by_category": {
+            "math": "10/10",
+            "logic": "5/6",
+            "code": "5/5",
+            "instruction": "3/3",
+            "hindi": "2/2",
+            "knowledge": "0/0"
+          },
+          "mean_seconds": 2.19,
+          "mean_gen_tokens": 176,
+          "truncated": 0,
+          "items": [
+            {
+              "id": "hm-01",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 449,
+              "seconds": 5.46,
+              "answer": "0}{5} \\right\\rfloor = 200\n   \\]\n\n3. **Divisible by both 3 and 5 (i.e., by 15)**  \n   \\[\n   \\left\\lfloor \\frac{1000}{15} \\right\\rfloor = 66\n   \\]\n\n4. **Divisible by 3 or 5**  \n   \\[\n   333 + 200 - 66 = 467\n   \\]\n\n5. **Exclude those divisible by 15**  \n   \\[\n   467 - 66 = 401\n   \\]\n\nHence, there are **401** integers from 1 to 1000 inclusive that are divisible by 3 or by 5 but not by 15.\n\nAnswer: 401"
+            },
+            {
+              "id": "hm-02",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 296,
+              "seconds": 3.3,
+              "answer": "The decimal representation of \\(2^{50}\\) is  \n\\(1\\,125\\,899\\,906\\,842\\,624\\).\n\nAdding its digits:\n\n\\[\n1+1+2+5+8+9+9+9+0+6+8+4+2+6+2+4 = 76\n\\]\n\nAnswer: 76"
+            },
+            {
+              "id": "hm-03",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 287,
+              "seconds": 3.28,
+              "answer": "Answer: 23"
+            },
+            {
+              "id": "hm-04",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 256,
+              "seconds": 3.05,
+              "answer": "f \\(2\\) than \\(5\\), the number of trailing zeros equals the exponent of \\(5\\) in \\(125!\\).\n\n\\[\n\\begin{aligned}\n\\left\\lfloor \\frac{125}{5} \\right\\rfloor &= 25,\\\\[4pt]\n\\left\\lfloor \\frac{125}{25} \\right\\rfloor &= 5,\\\\[4pt]\n\\left\\lfloor \\frac{125}{125} \\right\\rfloor &= 1.\n\\end{aligned}\n\\]\n\nAdding these contributions:\n\n\\[\n25 + 5 + 1 = 31.\n\\]\n\nThus, \\(125!\\) ends with **31** trailing zeros.\n\nAnswer: 31"
+            },
+            {
+              "id": "hm-05",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 190,
+              "seconds": 2.7,
+              "answer": "n committees that can be formed from 12 people is  \n\n\\[\n\\binom{12}{3}=220.\n\\]\n\nCommittees that contain both of the two particular people are not allowed.  \nIf both of them are on the committee, the third member can be any of the remaining \\(12-2=10\\) people, giving  \n\n\\[\n\\binom{10}{1}=10\n\\]\n\nsuch forbidden committees.\n\nHence the number of permissible committees is  \n\n\\[\n220-10=210.\n\\]\n\nAnswer: 210"
+            },
+            {
+              "id": "hm-06",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 117,
+              "seconds": 1.81,
+              "answer": "Answer: 48 km/h"
+            },
+            {
+              "id": "hm-07",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 336,
+              "seconds": 3.64,
+              "answer": "Answer: 832040"
+            },
+            {
+              "id": "hm-08",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 181,
+              "seconds": 2.09,
+              "answer": "The probability of rolling at least one six in four rolls of a fair six‑sided die is  \n\n\\[\n1-\\left(\\frac{5}{6}\\right)^4 = 1-\\frac{625}{1296} = \\frac{671}{1296}\\approx 0.517746.\n\\]\n\nRounded to four decimal places:\n\n**Answer: 0.5177**"
+            },
+            {
+              "id": "hm-09",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 166,
+              "seconds": 1.93,
+              "answer": "The three consecutive even integers are \\(x,\\;x+2,\\;x+4\\).  \nTheir sum is  \n\n\\[\nx+(x+2)+(x+4)=3x+6=222.\n\\]\n\nSolve for \\(x\\):\n\n\\[\n3x = 216 \\quad\\Rightarrow\\quad x = 72.\n\\]\n\nThus the integers are \\(72,\\;74,\\;76\\).  \nThe largest of them is **76**.\n\nAnswer: 76"
+            },
+            {
+              "id": "hm-10",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 273,
+              "seconds": 2.97,
+              "answer": "rresponds to an angle of  \n\\[\n3.\\overline{6}\\times 30^\\circ = 110^\\circ\n\\]\nfrom 12 o’clock.  \nThe minute hand is at \\(40\\) minutes, giving an angle of  \n\\[\n40\\times 6^\\circ = 240^\\circ\n\\]\nfrom 12 o’clock.  \nThe difference between the two angles is  \n\\[\n|240^\\circ-110^\\circ| = 130^\\circ.\n\\]\nSince \\(130^\\circ < 360^\\circ-130^\\circ\\), the smaller angle between the hands is \\(130^\\circ\\).\n\nAnswer: 130"
+            },
+            {
+              "id": "hl-01",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 121,
+              "seconds": 1.54,
+              "answer": "Answer: 8"
+            },
+            {
+              "id": "hl-02",
+              "cat": "logic",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 43,
+              "seconds": 0.89,
+              "answer": "epocsodialek  \nAnswer: epocsodialek"
+            },
+            {
+              "id": "hl-03",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 85,
+              "seconds": 1.28,
+              "answer": "The sorted list is: 3, 3, 8, 11, 14, 19, 27.  \nThe middle value (the 4th number) is **11**.\n\nAnswer: 11"
+            },
+            {
+              "id": "hl-04",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 347,
+              "seconds": 3.7,
+              "answer": "Answer: Saturday"
+            },
+            {
+              "id": "hl-05",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 98,
+              "seconds": 1.43,
+              "answer": "Answer: grandfather"
+            },
+            {
+              "id": "hl-06",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 35,
+              "seconds": 0.8,
+              "answer": "Answer: 2"
+            },
+            {
+              "id": "hc-01",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 274,
+              "seconds": 3.16,
+              "answer": " step beyond the palindrome\n        cur_len = r - l - 1\n        if cur_len > max_len or (cur_len == max_len and l + 1 < start):\n            start = l + 1\n            max_len = cur_len\n\n    for i in range(n):\n        # odd length palindrome centered at i\n        expand(i, i)\n        # even length palindrome centered between i and i+1\n        expand(i, i + 1)\n\n    return s[start:start + max_len]\n```"
+            },
+            {
+              "id": "hc-02",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 149,
+              "seconds": 1.93,
+              "answer": "} — is correctly matched and nested.\n    Other characters are ignored.\n    \"\"\"\n    pairs = {')': '(', ']': '[', '}': '{'}\n    opening = set(pairs.values())\n    stack = []\n\n    for ch in s:\n        if ch in opening:\n            stack.append(ch)\n        elif ch in pairs:\n            if not stack or stack[-1] != pairs[ch]:\n                return False\n            stack.pop()\n\n    return not stack\n```"
+            },
+            {
+              "id": "hc-03",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 163,
+              "seconds": 2.02,
+              "answer": "e sorting algorithm.\n    \"\"\"\n    import bisect\n\n    tails = []  # tails[i] = smallest possible tail of an increasing subsequence of length i+1\n    for x in nums:\n        # Find the insertion point for x in tails to keep tails sorted\n        idx = bisect.bisect_left(tails, x)\n        if idx == len(tails):\n            tails.append(x)\n        else:\n            tails[idx] = x\n    return len(tails)\n```"
+            },
+            {
+              "id": "hc-04",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 264,
+              "seconds": 3.04,
+              "answer": "right to left along the bottom row\n            for col in range(right, left - 1, -1):\n                result.append(matrix[bottom][col])\n            bottom -= 1\n\n        if left <= right:\n            # Traverse from bottom to top along the leftmost column\n            for row in range(bottom, top - 1, -1):\n                result.append(matrix[row][left])\n            left += 1\n\n    return result\n```"
+            },
+            {
+              "id": "hc-05",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 215,
+              "seconds": 2.51,
+              "answer": "rse_duration('2h')        -> 7200\n        parse_duration('90s')       -> 90\n    \"\"\"\n    # Map unit to multiplier in seconds\n    multipliers = {'h': 3600, 'm': 60, 's': 1}\n    total_seconds = 0\n\n    # Find all occurrences of a number followed by a unit\n    for value, unit in re.findall(r'(\\d+)([hms])', s.lower()):\n        total_seconds += int(value) * multipliers[unit]\n\n    return total_seconds\n```"
+            },
+            {
+              "id": "hi-h1",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 62,
+              "seconds": 1.04,
+              "answer": "Rain drizzles softly, whispering lullabies to the thirsty earth.  \nRivers swell, their currents dancing with newfound vigor.  \nRoses blush brighter, their petals soaking in the gentle downpour."
+            },
+            {
+              "id": "hi-h2",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 38,
+              "seconds": 0.78,
+              "answer": "2,3,5,7,11,13"
+            },
+            {
+              "id": "hi-h3",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 17,
+              "seconds": 0.61,
+              "answer": "paris"
+            },
+            {
+              "id": "hh-01",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 26,
+              "seconds": 0.74,
+              "answer": "Yesterday morning it had rained, so the match was cancelled."
+            },
+            {
+              "id": "hh-02",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 92,
+              "seconds": 1.37,
+              "answer": "Agar shirt 800 rupaye ki hai aur 25% discount mile, to discount amount 800 ka 25% = 200 rupaye. Isliye final price = 800 - 200 = 600 rupaye.  \nAnswer: 600"
+            }
+          ]
+        }
+      },
+      "peak_vram_mb_system": 13323,
+      "peak_engine_working_set_mb": 7937,
+      "peak_engine_private_mb": 12942
+    }
+  ]
+}

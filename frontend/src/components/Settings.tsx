@@ -293,6 +293,18 @@ function Models({ s, save }: { s: SettingsT; save: Save }) {
               {engine.context_length?.toLocaleString()} tokens · {engine.gpu_layers ? "GPU offload on" : "CPU only"} · loaded in{" "}
               {engine.load_seconds}s{engine.model_vram_mb != null ? ` · about ${mb(engine.model_vram_mb)} VRAM taken at load` : ""}.
               {engine.warnings?.map((w) => <div key={w} style={{ color: "var(--warn)" }}>{w}</div>)}
+              {engine.fallback && (
+                <div style={{ marginTop: 6 }}>
+                  The full settings did not fit, usually because other apps were using memory. Close them and press
+                  “Apply new settings now” to retry.
+                  {engine.last_load_failure && (
+                    <details style={{ marginTop: 4 }}>
+                      <summary style={{ cursor: "pointer" }}>Engine error</summary>
+                      <span className="path">{engine.last_load_failure}</span>
+                    </details>
+                  )}
+                </div>
+              )}
             </>
           ) : engine.loading ? "A model is loading…" : "No model is in memory. It loads automatically when you send a message."}
           <div style={{ display: "flex", gap: 8, marginTop: 9 }}>

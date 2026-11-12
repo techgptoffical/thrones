@@ -61,7 +61,7 @@ def main() -> int:
                      "gen_tokens": m.get("completion_tokens", 0),
                      "verdict": next((s["title"] for s in msg.get("steps", []) if s["kind"] == "verify"), ""),
                      "revised": any(s["kind"] == "revise" for s in msg.get("steps", [])),
-                     "answer": msg.get("content", "").strip()[-400:]})
+                     "answer": msg.get("content", "").strip()[-6000:]})
         print(f"  {item['id']:<9} {'PASS' if ok else 'fail'}  tools {rows[-1]['tool_calls']}  "
               f"{rows[-1]['seconds']:5.1f}s  {rows[-1]['verdict']}", flush=True)
         if cid:

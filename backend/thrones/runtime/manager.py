@@ -25,6 +25,7 @@ class Loaded:
     vram_before_mb: int | None
     vram_after_mb: int | None
     warnings: list[str] = field(default_factory=list)
+    requested: tuple[str, int, int] = ("", 0, 0)   # what was asked for; differs from actual after a fallback
 
 
 @dataclass
@@ -44,6 +45,7 @@ class ModelManager:
         self.downloads: dict[str, dict[str, Any]] = {}
         self._download_tasks: dict[str, asyncio.Task[None]] = {}
         self._idle_task: asyncio.Task[None] | None = None
+        self.last_load_failure: str = ""
 
     # --------------------------------------------------------------- catalog
     def catalog(self) -> list[dict[str, Any]]:
@@ -89,13 +91,21 @@ class ModelManager:
         return entry, ctx, layers, profile
 
     # ---------------------------------------------------------------- loading
-    async def ensure_loaded(self, settings: dict[str, Any], model_override: str = "") -> tuple[Loaded, bool]:
-        """Make sure the configured model is in memory. Returns (state, freshly_loaded)."""
+    async def ensure_loaded(self, settings: dict[str, Any], model_override: str = "",
+                            force: bool = False) -> tuple[Loaded, bool]:
+        """Make sure the configured model is in memory. Returns (state, freshly_loaded).
+
+        If an earlier load had to fall back to lighter settings, that fallback is kept for later
+        requests with the same settings instead of retrying (and failing) on every message.
+        `force=True` (the Settings "apply"/"load" buttons) retries the requested settings.
+        """
         entry, ctx, layers, _ = self.resolve(settings, model_override)
+        wanted = (entry["id"], ctx, layers)
         async with self.load_lock:
             cur = self.loaded
-            if (cur and self.provider.running() and cur.entry["id"] == entry["id"]
-                    and cur.context_length == ctx and cur.gpu_layers == layers):
+            if cur and self.provider.running() and (
+                    (cur.entry["id"], cur.context_length, cur.gpu_layers) == wanted
+                    or (cur.requested == wanted and not force)):
                 self.last_used = time.monotonic()
                 return cur, False
 
@@ -122,6 +132,7 @@ class ModelManager:
                         await self.provider.start(config.model_path(entry), entry["id"], try_ctx, try_layers)
                     except LoadError as exc:
                         last_error = exc
+                        self._record_failure(entry["id"], try_ctx, try_layers, str(exc))
                         warnings.append(
                             f"Could not load with context {try_ctx} and {try_layers} GPU layers; trying a lighter setting."
                         )
@@ -133,12 +144,26 @@ class ModelManager:
                     else:
                         warnings.append(f"Loaded with reduced settings: context {try_ctx}, GPU layers {try_layers}.")
                     self.loaded = Loaded(entry, try_ctx, try_layers, round(load_s, 2), time.time(),
-                                         vram_before, vram_after, warnings)
+                                         vram_before, vram_after, warnings, requested=wanted)
                     self.last_used = time.monotonic()
                     return self.loaded, True
                 raise LoadError(f"The model could not be loaded on this hardware. {last_error}")
             finally:
                 self.loading = ""
+
+    def _record_failure(self, model_id: str, ctx: int, layers: int, detail: str) -> None:
+        """Keep the engine's own error output from failed attempts (the live log is overwritten by the next try)."""
+        stamp = time.strftime("%Y-%m-%d %H:%M:%S")
+        avail = psutil.virtual_memory().available // 2**20
+        self.last_load_failure = f"{stamp} {model_id} ctx={ctx} gpu_layers={layers} free_ram={avail}MB: {detail[-600:]}"
+        try:
+            path = config.DATA_DIR / "load-failures.log"
+            if path.exists() and path.stat().st_size > 1_000_000:
+                path.unlink()
+            with path.open("a", encoding="utf-8") as f:
+                f.write(self.last_load_failure + "\n" + "-" * 60 + "\n")
+        except OSError:
+            pass
 
     async def unload(self) -> None:
         async with self.load_lock:
@@ -164,6 +189,8 @@ class ModelManager:
             "load_seconds": cur.load_seconds,
             "model_vram_mb": model_vram,
             "warnings": cur.warnings,
+            "fallback": (cur.entry["id"], cur.context_length, cur.gpu_layers) != cur.requested,
+            "last_load_failure": self.last_load_failure if cur.warnings else "",
             "busy": self.gen_lock.locked(),
         }
 

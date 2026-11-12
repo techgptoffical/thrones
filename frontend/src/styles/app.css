@@ -1292,6 +1292,10 @@ a.source:hover {
   color: var(--text-2);
   max-width: 190px;
 }
+.lbl-short,
+.model-icon {
+  display: none;
+}
 .model-btn span {
   overflow: hidden;
   white-space: nowrap;
@@ -1966,7 +1970,32 @@ a.source:hover {
   .msg.user {
     max-width: 92%;
   }
-  .seg button span.long {
+}
+@media (max-width: 560px) {
+  .composer .bar {
+    gap: 4px;
+    padding-left: 6px;
+  }
+  .seg button {
+    padding: 0 9px;
+  }
+  .seg button svg {
     display: none;
+  }
+  .lbl-full {
+    display: none;
+  }
+  .lbl-short,
+  .model-icon {
+    display: inline;
+  }
+  .model-btn {
+    padding: 0 6px;
+  }
+  .model-btn span {
+    display: none;
+  }
+  .welcome h1 {
+    font-size: 32px;
   }
 }

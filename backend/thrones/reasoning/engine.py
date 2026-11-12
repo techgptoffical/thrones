@@ -16,7 +16,7 @@ from typing import Any, Awaitable, Callable
 
 from .. import db
 from ..retrieval import documents
-from ..runtime.base import GenParams, RuntimeError_
+from ..runtime.base import GenerationError, GenParams, RuntimeError_
 from ..runtime.manager import Loaded, manager
 from ..tools.calculator import calculator
 from ..tools.python_exec import python_exec
@@ -302,8 +302,10 @@ async def _think(run: Run, messages: list[dict[str, Any]], tools: ToolSet, quest
     calls_before = run.tool_calls
     review = await agent_loop(
         run, [{"role": "user", "content": prompts.VERIFY_PROMPT.format(question=question[:6000], draft=draft[:8000])}],
-        checker, replace(run.base_params(True, precise=True), max_tokens=1800),
-        deadline=deadline, token_budget=min(3000, budget - spent), visible=False)
+        # Thinking is off for the reviewer: with it on, the model often spent its whole allowance
+        # reasoning and never wrote the VERDICT line (8 of 26 "inconclusive" checks, 12 Nov 2026 eval).
+        checker, replace(run.base_params(False, precise=True), max_tokens=1000),
+        deadline=deadline, token_budget=min(2000, budget - spent), visible=False)
     verdict, issues = _parse_verdict(review)
     rechecked = run.tool_calls - calls_before
     note = f" ({rechecked} figure(s) recomputed)" if rechecked else ""
@@ -435,6 +437,14 @@ async def run_turn(req: TurnRequest, emit: Emit) -> None:
                     await _think(run, messages, tools, question)
                 else:
                     await _fast(run, messages, tools)
+                if mode != "research" and not run.content.strip():
+                    # Never present an empty reply as a finished answer.
+                    raise GenerationError(
+                        "The model finished without writing an answer"
+                        + (f" (it was running with only {loaded.context_length:,} tokens of context after a "
+                           "reduced-settings load)" if loaded.warnings else
+                           " (it may have used its whole token budget on reasoning)")
+                        + ". Try again, or raise the token budget in Settings → Generation.")
 
                 # --- title for new conversations ----------------------------
                 if not rows and run.content.strip():

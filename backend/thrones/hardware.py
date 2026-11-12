@@ -101,6 +101,12 @@ def compatibility(entry: dict[str, Any], hw: dict[str, Any] | None = None) -> di
     need_vram = entry.get("min_vram_gb", 0)
     need_ram = entry.get("min_ram_gb", 0)
     if vram >= max(need_vram, size_gb + 1.5):
+        # Even fully offloaded, llama.cpp keeps a large share of the model resident in system RAM
+        # (measured: ~5.3 GB for the 9B, ~12 GB for gpt-oss 20B on Windows).
+        if ram < need_ram:
+            return {"level": "warn",
+                    "message": f"Fits on the GPU, but also needs about {need_ram} GB of system RAM; this PC has "
+                               f"{ram:.0f} GB. Close other apps before loading it."}
         return {"level": "ok", "message": "Fits fully on the GPU."}
     if vram > 0 and ram + vram >= size_gb + 4:
         return {"level": "warn", "message": "Will be split between GPU and system RAM; expect slower replies."}
