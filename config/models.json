@@ -73,7 +73,7 @@
       "gguf_repo": "https://huggingface.co/ggml-org/gpt-oss-20b-GGUF",
       "file": "gpt-oss-20b-MXFP4.gguf",
       "download_url": "https://huggingface.co/ggml-org/gpt-oss-20b-GGUF/resolve/main/gpt-oss-20b-MXFP4.gguf",
-      "size_bytes": 12110000000,
+      "size_bytes": 12109566624,
       "license": "Apache-2.0",
       "parameters": "20.9B (3.6B active per token)",
       "quantization": "MXFP4",

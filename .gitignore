@@ -1,10 +1,14 @@
 # Third-party binaries and model weights are never committed
-runtime/
-models/*.gguf
-models/*.part
+# (anchored with a leading slash so backend/thrones/runtime/ source is NOT ignored)
+/runtime/
+/models/*.gguf
+/models/*.part
 
 # Local user data (conversations, memory, uploads, settings)
-data/
+/data/
+
+# Benchmark engine logs (results JSON is kept)
+/evals/results/server-*.log
 
 # Environments and caches
 .venv/

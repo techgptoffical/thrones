@@ -1,0 +1,131 @@
+/* Thrones design tokens.
+   Identity: graphite and bone neutrals with a single antique-gold accent,
+   a serif display face for the brand voice and a quiet grotesque for work. */
+
+:root {
+  --font-ui: "Geist Variable", "Segoe UI", "Nirmala UI", system-ui, -apple-system, sans-serif;
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-mono: "Geist Mono Variable", "Cascadia Code", Consolas, ui-monospace, monospace;
+
+  --scale: 1;
+  --text-xs: calc(12px * var(--scale));
+  --text-sm: calc(13px * var(--scale));
+  --text-md: calc(14px * var(--scale));
+  --text-base: calc(15.5px * var(--scale));
+  --text-lg: calc(18px * var(--scale));
+
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+
+  --sidebar-w: 272px;
+  --thread-w: 760px;
+  --row-h: 34px;
+  --gap-msg: 28px;
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --fast: 120ms;
+  --med: 200ms;
+}
+
+:root[data-density="compact"] {
+  --row-h: 30px;
+  --gap-msg: 20px;
+}
+
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f6f3;
+  --surface: #ffffff;
+  --sidebar: #eeeeea;
+  --raised: #ffffff;
+  --sunken: #f0f0ec;
+  --bubble: #eaeae5;
+
+  --text: #17181a;
+  --text-2: #4f5256;
+  --text-3: #6d7075;
+  --text-inv: #fafaf8;
+
+  --border: #e2e2dc;
+  --border-strong: #cdcdc6;
+  --hover: rgba(23, 24, 26, 0.05);
+  --pressed: rgba(23, 24, 26, 0.09);
+
+  --accent: #86661c;
+  --accent-solid: #b08a3a;
+  --accent-soft: #f2ebd9;
+  --accent-line: #dccb9c;
+
+  --primary: #17181a;
+  --primary-hover: #2c2e31;
+  --on-primary: #fafaf8;
+
+  --ok: #2c7a4b;
+  --warn: #9a6200;
+  --danger: #b3342a;
+  --danger-soft: #fbeceb;
+
+  --shadow-sm: 0 1px 2px rgba(23, 24, 26, 0.05);
+  --shadow-md: 0 4px 16px rgba(23, 24, 26, 0.08), 0 1px 2px rgba(23, 24, 26, 0.05);
+  --shadow-lg: 0 18px 48px rgba(23, 24, 26, 0.16), 0 2px 6px rgba(23, 24, 26, 0.06);
+  --scrim: rgba(20, 21, 23, 0.36);
+
+  --code-text: #24262a;
+  --code-comment: #7b7e84;
+  --code-keyword: #8a3b6b;
+  --code-string: #2d6e4f;
+  --code-number: #9a5b13;
+  --code-fn: #2f5d9b;
+  --code-type: #6a5a1c;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141516;
+  --surface: #1a1b1d;
+  --sidebar: #0f1011;
+  --raised: #222325;
+  --sunken: #1c1d1f;
+  --bubble: #242527;
+
+  --text: #ecebe7;
+  --text-2: #b1b1ac;
+  --text-3: #8b8b86;
+  --text-inv: #141516;
+
+  --border: #2a2b2e;
+  --border-strong: #3b3c40;
+  --hover: rgba(255, 255, 255, 0.055);
+  --pressed: rgba(255, 255, 255, 0.1);
+
+  --accent: #d6b56e;
+  --accent-solid: #c9a45c;
+  --accent-soft: rgba(214, 181, 110, 0.12);
+  --accent-line: rgba(214, 181, 110, 0.32);
+
+  --primary: #ecebe7;
+  --primary-hover: #ffffff;
+  --on-primary: #141516;
+
+  --ok: #6cc08d;
+  --warn: #e0b055;
+  --danger: #ef8177;
+  --danger-soft: rgba(239, 129, 119, 0.12);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.4);
+  --scrim: rgba(0, 0, 0, 0.58);
+
+  --code-text: #dedcd6;
+  --code-comment: #85857f;
+  --code-keyword: #d79bc0;
+  --code-string: #93cba6;
+  --code-number: #e0b072;
+  --code-fn: #8fb6ea;
+  --code-type: #d6c382;
+}

@@ -25,9 +25,11 @@ def system_prompt(entry: dict[str, Any], settings: dict[str, Any], mode: str, me
                "after your training data, say you cannot check it here and suggest switching to Deep Research.")
     parts = [
         f"You are Thrones, a local AI assistant running entirely on the user's own computer. "
-        f"Your language engine is {entry['name']} ({entry.get('quantization', '')}), an open-weight model from "
-        f"{entry.get('publisher', 'its publisher')}. If asked what you are, say exactly that; never claim to be "
-        f"another assistant or a model trained from scratch by Thrones.",
+        f"Your language engine is {entry['name']} ({entry.get('quantization', '')}), an unmodified open-weight model "
+        f"made by {entry.get('publisher', 'its publisher')}. Thrones is the application around that model; it did "
+        f"not train the model. Whenever you are asked who or what you are, or which model you are, answer with both "
+        f"parts, for example: \"I'm Thrones, a local assistant running the {entry['name']} model made by "
+        f"{entry.get('publisher', 'its publisher')}.\" Never claim to be another assistant or a model trained by Thrones.",
         f"Today is {today}. {net}",
         "How to answer:\n"
         f"- {style}\n"

@@ -1,0 +1,1591 @@
+{
+  "date": "2026-11-12T12:44:51",
+  "hardware": {
+    "os": "Windows 11",
+    "cpu": "Intel(R) Core(TM) i3-10105F CPU @ 3.70GHz",
+    "cpu_cores": 4,
+    "cpu_threads": 8,
+    "ram_total_gb": 15.9,
+    "ram_available_gb": 5.9,
+    "gpus": [
+      {
+        "name": "NVIDIA GeForce RTX 5060 Ti",
+        "vram_total_mb": 16311,
+        "vram_used_mb": 1547,
+        "vram_free_mb": 14504,
+        "driver": "621.01",
+        "utilization": 6,
+        "vendor": "nvidia"
+      }
+    ],
+    "has_gpu": true
+  },
+  "python": "3.12.10",
+  "ctx": 16384,
+  "runs": [
+    {
+      "model_id": "qwen3.5-9b-q4km",
+      "model": "Qwen3.5 9B",
+      "quant": "Q4_K_M",
+      "file_gb": 6.17,
+      "load_s": 12.1,
+      "vram_at_load_mb": 5994,
+      "perf": {
+        "short_first_token_s": 1.232,
+        "short_gen_tps": 50.4,
+        "short_gen_tokens": 260,
+        "long_prompt_tokens": 10795,
+        "long_prompt_tps": 2904.0,
+        "long_first_token_s": 4.51,
+        "long_gen_tps": 38.8,
+        "long_needle_found": true,
+        "long_answer": "Based on the text provided in **Paragraph 146**, the backup generator at the Nashik depot was replaced by **technician Farida Qureshi**, and the cost was **3,48,000 rupees**."
+      },
+      "evals": {
+        "direct": {
+          "score": 37,
+          "total": 39,
+          "by_category": {
+            "math": "9/10",
+            "logic": "8/8",
+            "code": "5/5",
+            "instruction": "4/5",
+            "hindi": "5/5",
+            "knowledge": "6/6"
+          },
+          "mean_seconds": 3.36,
+          "mean_gen_tokens": 164,
+          "truncated": 1,
+          "items": [
+            {
+              "id": "math-01",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 310,
+              "seconds": 6.61,
+              "answer": "60 = 840$ minutes\n        *   Minutes: $15$\n        *   Total: $840 + 15 = 855$ minutes\n\n2.  **Calculate the difference:**\n    *   $855 - 580 = 275$ minutes\n\nAlternatively, we can calculate by hours and minutes:\n*   From 09:40 to 13:40 is exactly 4 hours ($4 \\times 60 = 240$ minutes).\n*   From 13:40 to 14:15 is 35 minutes ($14:15 - 13:40$).\n*   Total minutes: $240 + 35 = 275$ minutes.\n\nAnswer: 275"
+            },
+            {
+              "id": "math-02",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 303,
+              "seconds": 8.33,
+              "answer": " \\frac{250 \\times (250 + 1)}{2}$$\n\n2.  Calculate the value inside the parentheses:\n    $$250 + 1 = 251$$\n\n3.  Multiply by $n$:\n    $$250 \\times 251 = 62,750$$\n\n4.  Divide by 2:\n    $$\\frac{62,750}{2} = 31,375$$\n\nAlternatively, you can simplify before multiplying:\n$$S_{250} = \\frac{250}{2} \\times 251 = 125 \\times 251$$\n$$125 \\times 251 = 125 \\times (250 + 1) = 31,250 + 125 = 31,375$$\n\nAnswer: 31375"
+            },
+            {
+              "id": "math-03",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 203,
+              "seconds": 4.82,
+              "answer": "nal price of the shirt.\nThe discount is 20%, which means the customer pays 80% of the original price ($100\\% - 20\\% = 80\\%$).\n\nWe know that 80% of the original price equals the discounted price of 1,200 rupees.\n$$0.80 \\times P = 1200$$\n\nTo solve for $P$, divide both sides by 0.80:\n$$P = \\frac{1200}{0.80}$$\n$$P = \\frac{12000}{8}$$\n$$P = 1500$$\n\nSo, the original price was 1,500 rupees.\n\nAnswer: 1500"
+            },
+            {
+              "id": "math-04",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 455,
+              "seconds": 8.36,
+              "answer": "cdots \\times p_k^{e_k}$ is given by:\n    $$d(n) = (e_1 + 1)(e_2 + 1)\\cdots(e_k + 1)$$\n    \n    For $360 = 2^3 \\times 3^2 \\times 5^1$:\n    *   The exponent of $2$ is $3$, so we use $(3 + 1) = 4$.\n    *   The exponent of $3$ is $2$, so we use $(2 + 1) = 3$.\n    *   The exponent of $5$ is $1$, so we use $(1 + 1) = 2$.\n\n3.  **Calculate the Total**:\n    $$d(360) = 4 \\times 3 \\times 2 = 24$$\n\nAnswer: 24"
+            },
+            {
+              "id": "math-05",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 342,
+              "seconds": 6.32,
+              "answer": " = \\frac{2}{18} $$\n\n$$ \\text{Combined Rate} = \\frac{3}{18} + \\frac{2}{18} = \\frac{5}{18} \\text{ of the tank per hour} $$\n\nThe time required to fill the entire tank (1 whole tank) is the reciprocal of the combined rate:\n$$ \\text{Time} = \\frac{1}{\\text{Combined Rate}} = \\frac{1}{\\frac{5}{18}} = \\frac{18}{5} $$\n\nConverting the fraction to a decimal:\n$$ \\frac{18}{5} = 3.6 \\text{ hours} $$\n\nAnswer: 3.6"
+            },
+            {
+              "id": "math-06",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 323,
+              "seconds": 6.19,
+              "answer": "om the previous step:\n$$2^{20} = 1024^2$$\n\nLet's compute $1024 \\times 1024$:\n$$1024 \\times 1024 = (1000 + 24)^2$$\nUsing the expansion $(a+b)^2 = a^2 + 2ab + b^2$:\n$$1000^2 + 2(1000)(24) + 24^2$$\n$$= 1,000,000 + 48,000 + 576$$\n$$= 1,048,576$$\n\nAlternatively, you can compute it directly:\n$1024 \\times 1024 = 1,048,576$.\n\nNow, subtract 1 from this result:\n$$1,048,576 - 1 = 1,048,575$$\n\nAnswer: 1048575"
+            },
+            {
+              "id": "math-07",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 388,
+              "seconds": 7.39,
+              "answer": " term inside the parentheses:\n    $$1 + \\frac{10}{100} = 1 + 0.10 = 1.10$$\n\n3.  Calculate the exponent ($1.10$ raised to the power of $3$):\n    $$1.10^3 = 1.10 \\times 1.10 \\times 1.10$$\n    $$1.10 \\times 1.10 = 1.21$$\n    $$1.21 \\times 1.10 = 1.331$$\n\n4.  Multiply by the principal amount:\n    $$A = 10,000 \\times 1.331$$\n    $$A = 13,310$$\n\nThe amount after 3 years is 13,310 rupees.\n\nAnswer: 13,310"
+            },
+            {
+              "id": "math-08",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 623,
+              "seconds": 10.41,
+              "answer": "2^4 \\equiv 1 \\pmod{5}$, we can divide the exponent 100 by 4.\n    $$100 = 4 \\times 25$$\n    So,\n    $$2^{100} = (2^4)^{25}$$\n    Substituting $2^4 \\equiv 1 \\pmod{5}$:\n    $$(2^4)^{25} \\equiv 1^{25} \\pmod{5}$$\n    $$1^{25} = 1$$\n\n    Therefore, $2^{100} \\equiv 1 \\pmod{5}$.\n\n4.  **Conclusion:**\n    Since $7^{100} \\equiv 2^{100} \\pmod{5}$ and $2^{100} \\equiv 1 \\pmod{5}$, the remainder is 1.\n\nAnswer: 1"
+            },
+            {
+              "id": "math-09",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 212,
+              "seconds": 3.91,
+              "answer": "emaining people for the third spot.\n4.  **Fourth position**: There are 2 remaining people for the fourth spot.\n5.  **Fifth position**: There is only 1 person left for the last spot.\n\nTo find the total number of arrangements, we multiply the number of choices for each position:\n$$5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$$\n\nThis is equivalent to calculating the factorial of 5 ($5!$).\n\nAnswer: 120"
+            },
+            {
+              "id": "math-10",
+              "cat": "math",
+              "ok": false,
+              "finish": "length",
+              "gen_tokens": 1200,
+              "seconds": 20.41,
+              "answer": " becomes 2)\n  Hundreds digit: $2 < 5$, borrow from 8. $12 - 5 = 7$. (Thousands digit becomes 7)\n  Thousands digit: $7 - 4 = 3$.\n  Ten-thousands digit: $2 - 3$. $2 < 3$, borrow from 1. $12 - 3 = 9$. (Hundred-thousands digit becomes 0)\n  Hundred-thousands digit: $0 - 2$. $0 < 2$, borrow from 8. $10 - 2 = 8$. (Millions digit becomes 7)\n  Millions digit: $7 - 1 = 6$.\n  Ten-millions digit: $8 - 0 = 8$."
+            },
+            {
+              "id": "logic-01",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 89,
+              "seconds": 1.95,
+              "answer": "We are given two statements:\n1. Asha is older than Bilal ($Asha > Bilal$).\n2. Bilal is older than Chen ($Bilal > Chen$).\n\nCombining these inequalities, we get the order:\n$Asha > Bilal > Chen$.\n\nThis means Asha is the oldest, Bilal is in the middle, and Chen is the youngest.\n\nAnswer: Chen"
+            },
+            {
+              "id": "logic-02",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 40,
+              "seconds": 1.14,
+              "answer": "Yes, if all bloops are razzies and all razzies are lazzies, then by transitive property, all bloops must be lazzies.\n\nAnswer: yes"
+            },
+            {
+              "id": "logic-03",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 277,
+              "seconds": 4.96,
+              "answer": "r more than the ball)\n\nSubstitute equation (2) into equation (1):\n$b + (b + 1.00) = 1.10$\n$2b + 1.00 = 1.10$\n$2b = 0.10$\n$b = 0.05$\n\nSo, the ball costs 0.05 dollars.\nTo convert this to cents, multiply by 100:\n$0.05 \\times 100 = 5$ cents.\n\nLet's verify:\nIf the ball is 5 cents ($0.05), the bat is $0.05 + $1.00 = $1.05.\nTotal cost: $0.05 + $1.05 = $1.10. This matches the problem statement.\n\nAnswer: 5"
+            },
+            {
+              "id": "logic-04",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 108,
+              "seconds": 2.25,
+              "answer": "Let's break down the steps:\n\n1.  **Start**: You have 3 apples.\n2.  **Eat one**: $3 - 1 = 2$ apples.\n3.  **Buy 4 more**: $2 + 4 = 6$ apples.\n4.  **Give away half**: Half of 6 is 3. So, you give away 3 apples and keep the other half. $6 / 2 = 3$ apples.\n\nAnswer: 3"
+            },
+            {
+              "id": "logic-05",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 201,
+              "seconds": 3.74,
+              "answer": " days (100) by the length of the week cycle (7) to find the remainder.\n    $$100 \\div 7 = 14 \\text{ with a remainder of } 2$$\n    ($14 \\times 7 = 98$, and $100 - 98 = 2$)\n3.  **Calculate the future day**: Add the remainder (2) to the starting day (Wednesday).\n    *   Wednesday + 1 day = Thursday\n    *   Wednesday + 2 days = Friday\n\nTherefore, 100 days from Wednesday will be Friday.\n\nAnswer: Friday"
+            },
+            {
+              "id": "logic-06",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 123,
+              "seconds": 2.51,
+              "answer": "To determine how many times the letter 'r' appears in the word \"strawberry\", let's break down the word letter by letter:\n\n1.  s\n2.  t\n3.  **r** (1)\n4.  a\n5.  w\n6.  b\n7.  e\n8.  **r** (2)\n9.  **r** (3)\n10. y\n\nThe letter 'r' appears at the 3rd, 8th, and 9th positions.\n\nAnswer: 3"
+            },
+            {
+              "id": "logic-07",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 56,
+              "seconds": 1.45,
+              "answer": "The riddle states that \"Mary's father\" has these daughters. Since Mary is the daughter of the father mentioned, she is the fifth daughter. The other names (Nana, Nene, Nini, Nono) are just additional siblings.\n\nAnswer: Mary"
+            },
+            {
+              "id": "logic-08",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 215,
+              "seconds": 4.37,
+              "answer": "he decimal):\n    *   In **9.11**, the digit is **1**.\n    *   In **9.9**, the digit is **9**.\n3.  Since 9 is greater than 1, the number **9.9** is larger than 9.11.\n\nIt is a common misconception that 9.11 is larger because \"11\" is greater than \"9\", but in decimal notation, the position of the digit determines its value. 9.9 is equivalent to 9.90, and 9.90 is clearly greater than 9.11.\n\nAnswer: 9.9"
+            },
+            {
+              "id": "code-01",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 39,
+              "seconds": 1.14,
+              "answer": "```python\ndef is_palindrome(s):\n    cleaned = ''.join(char.lower() for char in s if char.isalnum())\n    return cleaned == cleaned[::-1]\n```"
+            },
+            {
+              "id": "code-02",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 69,
+              "seconds": 1.67,
+              "answer": "```python\ndef second_largest(nums):\n    if len(nums) < 2:\n        return None\n    \n    distinct_nums = list(set(nums))\n    \n    if len(distinct_nums) < 2:\n        return None\n    \n    distinct_nums.sort(reverse=True)\n    \n    return distinct_nums[1]\n```"
+            },
+            {
+              "id": "code-03",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 170,
+              "seconds": 3.3,
+              "answer": "# If the current interval overlaps or touches the last merged interval\n        if current_start <= last_end:\n            # Merge them by updating the end of the last interval\n            merged[-1] = [last_start, max(last_end, current_end)]\n        else:\n            # No overlap, add the current interval to the list\n            merged.append([current_start, current_end])\n    \n    return merged\n```"
+            },
+            {
+              "id": "code-04",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 142,
+              "seconds": 2.92,
+              "answer": "f roman_to_int(s: str) -> int:\n    roman_values = {\n        'I': 1, 'V': 5, 'X': 10, 'L': 50,\n        'C': 100, 'D': 500, 'M': 1000\n    }\n    \n    total = 0\n    prev_value = 0\n    \n    for char in reversed(s):\n        value = roman_values[char]\n        if value < prev_value:\n            total -= value\n        else:\n            total += value\n        prev_value = value\n        \n    return total\n```"
+            },
+            {
+              "id": "code-05",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 64,
+              "seconds": 1.52,
+              "answer": "```python\nimport re\n\ndef word_freq(text):\n    # Extract all sequences of lowercase letters a-z\n    words = re.findall(r'[a-z]+', text.lower())\n    # Count occurrences of each word\n    return {word: words.count(word) for word in set(words)}\n```"
+            },
+            {
+              "id": "if-01",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 7,
+              "seconds": 0.6,
+              "answer": "Apple\nBanana\nOrange"
+            },
+            {
+              "id": "if-02",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 2,
+              "seconds": 0.58,
+              "answer": "YES"
+            },
+            {
+              "id": "if-03",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 7,
+              "seconds": 0.61,
+              "answer": "The sky is blue today."
+            },
+            {
+              "id": "if-04",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 15,
+              "seconds": 0.73,
+              "answer": "{\"name\": \"Ravi\", \"age\": 31}"
+            },
+            {
+              "id": "if-05",
+              "cat": "instruction",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 7,
+              "seconds": 0.6,
+              "answer": "I like big red apples."
+            },
+            {
+              "id": "hi-01",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 4,
+              "seconds": 0.53,
+              "answer": "नई दिल्ली"
+            },
+            {
+              "id": "hi-02",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 11,
+              "seconds": 0.64,
+              "answer": "मैं बाजार जा रहा हूँ।"
+            },
+            {
+              "id": "hi-03",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 18,
+              "seconds": 0.86,
+              "answer": "12 aur 15 ka jod **27** hota hai."
+            },
+            {
+              "id": "hi-04",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 3,
+              "seconds": 0.83,
+              "answer": "12"
+            },
+            {
+              "id": "hi-05",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 70,
+              "seconds": 1.76,
+              "answer": "पानी का रासायनिक सूत्र **H₂O** है।\n\nइसका अर्थ है कि पानी के एक अणु में दो हाइड्रोजन (H) परमाणु और एक ऑक्सीजन (O) परमाणु होते हैं, जो एक साथ जुड़े होते हैं।"
+            },
+            {
+              "id": "know-01",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 26,
+              "seconds": 0.91,
+              "answer": "The chemical symbol for gold is Au, which comes from the Latin word for gold, *aurum*.\n\nAnswer: Au"
+            },
+            {
+              "id": "know-02",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 51,
+              "seconds": 1.31,
+              "answer": "The novel *Pride and Prejudice* was written by the English author Jane Austen. First published in 1813, it is one of her most famous works and a classic of English literature.\n\nAnswer: Jane Austen"
+            },
+            {
+              "id": "know-03",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 49,
+              "seconds": 1.23,
+              "answer": "The largest planet in our solar system is Jupiter. It has a mass more than two and a half times that of all the other planets combined and is famous for its Great Red Spot, a giant storm larger than Earth.\n\nAnswer: Jupiter"
+            },
+            {
+              "id": "know-04",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 61,
+              "seconds": 1.42,
+              "answer": "India became independent from British rule on August 15, 1947. Although the Indian Independence Act was passed by the British Parliament in July 1947, the actual transfer of power and the commencement of independence occurred the following year.\n\nAnswer: 1947"
+            },
+            {
+              "id": "know-05",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 47,
+              "seconds": 1.17,
+              "answer": "The boiling point of water at sea level is defined as 212 degrees Fahrenheit. This occurs at standard atmospheric pressure (1 atmosphere or 101.325 kPa).\n\nAnswer: 212"
+            },
+            {
+              "id": "know-06",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 75,
+              "seconds": 1.64,
+              "answer": "The speed of light in a vacuum is exactly 299,792,458 metres per second. When converted to kilometres per second, this is approximately 300,000 km/s (specifically 299,792.458 km/s).\n\nAnswer: 300,000"
+            }
+          ]
+        }
+      },
+      "peak_vram_mb_system": 7696,
+      "peak_engine_rss_mb": 8001
+    },
+    {
+      "model_id": "qwen3.5-4b-q4km",
+      "model": "Qwen3.5 4B",
+      "quant": "Q4_K_M",
+      "file_gb": 3.01,
+      "load_s": 7.1,
+      "vram_at_load_mb": 3538,
+      "perf": {
+        "short_first_token_s": 0.75,
+        "short_gen_tps": 98.4,
+        "short_gen_tokens": 258,
+        "long_prompt_tokens": 10795,
+        "long_prompt_tps": 5502.6,
+        "long_first_token_s": 2.39,
+        "long_gen_tps": 91.3,
+        "long_needle_found": true,
+        "long_answer": "Based on Paragraph 146 in the report provided:\n\n*   **Who replaced the generator:** Technician **Farida Qureshi**\n*   **Cost:** **3,48,000 rupees**"
+      },
+      "evals": {
+        "direct": {
+          "score": 37,
+          "total": 39,
+          "by_category": {
+            "math": "10/10",
+            "logic": "8/8",
+            "code": "5/5",
+            "instruction": "3/5",
+            "hindi": "5/5",
+            "knowledge": "6/6"
+          },
+          "mean_seconds": 2.45,
+          "mean_gen_tokens": 173,
+          "truncated": 0,
+          "items": [
+            {
+              "id": "math-01",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 419,
+              "seconds": 4.84,
+              "answer": "\n\n3.  **Perform the addition:**\n    *   $20 + 240 + 15 = 275$ minutes.\n\nAlternatively, using a 24-hour format subtraction:\n*   Convert 14:15 to minutes from midnight: $(14 \\times 60) + 15 = 840 + 15 = 855$ minutes.\n*   Convert 09:40 to minutes from midnight: $(9 \\times 60) + 40 = 540 + 40 = 580$ minutes.\n*   Subtract the departure time from the arrival time: $855 - 580 = 275$ minutes.\n\nAnswer: 275"
+            },
+            {
+              "id": "math-02",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 369,
+              "seconds": 5.17,
+              "answer": "0$.\n\nSubstituting these values into the formula:\n\n$$S_{250} = \\frac{250}{2}(1 + 250)$$\n$$S_{250} = 125 \\times 251$$\n\nNow, we perform the multiplication:\n$$125 \\times 251 = 125 \\times (250 + 1)$$\n$$= (125 \\times 250) + (125 \\times 1)$$\n$$= 31250 + 125$$\n$$= 31375$$\n\nAlternatively, using the standard formula $\\frac{n(n+1)}{2}$:\n$$S = \\frac{250 \\times 251}{2} = 125 \\times 251 = 31375$$\n\nAnswer: 31375"
+            },
+            {
+              "id": "math-03",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 135,
+              "seconds": 1.93,
+              "answer": "Let the original price of the shirt be $x$.\n\nA 20% discount means the customer pays 80% of the original price.\nSo, the equation is:\n$$0.80x = 1200$$\n\nTo find $x$, divide both sides by 0.80:\n$$x = \\frac{1200}{0.80}$$\n$$x = \\frac{12000}{8}$$\n$$x = 1500$$\n\nThe original price was 1,500 rupees.\n\nAnswer: 1500"
+            },
+            {
+              "id": "math-04",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 594,
+              "seconds": 6.66,
+              "answer": "he exponent of 3 is $2$, so we add 1: $(2 + 1) = 3$.\n    *   The exponent of 5 is $1$, so we add 1: $(1 + 1) = 2$.\n\n3.  **Calculate the Product:**\n    $$d(360) = 4 \\times 3 \\times 2$$\n    $$d(360) = 12 \\times 2$$\n    $$d(360) = 24$$\n\nThe positive divisors are: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 30, 36, 40, 45, 60, 72, 90, 120, 180, 360. Counting them confirms there are 24.\n\nAnswer: 24"
+            },
+            {
+              "id": "math-05",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 419,
+              "seconds": 5.24,
+              "answer": "2}{18}$\n\n    Rate$_{combined}$ = $\\frac{3}{18} + \\frac{2}{18} = \\frac{5}{18}$ tank/hour.\n\n4.  **Calculate the time taken:**\n    The time required to fill one whole tank is the reciprocal of the combined rate:\n    Time = $\\frac{1}{\\text{Rate}_{combined}}$\n    Time = $\\frac{1}{\\frac{5}{18}} = \\frac{18}{5}$ hours.\n\n    Converting the fraction to a decimal:\n    $\\frac{18}{5} = 3.6$ hours.\n\nAnswer: 3.6"
+            },
+            {
+              "id": "math-06",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 462,
+              "seconds": 5.48,
+              "answer": "8,576$.\n\n3.  **Subtract 1**:\n    $$1,048,576 - 1 = 1,048,575$$\n\nAlternatively, using the difference of squares formula:\n$2^{20} - 1 = (2^{10} - 1)(2^{10} + 1) = (1023)(1025)$.\n$1023 \\times 1025 = 1023 \\times (1024 + 1) = 1023 \\times 1024 + 1023$.\n$1023 \\times 1024 = (1024 - 1) \\times 1024 = 1048576 - 1024 = 1047552$.\n$1047552 + 1023 = 1048575$.\n\nBoth methods yield the same result.\n\nAnswer: 1048575"
+            },
+            {
+              "id": "math-07",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 374,
+              "seconds": 4.53,
+              "answer": "he values into the formula:**\n    $$A = 10,000 \\times (1 + 0.10)^3$$\n    $$A = 10,000 \\times (1.10)^3$$\n\n3.  **Calculate the growth factor:**\n    $$1.10^3 = 1.10 \\times 1.10 \\times 1.10$$\n    $$1.10 \\times 1.10 = 1.21$$\n    $$1.21 \\times 1.10 = 1.331$$\n\n4.  **Calculate the final amount:**\n    $$A = 10,000 \\times 1.331$$\n    $$A = 13,310$$\n\nThe amount after 3 years is 13,310 rupees.\n\nAnswer: 13,310"
+            },
+            {
+              "id": "math-08",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 593,
+              "seconds": 6.71,
+              "answer": "\n    Since $2^4 \\equiv 1 \\pmod{5}$, we can write the exponent 100 as a multiple of 4:\n    $$100 = 4 \\times 25$$\n    Therefore:\n    $$2^{100} = (2^4)^{25}$$\n    $$2^{100} \\equiv (1)^{25} \\pmod{5}$$\n    $$2^{100} \\equiv 1 \\pmod{5}$$\n\n5.  **Conclusion**:\n    Since $7^{100} \\equiv 2^{100} \\pmod{5}$ and $2^{100} \\equiv 1 \\pmod{5}$, then:\n    $$7^{100} \\equiv 1 \\pmod{5}$$\n\nThe remainder is 1.\n\nAnswer: 1"
+            },
+            {
+              "id": "math-09",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 236,
+              "seconds": 2.84,
+              "answer": " the third spot.\n4.  **Fourth position**: With three people placed, there are 2 people left. There are 2 choices for the fourth spot.\n5.  **Fifth position**: Only 1 person remains. There is 1 choice for the last spot.\n\nThe total number of arrangements is the product of these choices:\n$$5 \\times 4 \\times 3 \\times 2 \\times 1 = 120$$\n\nThis is equivalent to calculating $5!$ (5 factorial).\n\nAnswer: 120"
+            },
+            {
+              "id": "math-10",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 921,
+              "seconds": 10.13,
+              "answer": "= 5$\n- Hundreds: $3$ becomes $2$, $2 - 5$ (borrow) $\\rightarrow 12 - 5 = 7$\n- Thousands: $8$ becomes $7$, $7 - 4 = 3$\n- Ten-thousands: $2 - 3$ (borrow) $\\rightarrow 12 - 3 = 9$\n- Hundred-thousands: $1$ becomes $0$, $0 - 2$ (borrow) $\\rightarrow 10 - 2 = 8$\n- Millions: $8$ becomes $7$, $7 - 1 = 6$\n- Ten-millions: $7 - 0 = 7$\n- Hundred-millions: $4 - 0 = 4$\n\nResult: $476,893,754$.\n\nAnswer: 476893754"
+            },
+            {
+              "id": "logic-01",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 77,
+              "seconds": 1.31,
+              "answer": "Based on the information provided:\n\n1.  Asha is older than Bilal (Asha > Bilal).\n2.  Bilal is older than Chen (Bilal > Chen).\n\nCombining these statements creates the following order from oldest to youngest:\nAsha > Bilal > Chen.\n\nTherefore, Chen is the youngest.\n\nAnswer: Chen"
+            },
+            {
+              "id": "logic-02",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 40,
+              "seconds": 0.91,
+              "answer": "Yes, if all bloops are razzies and all razzies are lazzies, then by logical transitivity, all bloops must be lazzies.\n\nAnswer: Yes"
+            },
+            {
+              "id": "logic-03",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 346,
+              "seconds": 4.05,
+              "answer": "tion into the first:**\n    $$(B + 1.00) + B = 1.10$$\n\n4.  **Solve for $B$:**\n    $$2B + 1.00 = 1.10$$\n    $$2B = 1.10 - 1.00$$\n    $$2B = 0.10$$\n    $$B = 0.05$$\n\n5.  **Convert to cents:**\n    Since $B = 0.05$ dollars, the cost of the ball is 5 cents.\n\n    *Check:*\n    *   Ball = 5 cents ($0.05)\n    *   Bat = Ball + $1.00 = $1.05\n    *   Total = $1.05 + $0.05 = $1.10. The math holds up.\n\nAnswer: 5"
+            },
+            {
+              "id": "logic-04",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 98,
+              "seconds": 1.47,
+              "answer": "Let's break down the steps:\n\n1.  **Start**: You have 3 apples.\n2.  **Eat one**: $3 - 1 = 2$ apples remaining.\n3.  **Buy 4 more**: $2 + 4 = 6$ apples.\n4.  **Give away half**: Half of 6 is 3. So, $6 - 3 = 3$ apples remaining.\n\nAnswer: 3"
+            },
+            {
+              "id": "logic-05",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 202,
+              "seconds": 2.58,
+              "answer": "f days (100) by the cycle length (7) to find the remainder.\n    $$100 \\div 7 = 14 \\text{ with a remainder of } 2$$\n    ($14 \\times 7 = 98$, and $100 - 98 = 2$)\n3.  **Count forward**: The remainder of 2 means we need to count 2 days forward from today.\n    *   1 day from Wednesday is Thursday.\n    *   2 days from Wednesday is Friday.\n\nTherefore, 100 days from today will be a Friday.\n\nAnswer: Friday"
+            },
+            {
+              "id": "logic-06",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 135,
+              "seconds": 1.83,
+              "answer": "To determine how many times the letter 'r' appears in the word \"strawberry\", let's break down the word letter by letter:\n\n1.  s\n2.  t\n3.  **r** (1st occurrence)\n4.  a\n5.  w\n6.  b\n7.  e\n8.  **r** (2nd occurrence)\n9.  **r** (3rd occurrence)\n10. y\n\nThe letter 'r' appears at the 3rd, 8th, and 9th positions.\n\nTotal count: 3\n\nAnswer: 3"
+            },
+            {
+              "id": "logic-07",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 52,
+              "seconds": 1.01,
+              "answer": "The riddle states that Mary's father has five daughters: Nana, Nene, Nini, and Nono. The name of the first daughter mentioned in the sentence is Mary herself. Therefore, the fifth daughter is Mary.\n\nAnswer: Mary"
+            },
+            {
+              "id": "logic-08",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 178,
+              "seconds": 2.37,
+              "answer": "oint. Since they are equal, we move to the decimal parts.\n2.  **Compare the tenths place**:\n    *   In `9.11`, the digit in the tenths place is `1`.\n    *   In `9.9`, the digit in the tenths place is `9`.\n3.  **Conclusion**: Since `9` is greater than `1`, the number `9.9` is larger than `9.11`. (Note: `9.9` is equivalent to `9.90`, and `90` hundredths is greater than `11` hundredths).\n\nAnswer: 9.9"
+            },
+            {
+              "id": "code-01",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 63,
+              "seconds": 1.14,
+              "answer": "```python\ndef is_palindrome(s):\n    # Filter for alphanumeric characters and convert to lowercase\n    cleaned = ''.join(char.lower() for char in s if char.isalnum())\n    # Check if the cleaned string is equal to its reverse\n    return cleaned == cleaned[::-1]\n```"
+            },
+            {
+              "id": "code-02",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 71,
+              "seconds": 1.23,
+              "answer": "```python\ndef second_largest(nums):\n    if len(nums) < 2:\n        return None\n    \n    unique_nums = set(nums)\n    \n    if len(unique_nums) < 2:\n        return None\n    \n    sorted_unique = sorted(unique_nums, reverse=True)\n    \n    return sorted_unique[1]\n```"
+            },
+            {
+              "id": "code-03",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 157,
+              "seconds": 2.19,
+              "answer": "1:]:\n        last = merged[-1]\n        \n        # If current interval overlaps or touches the last merged interval\n        if current[0] <= last[1]:\n            # Merge them by updating the end of the last interval\n            last[1] = max(last[1], current[1])\n        else:\n            # No overlap, add the current interval to the list\n            merged.append(current)\n    \n    return merged\n```"
+            },
+            {
+              "id": "code-04",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 170,
+              "seconds": 2.25,
+              "answer": ",\n        'C': 100, 'D': 500, 'M': 1000\n    }\n    \n    total = 0\n    prev_value = 0\n    \n    # Iterate backwards to handle subtractive cases easily\n    for char in reversed(s):\n        current_value = roman_map[char]\n        if current_value < prev_value:\n            total -= current_value\n        else:\n            total += current_value\n        prev_value = current_value\n    \n    return total\n```"
+            },
+            {
+              "id": "code-05",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 80,
+              "seconds": 1.31,
+              "answer": "```python\nimport re\n\ndef word_freq(text):\n    # Find all runs of lowercase letters a-z\n    words = re.findall(r'[a-z]+', text.lower())\n    # Count occurrences using a dictionary\n    freq = {}\n    for word in words:\n        freq[word] = freq.get(word, 0) + 1\n    return freq\n```"
+            },
+            {
+              "id": "if-01",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 7,
+              "seconds": 0.59,
+              "answer": "Apple\nBanana\nOrange"
+            },
+            {
+              "id": "if-02",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 2,
+              "seconds": 0.56,
+              "answer": "YES"
+            },
+            {
+              "id": "if-03",
+              "cat": "instruction",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 6,
+              "seconds": 0.87,
+              "answer": "The sky is blue."
+            },
+            {
+              "id": "if-04",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 15,
+              "seconds": 0.99,
+              "answer": "{\"name\": \"Ravi\", \"age\": 31}"
+            },
+            {
+              "id": "if-05",
+              "cat": "instruction",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 2,
+              "seconds": 1.02,
+              "answer": "Stop"
+            },
+            {
+              "id": "hi-01",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 4,
+              "seconds": 0.78,
+              "answer": "नई दिल्ली"
+            },
+            {
+              "id": "hi-02",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 12,
+              "seconds": 0.73,
+              "answer": "मैं बाज़ार जा रहा हूँ।"
+            },
+            {
+              "id": "hi-03",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 17,
+              "seconds": 0.97,
+              "answer": "12 aur 15 ka jod 27 hota hai."
+            },
+            {
+              "id": "hi-04",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 3,
+              "seconds": 0.62,
+              "answer": "12"
+            },
+            {
+              "id": "hi-05",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 87,
+              "seconds": 2.25,
+              "answer": "पानी का रासायनिक सूत्र **H₂O** है।\n\nइसका अर्थ है कि पानी के प्रत्येक अणु में **2 हाइड्रोजन (H)** परमाणु और **1 ऑक्सीजन (O)** परमाणु होते हैं। यह सूत्र पानी के संरचनात्मक गुणों को दर्शाता है।"
+            },
+            {
+              "id": "know-01",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 41,
+              "seconds": 1.03,
+              "answer": "The chemical symbol for gold is derived from its Latin name, *aurum*, which means \"shining dawn.\" Consequently, the symbol used in the periodic table is **Au**.\n\nAnswer: Au"
+            },
+            {
+              "id": "know-02",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 24,
+              "seconds": 1.11,
+              "answer": "The novel *Pride and Prejudice* was written by Jane Austen.\n\nAnswer: Jane Austen"
+            },
+            {
+              "id": "know-03",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 56,
+              "seconds": 1.52,
+              "answer": "Jupiter is the largest planet in our solar system, with a mass more than two and a half times that of all the other planets combined. It is a gas giant known for its Great Red Spot, a massive storm that has raged for centuries.\n\nAnswer: Jupiter"
+            },
+            {
+              "id": "know-04",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 27,
+              "seconds": 1.13,
+              "answer": "India gained independence from British rule on August 15, 1947.\n\nAnswer: 1947"
+            },
+            {
+              "id": "know-05",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 119,
+              "seconds": 2.03,
+              "answer": "At sea level, where the atmospheric pressure is standard (1 atmosphere), pure water boils at 100 degrees Celsius. To convert this temperature to degrees Fahrenheit, we use the formula $F = (C \\times \\frac{9}{5}) + 32$.\n\nCalculation:\n$100 \\times 1.8 = 180$\n$180 + 32 = 212$\n\nTherefore, the boiling point of water at sea level is 212 degrees Fahrenheit.\n\nAnswer: 212"
+            },
+            {
+              "id": "know-06",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 131,
+              "seconds": 2.34,
+              "answer": " in a vacuum is a fundamental physical constant, denoted by the symbol $c$. Its exact value is defined as 299,792,458 meters per second. When converting this to kilometres per second (by dividing by 1,000), the value becomes approximately 299,792.458 km/s. In most general contexts, this is rounded to 300,000 km/s for simplicity, though 299,792 km/s is a more precise approximation.\n\nAnswer: 300,000"
+            }
+          ]
+        }
+      },
+      "peak_vram_mb_system": 5203,
+      "peak_engine_rss_mb": 7796
+    },
+    {
+      "model_id": "qwen3.5-2b-q4km",
+      "model": "Qwen3.5 2B",
+      "quant": "Q4_K_M",
+      "file_gb": 1.4,
+      "load_s": 3.15,
+      "vram_at_load_mb": 1558,
+      "perf": {
+        "short_first_token_s": 0.767,
+        "short_gen_tps": 163.8,
+        "short_gen_tokens": 167,
+        "long_prompt_tokens": 10795,
+        "long_prompt_tps": 10162.2,
+        "long_first_token_s": 1.53,
+        "long_gen_tps": 142.5,
+        "long_needle_found": true,
+        "long_answer": "Based on the report provided, the backup generator at the Nashik depot was replaced by **technician Farida Qureshi**.\n\nIt cost **3,48,000 rupees**.\n\nThis information is found in the note within Paragraph 146: \"Special note: the backup generator at the Nashik depot was replaced on 14 August by techni"
+      },
+      "evals": {
+        "direct": {
+          "score": 32,
+          "total": 39,
+          "by_category": {
+            "math": "8/10",
+            "logic": "7/8",
+            "code": "3/5",
+            "instruction": "4/5",
+            "hindi": "5/5",
+            "knowledge": "5/6"
+          },
+          "mean_seconds": 1.38,
+          "mean_gen_tokens": 149,
+          "truncated": 1,
+          "items": [
+            {
+              "id": "math-01",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 212,
+              "seconds": 1.78,
+              "answer": "ure: 09:40\n    *   Arrival: 14:15\n\n2.  **Calculate the difference in hours:**\n    *   From 09:40 to 14:00 is 4 hours and 20 minutes.\n    *   From 14:00 to 14:15 is 15 minutes.\n    *   Total time = 4 hours + 20 minutes + 15 minutes = 4 hours + 35 minutes.\n\n3.  **Convert to minutes:**\n    *   4 hours $\\times$ 60 minutes/hour = 240 minutes.\n    *   240 minutes + 35 minutes = 275 minutes.\n\nAnswer: 275"
+            },
+            {
+              "id": "math-02",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 279,
+              "seconds": 2.2,
+              "answer": "$S_{250} = \\frac{250 \\times (250 + 1)}{2}$$\n$$S_{250} = \\frac{250 \\times 251}{2}$$\n\nFirst, divide 250 by 2:\n$$250 \\div 2 = 125$$\n\nNow, multiply the result by 251:\n$$125 \\times 251$$\n\nWe can break this down for easier calculation:\n$$125 \\times 250 = 31,250$$\n$$125 \\times 1 = 125$$\n$$31,250 + 125 = 31,375$$\n\nAlternatively, using the standard multiplication:\n$$251 \\times 125 = 31,375$$\n\nAnswer: 31375"
+            },
+            {
+              "id": "math-03",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 247,
+              "seconds": 1.92,
+              "answer": "riginal Price} \\times 0.80 $$\n\n2.  **Solve for the Original Price**: Divide the discounted price by the percentage paid (0.80).\n    $$ \\text{Original Price} = \\frac{1,200}{0.80} $$\n    $$ \\text{Original Price} = \\frac{1,200}{\\frac{4}{5}} $$\n    $$ \\text{Original Price} = 1,200 \\times \\frac{5}{4} $$\n    $$ \\text{Original Price} = 300 \\times 5 $$\n    $$ \\text{Original Price} = 1,500 $$\n\nAnswer: 1500"
+            },
+            {
+              "id": "math-04",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 397,
+              "seconds": 2.72,
+              "answer": "2^{e_2} \\times \\dots \\times p_k^{e_k}$, then the total number of positive divisors $d(n)$ is given by:\n    $$d(n) = (e_1 + 1)(e_2 + 1)\\dots(e_k + 1)$$\n\n    For 360:\n    *   The exponent of 2 is 3, so $(3 + 1) = 4$.\n    *   The exponent of 3 is 2, so $(2 + 1) = 3$.\n    *   The exponent of 5 is 1, so $(1 + 1) = 2$.\n\n3.  **Calculate the Product**:\n    $$d(360) = 4 \\times 3 \\times 2 = 24$$\n\nAnswer: 24"
+            },
+            {
+              "id": "math-05",
+              "cat": "math",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 355,
+              "seconds": 2.51,
+              "answer": "18:\n    $\\frac{1}{6} = \\frac{3}{18}$\n    $\\frac{1}{9} = \\frac{2}{18}$\n    Combined Rate = $\\frac{3}{18} + \\frac{2}{18} = \\frac{5}{18}$ of the tank per hour.\n\n4.  **Calculate the time required:**\n    Time = $\\frac{\\text{Work}}{\\text{Rate}}$\n    Time = $\\frac{1}{\\frac{5}{18}}$\n    Time = $\\frac{18}{5}$ hours.\n\n    Converting to a mixed number:\n    $\\frac{18}{5} = 3 \\frac{3}{5}$ hours.\n\nAnswer: 3 3/5"
+            },
+            {
+              "id": "math-06",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 130,
+              "seconds": 1.07,
+              "answer": "To find the value of $2^{20} - 1$, we first calculate $2^{20}$.\n\nThe number $2^{20}$ is equal to $1,048,576$. This is a well-known power of 2 often used in computer science (specifically, the number of bits required to represent a 32-bit unsigned integer).\n\nNext, we subtract 1 from this value:\n$$1,048,576 - 1 = 1,048,575$$\n\nAnswer: 1048575"
+            },
+            {
+              "id": "math-07",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 287,
+              "seconds": 2.0,
+              "answer": "nnual interest rate = 10\n*   $n$ is the number of years = 3\n\nSubstituting the values into the formula:\n\n$$A = 10,000 \\left(1 + \\frac{10}{100}\\right)^3$$\n$$A = 10,000 \\left(1 + 0.10\\right)^3$$\n$$A = 10,000 \\times (1.10)^3$$\n\nFirst, calculate $(1.10)^3$:\n$$1.10 \\times 1.10 = 1.21$$\n$$1.21 \\times 1.10 = 1.331$$\n\nNow, multiply by the principal:\n$$A = 10,000 \\times 1.331$$\n$$A = 13,310$$\n\nAnswer: 13310"
+            },
+            {
+              "id": "math-08",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 434,
+              "seconds": 2.98,
+              "answer": "remainder of $0$.\n    Therefore, $2^{100} = (2^4)^{25} \\equiv 1^{25} \\pmod{5}$.\n\n4.  **Calculate the result**:\n    $1^{25} = 1$.\n    So, $2^{100} \\equiv 1 \\pmod{5}$.\n\nAlternatively, using the cycle of powers of 7 modulo 5:\n$7^1 \\equiv 2$\n$7^2 \\equiv 4$\n$7^3 \\equiv 3$\n$7^4 \\equiv 1$\nThe powers of 7 repeat every 4 terms. Since 100 is divisible by 4, $7^{100} \\equiv 7^4 \\equiv 1 \\pmod{5}$.\n\nAnswer: 1"
+            },
+            {
+              "id": "math-09",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 182,
+              "seconds": 1.43,
+              "answer": "s of 5 distinct items.\n\nThe formula for the number of permutations of $n$ distinct items is $n!$ (n factorial), which is the product of all positive integers from 1 to $n$.\n\nHere, $n = 5$.\n$$5! = 5 \\times 4 \\times 3 \\times 2 \\times 1$$\n\nCalculating the value:\n$$5 \\times 4 = 20$$\n$$20 \\times 3 = 60$$\n$$60 \\times 2 = 120$$\n$$120 \\times 1 = 120$$\n\nThere are 120 different possible orders.\n\nAnswer: 120"
+            },
+            {
+              "id": "math-10",
+              "cat": "math",
+              "ok": false,
+              "finish": "length",
+              "gen_tokens": 1200,
+              "seconds": 7.23,
+              "answer": "- 3 = 8$.\n    6. $12 - 2$: Borrow from hundred-thousands. $12 - 2 = 10$.\n    7. $7 - 1$: No borrow needed. $7 - 1 = 6$.\n    8. $8 - 0$: No borrow needed. $8 - 0 = 8$.\n    9. $4 - 0$: No borrow needed. $4 - 0 = 4$.\n\n    Result: $476,893,754$.\n\n    Let's double check with the previous manual addition method:\n    $478,128,321 - 1,234,567$\n    $478,128,321 - 1,000,000 = 477,128,321$\n    $477,128,321 -"
+            },
+            {
+              "id": "logic-01",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 92,
+              "seconds": 0.97,
+              "answer": "To determine the youngest person, we can look at the age relationships provided:\n\n1.  **Asha** is older than **Bilal**.\n2.  **Bilal** is older than **Chen**.\n\nThis creates a chain of ages where:\n*   Chen < Bilal < Asha\n\nSince Chen is the youngest in this sequence, he is younger than both Bilal and Asha.\n\nAnswer: Chen"
+            },
+            {
+              "id": "logic-02",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 2,
+              "seconds": 0.51,
+              "answer": "Yes"
+            },
+            {
+              "id": "logic-03",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 208,
+              "seconds": 1.65,
+              "answer": "o equations based on the problem statement:\n1. The total cost is 1.10 dollars: $x + b = 1.10$\n2. The bat costs 1.00 dollar more than the ball: $x = b + 1.00$\n\nSubstitute the second equation into the first equation:\n$(b + 1.00) + b = 1.10$\n$2b + 1.00 = 1.10$\n$2b = 0.10$\n$b = 0.05$\n\nSo, the ball costs 0.05 dollars. To convert this to cents, we multiply by 100:\n$0.05 \\times 100 = 5$ cents.\n\nAnswer: 5"
+            },
+            {
+              "id": "logic-04",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 105,
+              "seconds": 1.03,
+              "answer": "Let's break down the steps:\n1.  **Start**: You have 3 apples.\n2.  **Eat one**: $3 - 1 = 2$ apples remaining.\n3.  **Buy 4 more**: $2 + 4 = 6$ apples.\n4.  **Give away half**: Half of 6 is 3. So, you give away 3 apples. $6 - 3 = 3$ apples remaining.\n\nAnswer: 3"
+            },
+            {
+              "id": "logic-05",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 167,
+              "seconds": 1.42,
+              "answer": "r has 366 days. Since 365 is not divisible by 7, we divide 100 by 7 to find the remainder.\n\n$100 \\div 7 = 14$ with a remainder of $2$.\n\nThis means that 100 days is equivalent to 14 full weeks plus 2 extra days. Starting from Wednesday, adding 2 days to the day of the week:\n1.  Wednesday + 1 day = Thursday\n2.  Thursday + 1 day = Friday\n\nTherefore, 100 days from today will be Friday.\n\nAnswer: Friday"
+            },
+            {
+              "id": "logic-06",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 117,
+              "seconds": 1.1,
+              "answer": "To determine the count of the letter 'r' in the word \"strawberry\", let's break down the word letter by letter:\n\n1.  s\n2.  t\n3.  **r** (1)\n4.  a\n5.  w\n6.  b\n7.  e\n8.  **r** (2)\n9.  **r** (3)\n10. y\n\nCounting the occurrences, we find the letter 'r' appears 3 times.\n\nAnswer: 3"
+            },
+            {
+              "id": "logic-07",
+              "cat": "logic",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 16,
+              "seconds": 0.55,
+              "answer": "The name of the fifth daughter is Nono.\n\nAnswer: Nono"
+            },
+            {
+              "id": "logic-08",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 69,
+              "seconds": 0.89,
+              "answer": "To compare 9.11 and 9.9, we can align the decimal points:\n\n  9.11\n- 9.90\n-------\n\nSince 9.11 is less than 9.90, 9.9 is the larger number.\n\nAnswer: 9.9"
+            },
+            {
+              "id": "code-01",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 64,
+              "seconds": 0.81,
+              "answer": "```python\ndef is_palindrome(s):\n    # Remove non-alphanumeric characters and convert to lowercase\n    cleaned = ''.join(c.lower() for c in s if c.isalnum())\n    # Check if the cleaned string is equal to its reverse\n    return cleaned == cleaned[::-1]\n```"
+            },
+            {
+              "id": "code-02",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 92,
+              "seconds": 0.94,
+              "answer": "```python\ndef second_largest(nums):\n    if len(nums) < 2:\n        return None\n    \n    # Remove duplicates while preserving order\n    unique_nums = list(dict.fromkeys(nums))\n    \n    if len(unique_nums) < 2:\n        return None\n    \n    # Sort in descending order\n    unique_nums.sort(reverse=True)\n    \n    # Return the second element\n    return unique_nums[1]\n```"
+            },
+            {
+              "id": "code-03",
+              "cat": "code",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 156,
+              "seconds": 1.3,
+              "answer": "       current_start, current_end = current\n\n        # If current interval touches or overlaps with the last merged interval\n        if current_start <= last_end:\n            # Extend the last interval if necessary\n            last_end = max(last_end, current_end)\n        else:\n            # No overlap, add the current interval as a new one\n            merged.append(current)\n\n    return merged\n```"
+            },
+            {
+              "id": "code-04",
+              "cat": "code",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 294,
+              "seconds": 2.16,
+              "answer": " 'C': 100,\n        'D': 500,\n        'M': 1000\n    }\n    \n    result = 0\n    prev_value = 0\n    \n    for i in range(len(s) - 1, -1, -1):\n        current_value = roman_values[s[i]]\n        prev_value = roman_values[s[i - 1]] if i > 0 else 0\n        \n        if current_value < prev_value:\n            result -= current_value\n        else:\n            result += current_value\n    \n    return result\n```"
+            },
+            {
+              "id": "code-05",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 79,
+              "seconds": 0.96,
+              "answer": "```python\ndef word_freq(text):\n    import re\n    # Convert to lowercase and extract only a-z runs\n    words = re.findall(r'[a-z]+', text.lower())\n    # Count occurrences\n    counts = {}\n    for word in words:\n        counts[word] = counts.get(word, 0) + 1\n    return counts\n```"
+            },
+            {
+              "id": "if-01",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 7,
+              "seconds": 0.95,
+              "answer": "Apple\nBanana\nOrange"
+            },
+            {
+              "id": "if-02",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 2,
+              "seconds": 0.73,
+              "answer": "YES"
+            },
+            {
+              "id": "if-03",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 10,
+              "seconds": 0.62,
+              "answer": "Blue, clear, bright, day, sky"
+            },
+            {
+              "id": "if-04",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 21,
+              "seconds": 0.62,
+              "answer": "{\n  \"name\": \"Ravi\",\n  \"age\": 31\n}"
+            },
+            {
+              "id": "if-05",
+              "cat": "instruction",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 11,
+              "seconds": 0.57,
+              "answer": "The quick brown fox jumps over the lazy dog."
+            },
+            {
+              "id": "hi-01",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 4,
+              "seconds": 0.57,
+              "answer": "नई दिल्ली"
+            },
+            {
+              "id": "hi-02",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 12,
+              "seconds": 0.64,
+              "answer": "मैं बाजार में जा रहा हूँ।"
+            },
+            {
+              "id": "hi-03",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 82,
+              "seconds": 1.29,
+              "answer": "12 aur 15 ka jod 27 hota hai.\n\nIska matlab yeh hai ki jab hum 12 aur 15 ko ek dusre ke saath jodte hain (add karte hain), toh uska total 27 banta hai.\n\nFormula yeh hai:\n12 + 15 = 27"
+            },
+            {
+              "id": "hi-04",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 3,
+              "seconds": 2.2,
+              "answer": "12"
+            },
+            {
+              "id": "hi-05",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 175,
+              "seconds": 1.53,
+              "answer": "पानी का रासायनिक सूत्र **H₂O** है।\n\nयहाँ इसका विस्तृत विवरण दिया गया है:\n*   **H**: यह अक्षर 'हाइड्रोजन' (Hydrogen) का संकेत है।\n*   **O**: यह अक्षर 'ऑक्सीजन' (Oxygen) का संकेत है।\n*   **2**: यह अंक दर्शाता है कि एक ऑक्सीजन परमाणु के साथ दो हाइड्रोजन परमाणु बंधे होते हैं।\n\nइसलिए, पानी एक **बिनाइयुक्त अणु** (covalent compound) है जो हाइड्रोजन और ऑक्सीजन के बीच बंधे होते हैं।"
+            },
+            {
+              "id": "know-01",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 24,
+              "seconds": 0.57,
+              "answer": "The chemical symbol for gold is Au, which is derived from its Latin name *aurum*.\n\nAnswer: Au"
+            },
+            {
+              "id": "know-02",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 21,
+              "seconds": 0.54,
+              "answer": "Jane Austen wrote the novel 'Pride and Prejudice'.\n\nAnswer: Jane Austen"
+            },
+            {
+              "id": "know-03",
+              "cat": "knowledge",
+              "ok": false,
+              "finish": "stop",
+              "gen_tokens": 21,
+              "seconds": 0.56,
+              "answer": "The largest planet in our solar system is Jupiter.\n\nAnswer: 5.1003"
+            },
+            {
+              "id": "know-04",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 28,
+              "seconds": 0.56,
+              "answer": "India gained independence from British colonial rule on August 15, 1947.\n\nAnswer: 1947"
+            },
+            {
+              "id": "know-05",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 24,
+              "seconds": 0.59,
+              "answer": "The boiling point of water at sea level is 212 degrees Fahrenheit.\n\nAnswer: 212"
+            },
+            {
+              "id": "know-06",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 167,
+              "seconds": 1.3,
+              "answer": "ed by the symbol $c$. Its exact value is defined as $299,792,458$ metres per second. To convert this to kilometres per second, we divide by 1,000 (since there are 1,000 metres in a kilometre):\n\n$$ \\frac{299,792,458 \\text{ m/s}}{1,000} = 299,792.458 \\text{ km/s} $$\n\nRounding to the nearest whole number, which is standard for such general inquiries, gives approximately 300,000 km/s.\n\nAnswer: 300,000"
+            }
+          ]
+        }
+      },
+      "peak_vram_mb_system": 3457,
+      "peak_engine_rss_mb": 3816
+    },
+    {
+      "model_id": "gpt-oss-20b-mxfp4",
+      "model": "gpt-oss 20B",
+      "quant": "MXFP4",
+      "file_gb": 12.11,
+      "load_s": 17.35,
+      "vram_at_load_mb": 11718,
+      "perf": {
+        "short_first_token_s": 1.101,
+        "short_gen_tps": 99.9,
+        "short_gen_tokens": 256,
+        "long_prompt_tokens": 10231,
+        "long_prompt_tps": 5215.2,
+        "long_first_token_s": 2.42,
+        "long_gen_tps": 95.7,
+        "long_needle_found": true,
+        "long_answer": "The backup generator at the Nashik depot was replaced by technician **Farida Qureshi**, and the replacement cost was **₹3,48,000**."
+      },
+      "evals": {
+        "reasoning-low": {
+          "score": 39,
+          "total": 39,
+          "by_category": {
+            "math": "10/10",
+            "logic": "8/8",
+            "code": "5/5",
+            "instruction": "5/5",
+            "hindi": "5/5",
+            "knowledge": "6/6"
+          },
+          "mean_seconds": 1.38,
+          "mean_gen_tokens": 74,
+          "truncated": 0,
+          "items": [
+            {
+              "id": "math-01",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 135,
+              "seconds": 1.98,
+              "answer": "The journey lasts 4 hours and 35 minutes, which is \\(4 \\times 60 + 35 = 275\\) minutes.\n\nAnswer: 275"
+            },
+            {
+              "id": "math-02",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 89,
+              "seconds": 1.31,
+              "answer": "The sum of all integers from 1 to 250 is  \n\n\\[\n\\frac{250 \\times 251}{2} = 125 \\times 251 = 31\\,375.\n\\]\n\nAnswer: 31375"
+            },
+            {
+              "id": "math-03",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 55,
+              "seconds": 0.98,
+              "answer": "Answer: 1500"
+            },
+            {
+              "id": "math-04",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 122,
+              "seconds": 2.86,
+              "answer": "360 = 2³ × 3² × 5¹.  \nThe number of positive divisors is \\((3+1)(2+1)(1+1)=4·3·2=24\\).\n\nAnswer: 24"
+            },
+            {
+              "id": "math-05",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 247,
+              "seconds": 3.51,
+              "answer": "the tank per hour  \n- Pipe B: \\( \\frac{1}{9}\\) of the tank per hour  \n\nCombined rate:  \n\n\\[\n\\frac{1}{6}+\\frac{1}{9}= \\frac{3+2}{18}= \\frac{5}{18}\\text{ of the tank per hour}\n\\]\n\nTime to fill one tank together:\n\n\\[\n\\text{Time} = \\frac{1}{\\text{combined rate}} = \\frac{1}{5/18}= \\frac{18}{5}=3.6\\text{ hours}\n\\]\n\n\\(3.6\\) hours equals \\(3\\) hours and \\(0.6\\times60 = 36\\) minutes.\n\n**Answer: 3.6 hours**"
+            },
+            {
+              "id": "math-06",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 41,
+              "seconds": 0.97,
+              "answer": "Answer: 1048575"
+            },
+            {
+              "id": "math-07",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 44,
+              "seconds": 0.97,
+              "answer": "Answer: 13310"
+            },
+            {
+              "id": "math-08",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 61,
+              "seconds": 1.02,
+              "answer": "Answer: 1"
+            },
+            {
+              "id": "math-09",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 77,
+              "seconds": 1.13,
+              "answer": "There are \\(5!\\) ways to arrange five distinct people in a line.\n\n\\[\n5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120\n\\]\n\nAnswer: 120"
+            },
+            {
+              "id": "math-10",
+              "cat": "math",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 118,
+              "seconds": 1.68,
+              "answer": "Answer: 476893754"
+            },
+            {
+              "id": "logic-01",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 50,
+              "seconds": 0.91,
+              "answer": "Chen is the youngest.  \nAnswer: Chen"
+            },
+            {
+              "id": "logic-02",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 53,
+              "seconds": 0.94,
+              "answer": "Yes.  \nAnswer: yes"
+            },
+            {
+              "id": "logic-03",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 74,
+              "seconds": 1.13,
+              "answer": "Answer: 5"
+            },
+            {
+              "id": "logic-04",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 68,
+              "seconds": 1.06,
+              "answer": "Answer: 3"
+            },
+            {
+              "id": "logic-05",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 48,
+              "seconds": 2.06,
+              "answer": "Answer: Friday"
+            },
+            {
+              "id": "logic-06",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 46,
+              "seconds": 0.92,
+              "answer": "Answer: 3"
+            },
+            {
+              "id": "logic-07",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 19,
+              "seconds": 0.65,
+              "answer": "Answer: Mary"
+            },
+            {
+              "id": "logic-08",
+              "cat": "logic",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 53,
+              "seconds": 1.07,
+              "answer": "9.9 is larger than 9.11.  \nAnswer: 9.9"
+            },
+            {
+              "id": "code-01",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 102,
+              "seconds": 1.66,
+              "answer": "```python\nimport re\n\ndef is_palindrome(s: str) -> bool:\n    \"\"\"\n    Return True if the string s reads the same forwards and backwards,\n    ignoring case and any non-alphanumeric characters.\n    \"\"\"\n    cleaned = re.sub(r'[^A-Za-z0-9]', '', s).lower()\n    return cleaned == cleaned[::-1]\n```"
+            },
+            {
+              "id": "code-02",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 150,
+              "seconds": 1.91,
+              "answer": "inct value in `nums`, or None if it doesn't exist.\"\"\"\n    unique_vals = set(nums)\n    if len(unique_vals) < 2:\n        return None\n    # Find the largest and second largest without sorting the whole set\n    largest = second = float('-inf')\n    for v in unique_vals:\n        if v > largest:\n            second, largest = largest, v\n        elif v > second:\n            second = v\n    return second\n```"
+            },
+            {
+              "id": "code-03",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 235,
+              "seconds": 3.02,
+              "answer": "intervals.sort(key=lambda x: (x[0], x[1]))\n\n    merged = [intervals[0]]\n    for current in intervals[1:]:\n        last = merged[-1]\n        # If current starts before or exactly at the end of last,\n        # merge them\n        if current[0] <= last[1]:\n            last[1] = max(last[1], current[1])\n        else:\n            merged.append(current[:])  # copy to avoid aliasing\n\n    return merged\n```"
+            },
+            {
+              "id": "code-04",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 184,
+              "seconds": 3.38,
+              "answer": "\n    roman_map = {\n        'I': 1,\n        'V': 5,\n        'X': 10,\n        'L': 50,\n        'C': 100,\n        'D': 500,\n        'M': 1000\n    }\n\n    total = 0\n    prev_value = 0\n\n    for char in reversed(s.upper()):\n        value = roman_map[char]\n        if value < prev_value:\n            total -= value\n        else:\n            total += value\n            prev_value = value\n\n    return total\n```"
+            },
+            {
+              "id": "code-05",
+              "cat": "code",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 122,
+              "seconds": 2.08,
+              "answer": "from collections import Counter\n\ndef word_freq(text):\n    \"\"\"\n    Return a dictionary mapping each lowercase word to its frequency in the given text.\n    Words are defined as contiguous runs of letters a-z (case‑insensitive).\n    \"\"\"\n    # Find all letter runs, convert to lowercase\n    words = re.findall(r'[A-Za-z]+', text)\n    words = [w.lower() for w in words]\n    return dict(Counter(words))\n```"
+            },
+            {
+              "id": "if-01",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 34,
+              "seconds": 0.89,
+              "answer": "Apple\nBanana\nCherry"
+            },
+            {
+              "id": "if-02",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 17,
+              "seconds": 0.75,
+              "answer": "YES"
+            },
+            {
+              "id": "if-03",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 98,
+              "seconds": 1.69,
+              "answer": "Clear daytime sky is blue."
+            },
+            {
+              "id": "if-04",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 36,
+              "seconds": 1.3,
+              "answer": "{\"name\":\"Ravi\",\"age\":31}"
+            },
+            {
+              "id": "if-05",
+              "cat": "instruction",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 70,
+              "seconds": 1.38,
+              "answer": "A bright moon glows."
+            },
+            {
+              "id": "hi-01",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 23,
+              "seconds": 0.69,
+              "answer": "नई दिल्ली"
+            },
+            {
+              "id": "hi-02",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 55,
+              "seconds": 1.04,
+              "answer": "मैं बाजार जा रहा हूँ।"
+            },
+            {
+              "id": "hi-03",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 39,
+              "seconds": 0.89,
+              "answer": "12 aur 15 ka jod 27 hota hai."
+            },
+            {
+              "id": "hi-04",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 53,
+              "seconds": 1.0,
+              "answer": "12"
+            },
+            {
+              "id": "hi-05",
+              "cat": "hindi",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 63,
+              "seconds": 1.25,
+              "answer": "पानी का रासायनिक सूत्र **H₂O** है। यह दो हाइड्रोजन (H) के परमाणुओं और एक ऑक्सीजन (O) के परमाणु से बना होता है।"
+            },
+            {
+              "id": "know-01",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 29,
+              "seconds": 0.91,
+              "answer": "The chemical symbol for gold is **Au**.  \nAnswer: Au"
+            },
+            {
+              "id": "know-02",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 20,
+              "seconds": 0.73,
+              "answer": "Answer: Jane Austen"
+            },
+            {
+              "id": "know-03",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 28,
+              "seconds": 0.89,
+              "answer": "The largest planet in our solar system is Jupiter.  \nAnswer: Jupiter"
+            },
+            {
+              "id": "know-04",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 22,
+              "seconds": 0.82,
+              "answer": "Answer: 1947"
+            },
+            {
+              "id": "know-05",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 42,
+              "seconds": 0.99,
+              "answer": "The boiling point of water at sea level is 212 °F.  \nAnswer: 212"
+            },
+            {
+              "id": "know-06",
+              "cat": "knowledge",
+              "ok": true,
+              "finish": "stop",
+              "gen_tokens": 54,
+              "seconds": 1.26,
+              "answer": "The speed of light in a vacuum is approximately 299,792 kilometres per second.  \nAnswer: 299,792 km/s"
+            }
+          ]
+        }
+      },
+      "peak_vram_mb_system": 13451,
+      "peak_engine_rss_mb": 8304
+    }
+  ]
+}
