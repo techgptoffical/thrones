@@ -1,5 +1,7 @@
 # Thrones Adapter 0.1 for Qwen3.5 4B
 
+> **Superseded by [Thrones Adapter 0.2](../thrones-adapter-0.2/MODEL_CARD.md) (13 Nov 2026).** Later testing in the app's real setup (system prompt + calculator) found that this adapter **reduces general maths accuracy**: GSM8K 84.8% vs 95.2% for the base, MATH 61.3% vs 84.0%, MBPP 56.7% vs 60.0%. The evaluation below only covered its training-style questions and the regression sets without the system prompt, so it missed this. Do not use 0.1.
+
 The first model weights trained by the Thrones project. It is a **LoRA adapter** (21.2 M parameters, 42 MB as GGUF f16) applied on top of the **unmodified** Qwen3.5 4B. It is not a new model and was not trained from scratch: the base model's knowledge and reasoning come from Alibaba Cloud's Qwen team.
 
 | | |

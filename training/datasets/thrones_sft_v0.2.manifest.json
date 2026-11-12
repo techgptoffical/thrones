@@ -1,0 +1,56 @@
+{
+  "version": "0.2",
+  "seed": 20261113,
+  "files": {
+    "thrones_sft_v0.2.train.jsonl": {
+      "rows": 3738,
+      "sha256": "07abd638dde7ad1c735c5ae886a691c5f0a6a941604f55a94002a050d889158a"
+    },
+    "thrones_sft_v0.2.heldout.jsonl": {
+      "rows": 306,
+      "sha256": "42f812dabccffa332060613e3985cfae2381c6772b8b4072df8afcd50c81d93d"
+    },
+    "distill_v0.2.jsonl": {
+      "sha256": "46bde13b286f9a91e454a1d2e92acea66d0d58e3c4ca11d127010bac1b99320c"
+    }
+  },
+  "train_by_kind": {
+    "hinglish": 700,
+    "hindi": 600,
+    "tool_use": 900,
+    "general_en": 500,
+    "distill_math": 342,
+    "distill_mbpp": 373,
+    "distill_gsm8k": 291,
+    "identity": 32
+  },
+  "heldout_by_kind": {
+    "tool_use": 86,
+    "tool_use_ood": 120,
+    "hinglish": 100
+  },
+  "train_by_source": {
+    "findnitai/english-to-hinglish (source=1, human-annotated rows only)": 700,
+    "CohereLabs/aya_dataset (language=Hindi)": 600,
+    "thrones-generated": 900,
+    "OpenAssistant/oasst2 (lang=en, first turn, rank-0 reply)": 500,
+    "EleutherAI/hendrycks_math (intermediate_algebra)": 29,
+    "google-research-datasets/mbpp": 373,
+    "EleutherAI/hendrycks_math (algebra)": 87,
+    "openai/gsm8k": 291,
+    "EleutherAI/hendrycks_math (geometry)": 39,
+    "EleutherAI/hendrycks_math (prealgebra)": 62,
+    "EleutherAI/hendrycks_math (number_theory)": 76,
+    "EleutherAI/hendrycks_math (precalculus)": 18,
+    "EleutherAI/hendrycks_math (counting_and_probability)": 31,
+    "thrones-authored": 32
+  },
+  "licences": {
+    "Apache-2.0": 1800,
+    "MIT (Thrones project)": 932,
+    "MIT": 633,
+    "CC-BY-4.0": 373
+  },
+  "teacher": "Qwen/Qwen3.5-9B (Apache-2.0), Q4_K_M via llama.cpp, verified solutions only",
+  "excluded": "No outputs from Claude, Fable or any proprietary model; no non-commercial datasets."
+}

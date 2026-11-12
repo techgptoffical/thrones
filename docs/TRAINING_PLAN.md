@@ -1,6 +1,6 @@
 # Thrones training plan
 
-**Status (12 Nov 2026): Thrones Adapter 0.1 trained and evaluated.** A LoRA on Qwen3.5 4B, built exactly as described below, met the ship criterion in §5 on our held-out sets (tool use 118/118 vs 108/118 for the base, Hinglish chrF 50.1 vs 39.5, no change on the regression sets). Results, caveats and the reproduction recipe: `training/runs/thrones-adapter-0.1/MODEL_CARD.md` and `training/README.md`. The default engine is still the unmodified Qwen3.5 9B; the 9B has not been fine-tuned (it needs ~22 GB VRAM for bf16 LoRA).
+**Status (13 Nov 2026): Thrones Adapter 0.2 trained, evaluated and offered in the app; 0.1 withdrawn.** 0.1 met the original ship criterion on its own held-out sets, but a wider test in the app's real setup showed it reduced general maths accuracy — the criterion in §5 now explicitly requires public test sets run with the app's system prompt and tools. 0.2 (adds 1,006 verified Qwen3.5 9B solutions and adapts the linear-attention layers) keeps the tool-use and Hinglish gains with general maths/code within noise of the base. Distillation from the 9B did not measurably improve reasoning. Details: `training/runs/thrones-adapter-0.2/MODEL_CARD.md`.
 
 ## 1. Goal and principle
 
@@ -69,7 +69,7 @@ Run on base 4B and adapter 4B with identical greedy settings:
 4. Safety regression: a fixed set of clearly harmful requests (must not become more compliant) and a fixed set of benign-but-edgy requests (should become less refused).
 5. Speed and memory: unchanged GGUF size class; confirm tokens/s and VRAM in `run_bench.py`.
 
-Ship criterion: improvement beyond noise on targets 1–3 **and** no regression beyond noise on 3–4. Otherwise the adapter is not shipped and the result is documented anyway.
+Ship criterion: improvement beyond noise on targets 1–3 **and** no regression beyond noise on 3–4, where the public sets (GSM8K, MATH, MBPP samples) are run **with the app's system prompt and calculator**, exactly as users get them (`evals/eval_reasoning.py`). Adapter 0.1 passed an earlier, weaker version of this check and was later withdrawn. Otherwise the adapter is not shipped and the result is documented anyway.
 
 ## 6. Artefacts saved for every run
 

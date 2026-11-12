@@ -14,6 +14,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
 from typing import Any
 
@@ -112,10 +113,19 @@ def run_tests(code: str, tests: str) -> bool:
     with tempfile.TemporaryDirectory() as tmp:
         p = Path(tmp) / "t.py"
         p.write_text(code + "\n\n" + tests + "\nprint('ALL_OK')\n", encoding="utf-8")
-        try:
-            r = subprocess.run([sys.executable, "-I", str(p)], capture_output=True, text=True, timeout=10, cwd=tmp)
-        except subprocess.TimeoutExpired:
-            return False
+        for attempt in range(8):
+            try:
+                r = subprocess.run([sys.executable, "-I", str(p)], capture_output=True, text=True, timeout=10,
+                                   cwd=tmp)
+                break
+            except subprocess.TimeoutExpired:
+                return False
+            except OSError:
+                # Windows can briefly refuse to start a process when memory is nearly exhausted
+                # ("paging file is too small"); wait and retry instead of losing the whole run.
+                if attempt == 7:
+                    raise
+                time.sleep(10)
     return "ALL_OK" in r.stdout
 
 

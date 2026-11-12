@@ -12,6 +12,7 @@ import argparse
 import datetime as dt
 import json
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -59,11 +60,14 @@ def main() -> None:
         return r.json()["choices"][0]
 
     def one(item: dict) -> dict:
-        produced, final = rs.solve(post, [{"role": "system", "content": system},
-                                          {"role": "user", "content": item["prompt"]}], rs.TOOLS)
-        calls = sum(len(m.get("tool_calls", [])) for m in produced if m["role"] == "assistant")
-        return {"id": item["id"], "kind": item["kind"], "ok": rs.grade(item, final), "tool_calls": calls,
-                "chars": len(final), "final": final[-1500:]}
+        try:
+            produced, final = rs.solve(post, [{"role": "system", "content": system},
+                                              {"role": "user", "content": item["prompt"]}], rs.TOOLS)
+            calls = sum(len(m.get("tool_calls", [])) for m in produced if m["role"] == "assistant")
+            return {"id": item["id"], "kind": item["kind"], "ok": rs.grade(item, final), "tool_calls": calls,
+                    "chars": len(final), "final": final[-1500:]}
+        except Exception as exc:  # recorded and retried once at the end; never aborts the run
+            return {"id": item["id"], "kind": item["kind"], "ok": False, "error": f"{type(exc).__name__}: {exc}"}
 
     free_app_engine()
     extra = ["-np", str(SLOTS)] + (["--lora", str(ROOT / args.lora)] if args.lora else [])
@@ -74,12 +78,20 @@ def main() -> None:
                 rows.append(row)
                 if i % 50 == 0:
                     print(f"  {i}/{len(items)}", flush=True)
+        by_id = {it["id"]: it for it in items}
+        errored = [k for k, r in enumerate(rows) if "error" in r]
+        if errored:
+            print(f"  retrying {len(errored)} items that hit errors", flush=True)
+            time.sleep(15)
+            for k in errored:
+                rows[k] = one(by_id[rows[k]["id"]])
     summary = {}
     for kind in ("gsm8k", "math", "mbpp"):
         sub = [r for r in rows if r["kind"] == kind]
         summary[kind] = {"correct": sum(r["ok"] for r in sub), "n": len(sub),
+                         "errors": sum(1 for r in sub if "error" in r),
                          "pct": round(100 * sum(r["ok"] for r in sub) / max(1, len(sub)), 1),
-                         "used_calculator": sum(1 for r in sub if r["tool_calls"])}
+                         "used_calculator": sum(1 for r in sub if r.get("tool_calls"))}
     report = {"label": args.label, "model": args.model, "lora": args.lora, "seed": SEED,
               "date": dt.datetime.now().isoformat(timespec="seconds"), "summary": summary, "items": rows}
     path = ROOT / "evals" / "results" / f"reasoning-{args.label}-{dt.datetime.now():%Y%m%d-%H%M}.json"

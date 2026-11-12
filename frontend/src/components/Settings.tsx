@@ -662,7 +662,7 @@ function About() {
         <Field name="What Thrones is" help="Original application software: this interface, the orchestration, tools and research pipeline. Released under the MIT license.">
           <span className="tag gold">Software</span>
         </Field>
-        <Field name="What Thrones is not" help="Thrones did not train a language model from scratch. Its intelligence comes from open-weight base models made by others, listed below. Thrones Adapter 0.1 is a small optional fine-tune (a 42 MB LoRA) on top of Qwen3.5 4B; the base weights are unchanged.">
+        <Field name="What Thrones is not" help="Thrones did not train a language model from scratch. Its intelligence comes from open-weight base models made by others, listed below. Thrones Adapter 0.2 is a small optional fine-tune (a 61 MB LoRA) on top of Qwen3.5 4B; the base weights are unchanged.">
           <span className="tag">Not a from-scratch model</span>
         </Field>
       </div>
@@ -672,7 +672,7 @@ function About() {
           <>
             {active.adapter && (
               <Field name={`${active.adapter} (Thrones fine-tune)`}
-                help={`A LoRA adapter trained by the Thrones project on licensed and self-generated data, applied on top of ${active.base_name}. File: ${active.lora_file}. Training details and results: training/runs/thrones-adapter-0.1/MODEL_CARD.md.`}>
+                help={`A LoRA adapter trained by the Thrones project on licensed and self-generated data, applied on top of ${active.base_name}. File: ${active.lora_file}. Training details and results: training/runs/${(active.lora_file ?? '').replace('.gguf', '')}/MODEL_CARD.md.`}>
                 <span className="tag gold">Ours</span>
               </Field>
             )}

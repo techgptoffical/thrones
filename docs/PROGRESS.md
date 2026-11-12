@@ -54,7 +54,8 @@ Last updated: 12 November 2026. "Done" means implemented **and** verified by the
 | Model comparison on this PC | Done — `docs/MODEL_RESEARCH.md`, raw JSON in `evals/results/` |
 | Eval set v1 (39 base + 26 hard items, deterministic graders, unit-tested) | Done |
 | Training pipeline (licensed dataset builder, Unsloth LoRA, GGUF export, base-vs-adapter eval) | Done — `training/README.md` |
-| **Thrones Adapter 0.1** (LoRA on Qwen3.5 4B) | Trained, evaluated, selectable in the app (Experimental). Held-out tool use 118/118 vs 108/118 base, Hinglish chrF 50.1 vs 39.5, no regression. Model card: `training/runs/thrones-adapter-0.1/MODEL_CARD.md` |
+| Thrones Adapter 0.1 (LoRA on Qwen3.5 4B) | **Withdrawn.** Gained tool use and Hinglish, but later testing in the app's real setup showed lower general maths (GSM8K 84.8% vs 95.2%, MATH 61.3% vs 84.0%). |
+| **Thrones Adapter 0.2** (LoRA on Qwen3.5 4B, incl. linear-attention layers; 1,006 verified Qwen3.5 9B solutions added) | Trained, evaluated, selectable in the app (Experimental). Keeps 0.1's tool-use and Hinglish gains; GSM8K / MATH / MBPP 94.0 / 80.7 / 62.0 % vs base 95.2 / 84.0 / 60.0 % (within noise). Distillation did not raise reasoning. Model card: `training/runs/thrones-adapter-0.2/MODEL_CARD.md` |
 
 ### Not implemented in 1.0 (labelled as such in the UI where relevant)
 
@@ -65,7 +66,8 @@ Image/vision input · voice · MCP/external tool servers · per-message edit · 
 | Suite | Result | When |
 |---|---|---|
 | Backend unit tests (`pytest backend/tests`) | **77 / 77 passed** | 12 Nov 2026 |
-| Adapter vs base, identical held-out inputs through llama.cpp | see model card; adapter loaded and answered in the live app (82 tok/s, correct calculator use in Hinglish) | 12 Nov 2026 |
+| Adapters vs base on identical inputs (held-out + GSM8K/MATH/MBPP test samples) through llama.cpp | see `training/runs/thrones-adapter-0.2/MODEL_CARD.md` | 13 Nov 2026 |
+| Out-of-memory during long evals (16 GB RAM, C: nearly full) | 2 runs crashed (`bad allocation`, `paging file too small`); evals now retry and record per-item errors; re-run results complete | 13 Nov 2026 |
 | Frontend type-check + production build (`npm run build`) | passed | 12 Nov 2026 |
 | End-to-end API checks (`scripts/e2e_check.py`, real model, live web) | **16 / 17** on first run; the failing check (identity) was fixed and then passed 5 / 5 times | 12 Nov 2026 |
 | Browser session (in-app browser, production build) | Think EMI problem answered correctly (₹13,892.38 / ₹3,16,960.29) with 4 calculator calls; metrics popover, settings, phone width (375 px) checked | 12 Nov 2026 |

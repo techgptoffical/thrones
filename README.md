@@ -7,7 +7,7 @@ Open-weight models, real reasoning tools, cited web research and document Q&amp;
 
 ---
 
-**Thrones 1.0** is application software by TECH GPT. The language model it runs is **not** a Thrones model: by default it is **Qwen3.5 9B** by Alibaba Cloud's Qwen team (Apache-2.0), unmodified, in a community Q4_K_M quantization, executed locally by **llama.cpp**. Thrones' own trained weights so far are **Thrones Adapter 0.1**, a small LoRA fine-tune (42 MB) on Qwen3.5 4B that makes it use the calculator reliably and write cleaner Hinglish, with no measured loss elsewhere — see its [model card](training/runs/thrones-adapter-0.1/MODEL_CARD.md). It is optional and marked Experimental; it is not a model trained from scratch.
+**Thrones 1.0** is application software by TECH GPT. The language model it runs is **not** a Thrones model: by default it is **Qwen3.5 9B** by Alibaba Cloud's Qwen team (Apache-2.0), unmodified, in a community Q4_K_M quantization, executed locally by **llama.cpp**. Thrones' own trained weights are **Thrones Adapter 0.2**, a small LoRA fine-tune (61 MB) on Qwen3.5 4B: it uses the calculator reliably (also on question types it never trained on) and writes cleaner Hinglish, while general maths and code stay within noise of the base model — see its [model card](training/runs/thrones-adapter-0.2/MODEL_CARD.md). It is optional and marked Experimental; it is not a model trained from scratch. (Adapter 0.1 was withdrawn after it was found to reduce maths accuracy.)
 
 ## What it does
 
@@ -29,7 +29,7 @@ RTX 5060 Ti 16 GB · Core i3-10105F · 16 GB RAM · Windows 11 · llama.cpp b122
 |---|---|---|---|---|---|
 | **Qwen3.5 9B** Q4_K_M (default) | 50 tok/s | 5.8 GB | ~5.3 GB | 24 | High |
 | Qwen3.5 4B Q4_K_M | 98 tok/s | 3.5 GB | — | 21 | Balanced |
-| Thrones Adapter 0.1 (Qwen3.5 4B + LoRA) | 82 tok/s (in app) | 3.5 GB | — | 21 | Balanced, experimental |
+| Thrones Adapter 0.2 (Qwen3.5 4B + LoRA) | 66 tok/s (in app) | 3.6 GB | — | 22 | Balanced, experimental |
 | Qwen3.5 2B Q4_K_M | 164 tok/s | 1.6 GB | — | 19 | Lite |
 | gpt-oss 20B MXFP4 (optional) | 100 tok/s | 11.7 GB | ~12 GB | 25 | needs 24 GB+ RAM |
 

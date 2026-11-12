@@ -1,0 +1,1967 @@
+{
+  "label": "v02-adapter01",
+  "lora": "models\\thrones-adapter-0.1.gguf",
+  "heldout": "thrones_sft_v0.2.heldout.jsonl",
+  "date": "2026-11-13T00:22:13",
+  "base_gguf": "Qwen_Qwen3.5-4B-Q4_K_M.gguf",
+  "load_s": 3.73,
+  "tool_use": {
+    "n": 86,
+    "called_tool": 86,
+    "correct": 86,
+    "malformed_calls": 0,
+    "items": [
+      {
+        "user": "Compute 75100 × 3734 − 1535767 exactly.",
+        "want": [
+          "278887633.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "75100 × 3734 − 1535767 = **278,887,633**"
+      },
+      {
+        "user": "What is 23559 times 8804, minus 1225001?",
+        "want": [
+          "206188435.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "23559 × 8804 − 1225001 = **206,188,435**"
+      },
+      {
+        "user": "What is 85380 times 9240, minus 317876?",
+        "want": [
+          "788593324.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "85380 × 9240 − 317876 = **788,593,324**"
+      },
+      {
+        "user": "If I invest ₹5,00,000 at 10% interest compounded annually for 5 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "305255.00",
+          "805255.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 5 years: **₹8,05,255.11**\n- Interest earned: **₹3,05,255.11**"
+      },
+      {
+        "user": "Mere marks hain 46, 59, 48, 75, 40, 40, 65, 79, 50. Average kitna hua?",
+        "want": [
+          "55.78"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **55.78** hai (total 502 ÷ 9 tests)."
+      },
+      {
+        "user": "₹50,000 ko 8% saalana compound interest par 2 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "58320.00",
+          "8320.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 2 saal baad amount: **₹58,320**\n- Kul interest: **₹8,320**"
+      },
+      {
+        "user": "Mere marks hain 94, 70, 43, 63, 75, 80. Average kitna hua?",
+        "want": [
+          "70.83"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **70.83** hai (total 425 ÷ 6 tests)."
+      },
+      {
+        "user": "My test scores are 82, 92, 72, 85, 48, 62, 68. What's my average?",
+        "want": [
+          "72.71"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **72.71** (sum 509 ÷ 7 tests)."
+      },
+      {
+        "user": "₹50,000 ko 8% saalana compound interest par 10 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "107946.25",
+          "57946.25"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 10 saal baad amount: **₹1,07,946.25**\n- Kul interest: **₹57,946.25**"
+      },
+      {
+        "user": "An item is listed at ₹65,000. There is a 12% discount, and then 5% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "60060.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 12% discount: ₹57,200\n- Adding 5% GST: ₹60,060\n\nYou pay **₹60,060**."
+      },
+      {
+        "user": "What is 8598 times 6019, plus 526978?",
+        "want": [
+          "52278340.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "8598 × 6019 + 526978 = **52,278,340**"
+      },
+      {
+        "user": "A bus covers 315 km in 6 hours 15 minutes. What is its average speed in km/h?",
+        "want": [
+          "50.40"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 6 h 15 min = 6.25 h, so the average speed is **50.4 km/h**."
+      },
+      {
+        "user": "Mere marks hain 84, 40, 50, 44, 72, 56, 73. Average kitna hua?",
+        "want": [
+          "59.86"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **59.86** hai (total 419 ÷ 7 tests)."
+      },
+      {
+        "user": "Ek cheez ka price ₹3,750 hai. 20% discount milta hai, phir discounted price par 12% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "3360.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 20% discount ke baad: ₹3,000\n- 12% GST jodne par: ₹3,360\n\nAapko **₹3,360** dene honge."
+      },
+      {
+        "user": "Compute 27891 × 3530 − 971749 exactly.",
+        "want": [
+          "97483481.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "27891 × 3530 − 971749 = **97,483,481**"
+      },
+      {
+        "user": "Ek bus 560 km 7 ghante 20 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "76.36"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 7 ghante 20 minute = 7.3333 ghante, isliye average speed **76.36 km/h** hai."
+      },
+      {
+        "user": "Ek bus 420 km 5 ghante 30 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "76.36"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 5 ghante 30 minute = 5.5 ghante, isliye average speed **76.36 km/h** hai."
+      },
+      {
+        "user": "Mere marks hain 82, 95, 50, 53, 97, 37, 50. Average kitna hua?",
+        "want": [
+          "66.29"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **66.29** hai (total 464 ÷ 7 tests)."
+      },
+      {
+        "user": "Compute 16699 × 9282 − 1908705 exactly.",
+        "want": [
+          "153091413.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "16699 × 9282 − 1908705 = **153,091,413**"
+      },
+      {
+        "user": "Compute 91281 × 7915 − 287158 exactly.",
+        "want": [
+          "722201957.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "91281 × 7915 − 287158 = **722,201,957**"
+      },
+      {
+        "user": "If I invest ₹75,000 at 12% interest compounded annually for 7 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "165801.11",
+          "90801.11"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 7 years: **₹1,65,801.11**\n- Interest earned: **₹90,801.11**"
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹3,00,000 at 8.25% per year for 3 years? Also tell me the total interest.",
+        "want": [
+          "39679.80",
+          "9435.55"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 8.25%/12 per month and n = 36 months.\n\n- Monthly EMI: **₹9,435.55**\n- Total interest over 3 years: **₹39,679.80**"
+      },
+      {
+        "user": "My test scores are 74, 46, 36, 61, 62. What's my average?",
+        "want": [
+          "55.80"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **55.8** (sum 279 ÷ 5 tests)."
+      },
+      {
+        "user": "If I invest ₹2,50,000 at 12% interest compounded annually for 3 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "101232.00",
+          "351232.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 3 years: **₹3,51,232**\n- Interest earned: **₹1,01,232**"
+      },
+      {
+        "user": "79686 ko 6688 se guna karke 1859430 jodo. Exact answer chahiye.",
+        "want": [
+          "534799398.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "79686 × 6688 + 1859430 = **534,799,398**"
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹25,00,000 at 9.5% per year for 15 years? Also tell me the total interest.",
+        "want": [
+          "2199011.60",
+          "26105.62"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 9.5%/12 per month and n = 180 months.\n\n- Monthly EMI: **₹26,105.62**\n- Total interest over 15 years: **₹21,99,011.60**"
+      },
+      {
+        "user": "Compute 47049 × 8945 + 1289721 exactly.",
+        "want": [
+          "422143026.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "47049 × 8945 + 1289721 = **422,143,026**"
+      },
+      {
+        "user": "Compute 55464 × 7471 − 77116 exactly.",
+        "want": [
+          "414294428.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "55464 × 7471 − 77116 = **414,294,428**"
+      },
+      {
+        "user": "₹1,00,000 ko 6.5% saalana compound interest par 7 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "155398.65",
+          "55398.65"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 7 saal baad amount: **₹1,55,398.65**\n- Kul interest: **₹55,398.65**"
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹3,00,000 at 9% per year for 10 years? Also tell me the total interest.",
+        "want": [
+          "156032.40",
+          "3800.27"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 9%/12 per month and n = 120 months.\n\n- Monthly EMI: **₹3,800.27**\n- Total interest over 10 years: **₹1,56,032.40**"
+      },
+      {
+        "user": "A bus covers 45 km in 5 hours 30 minutes. What is its average speed in km/h?",
+        "want": [
+          "8.18"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 5 h 30 min = 5.5 h, so the average speed is **8.18 km/h**."
+      },
+      {
+        "user": "If I invest ₹2,50,000 at 10% interest compounded annually for 4 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "116025.00",
+          "366025.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 4 years: **₹3,66,025**\n- Interest earned: **₹1,16,025**"
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹40,00,000 at 9.5% per year for 10 years? Also tell me the total interest.",
+        "want": [
+          "2211082.40",
+          "51759.02"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 9.5%/12 per month and n = 120 months.\n\n- Monthly EMI: **₹51,759.02**\n- Total interest over 10 years: **₹22,11,082.40**"
+      },
+      {
+        "user": "An item is listed at ₹1,299. There is a 30% discount, and then 28% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "1163.90"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 30% discount: ₹909.30\n- Adding 28% GST: ₹1,163.90\n\nYou pay **₹1,163.90**."
+      },
+      {
+        "user": "₹50,000 ko 6.5% saalana compound interest par 2 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "56711.25",
+          "6711.25"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 2 saal baad amount: **₹56,711.25**\n- Kul interest: **₹6,711.25**"
+      },
+      {
+        "user": "30759 ko 7177 se guna karke 1951870 ghatao. Exact answer chahiye.",
+        "want": [
+          "218805473.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "30759 × 7177 − 1951870 = **218,805,473**"
+      },
+      {
+        "user": "My test scores are 59, 48, 48, 84, 76, 79, 97, 39. What's my average?",
+        "want": [
+          "66.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **66.25** (sum 530 ÷ 8 tests)."
+      },
+      {
+        "user": "An item is listed at ₹4,999. There is a 15% discount, and then 28% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "5438.91"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 15% discount: ₹4,249.15\n- Adding 28% GST: ₹5,438.91\n\nYou pay **₹5,438.91**."
+      },
+      {
+        "user": "My test scores are 35, 57, 88, 96, 96, 41, 87, 53. What's my average?",
+        "want": [
+          "69.12"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **69.12** (sum 553 ÷ 8 tests)."
+      },
+      {
+        "user": "Ek cheez ka price ₹3,750 hai. 12% discount milta hai, phir discounted price par 12% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "3696.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 12% discount ke baad: ₹3,300\n- 12% GST jodne par: ₹3,696\n\nAapko **₹3,696** dene honge."
+      },
+      {
+        "user": "19676 ko 7356 se guna karke 117912 ghatao. Exact answer chahiye.",
+        "want": [
+          "144618744.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "19676 × 7356 − 117912 = **144,618,744**"
+      },
+      {
+        "user": "What is 5367 times 5484, minus 1921011?",
+        "want": [
+          "27511617.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "5367 × 5484 − 1921011 = **27,511,617**"
+      },
+      {
+        "user": "A bus covers 45 km in 7 hours 40 minutes. What is its average speed in km/h?",
+        "want": [
+          "5.87"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 7 h 40 min = 7.6667 h, so the average speed is **5.87 km/h**."
+      },
+      {
+        "user": "₹25,00,000 ke loan par 10.5% saalana byaaj aur 15 saal ke liye monthly EMI kitni banegi? Total interest bhi batao.",
+        "want": [
+          "2474294.60",
+          "27634.97"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), jahan r = 10.5%/12 har mahine aur n = 180 mahine.\n\n- Monthly EMI: **₹27,634.97**\n- 15 saal mein total interest: **₹24,74,294.60**"
+      },
+      {
+        "user": "₹1,00,000 ko 6% saalana compound interest par 4 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "126247.70",
+          "26247.70"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 4 saal baad amount: **₹1,26,247.70**\n- Kul interest: **₹26,247.70**"
+      },
+      {
+        "user": "Mere marks hain 38, 85, 58, 46, 38, 77, 68. Average kitna hua?",
+        "want": [
+          "58.57"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **58.57** hai (total 410 ÷ 7 tests)."
+      },
+      {
+        "user": "₹1,00,000 ko 8% saalana compound interest par 3 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "125971.20",
+          "25971.20"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 3 saal baad amount: **₹1,25,971.20**\n- Kul interest: **₹25,971.20**"
+      },
+      {
+        "user": "My test scores are 42, 88, 86, 35, 74. What's my average?",
+        "want": [
+          "65.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **65** (sum 325 ÷ 5 tests)."
+      },
+      {
+        "user": "My test scores are 57, 89, 81, 57, 74, 98. What's my average?",
+        "want": [
+          "76.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **76** (sum 456 ÷ 6 tests)."
+      },
+      {
+        "user": "₹25,000 ko 6.5% saalana compound interest par 5 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "34252.17",
+          "9252.17"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 5 saal baad amount: **₹34,252.17**\n- Kul interest: **₹9,252.17**"
+      },
+      {
+        "user": "Compute 37844 × 4879 − 645689 exactly.",
+        "want": [
+          "183995187.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37844 × 4879 − 645689 = **183,995,187**"
+      },
+      {
+        "user": "Mere marks hain 77, 83, 82, 86, 74, 88, 79, 80, 78. Average kitna hua?",
+        "want": [
+          "80.78"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **80.78** hai (total 727 ÷ 9 tests)."
+      },
+      {
+        "user": "19482 ko 9909 se guna karke 1216874 jodo. Exact answer chahiye.",
+        "want": [
+          "194264012.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "19482 × 9909 + 1216874 = **194,264,012**"
+      },
+      {
+        "user": "An item is listed at ₹65,000. There is a 5% discount, and then 18% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "72865.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 5% discount: ₹61,750\n- Adding 18% GST: ₹72,865\n\nYou pay **₹72,865**."
+      },
+      {
+        "user": "Ek cheez ka price ₹24,750 hai. 20% discount milta hai, phir discounted price par 12% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "22176.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 20% discount ke baad: ₹19,800\n- 12% GST jodne par: ₹22,176\n\nAapko **₹22,176** dene honge."
+      },
+      {
+        "user": "My test scores are 89, 87, 37, 76, 70, 47. What's my average?",
+        "want": [
+          "67.67"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **67.67** (sum 406 ÷ 6 tests)."
+      },
+      {
+        "user": "A bus covers 45 km in 7 hours 50 minutes. What is its average speed in km/h?",
+        "want": [
+          "5.74"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 7 h 50 min = 7.8333 h, so the average speed is **5.74 km/h**."
+      },
+      {
+        "user": "₹12,00,000 ke loan par 11% saalana byaaj aur 3 saal ke liye monthly EMI kitni banegi? Total interest bhi batao.",
+        "want": [
+          "214312.56",
+          "39286.46"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), jahan r = 11%/12 har mahine aur n = 36 mahine.\n\n- Monthly EMI: **₹39,286.46**\n- 3 saal mein total interest: **₹2,14,312.56**"
+      },
+      {
+        "user": "Mere marks hain 61, 96, 74, 53, 66, 83. Average kitna hua?",
+        "want": [
+          "72.17"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **72.17** hai (total 433 ÷ 6 tests)."
+      },
+      {
+        "user": "My test scores are 50, 37, 61, 57, 42, 96. What's my average?",
+        "want": [
+          "57.17"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **57.17** (sum 343 ÷ 6 tests)."
+      },
+      {
+        "user": "₹40,00,000 ke loan par 9.5% saalana byaaj aur 10 saal ke liye monthly EMI kitni banegi? Total interest bhi batao.",
+        "want": [
+          "2211082.40",
+          "51759.02"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), jahan r = 9.5%/12 har mahine aur n = 120 mahine.\n\n- Monthly EMI: **₹51,759.02**\n- 10 saal mein total interest: **₹22,11,082.40**"
+      },
+      {
+        "user": "Ek cheez ka price ₹8,650 hai. 25% discount milta hai, phir discounted price par 18% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "7655.25"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 25% discount ke baad: ₹6,487.50\n- 18% GST jodne par: ₹7,655.25\n\nAapko **₹7,655.25** dene honge."
+      },
+      {
+        "user": "If I invest ₹50,000 at 7% interest compounded annually for 5 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "20127.59",
+          "70127.59"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 5 years: **₹70,127.59**\n- Interest earned: **₹20,127.59**"
+      },
+      {
+        "user": "Ek bus 120 km 6 ghante 15 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "19.20"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 6 ghante 15 minute = 6.25 ghante, isliye average speed **19.2 km/h** hai."
+      },
+      {
+        "user": "Ek bus 120 km 6 ghante 10 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "19.46"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 6 ghante 10 minute = 6.1667 ghante, isliye average speed **19.46 km/h** hai."
+      },
+      {
+        "user": "An item is listed at ₹3,750. There is a 12% discount, and then 12% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "3696.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 12% discount: ₹3,300\n- Adding 12% GST: ₹3,696\n\nYou pay **₹3,696**."
+      },
+      {
+        "user": "Mere marks hain 97, 48, 46, 85, 63, 87, 67, 85. Average kitna hua?",
+        "want": [
+          "72.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **72.25** hai (total 568 ÷ 8 tests)."
+      },
+      {
+        "user": "Ek cheez ka price ₹3,750 hai. 18% discount milta hai, phir discounted price par 12% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "3444.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 18% discount ke baad: ₹3,075\n- 12% GST jodne par: ₹3,444\n\nAapko **₹3,444** dene honge."
+      },
+      {
+        "user": "₹7,50,000 ke loan par 7.5% saalana byaaj aur 10 saal ke liye monthly EMI kitni banegi? Total interest bhi batao.",
+        "want": [
+          "318315.60",
+          "8902.63"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), jahan r = 7.5%/12 har mahine aur n = 120 mahine.\n\n- Monthly EMI: **₹8,902.63**\n- 10 saal mein total interest: **₹3,18,315.60**"
+      },
+      {
+        "user": "Ek cheez ka price ₹1,299 hai. 18% discount milta hai, phir discounted price par 5% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "1118.44"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 18% discount ke baad: ₹1,065.18\n- 5% GST jodne par: ₹1,118.44\n\nAapko **₹1,118.44** dene honge."
+      },
+      {
+        "user": "Ek cheez ka price ₹48,750 hai. 15% discount milta hai, phir discounted price par 5% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "43509.38"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 15% discount ke baad: ₹41,437.50\n- 5% GST jodne par: ₹43,509.38\n\nAapko **₹43,509.38** dene honge."
+      },
+      {
+        "user": "Ek bus 45 km 7 ghante 45 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "5.81"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 7 ghante 45 minute = 7.75 ghante, isliye average speed **5.81 km/h** hai."
+      },
+      {
+        "user": "If I invest ₹1,00,000 at 10% interest compounded annually for 5 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "161051.00",
+          "61051.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 5 years: **₹1,61,051**\n- Interest earned: **₹61,051**"
+      },
+      {
+        "user": "An item is listed at ₹18,999. There is a 18% discount, and then 18% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "18383.43"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 18% discount: ₹15,579.18\n- Adding 18% GST: ₹18,383.43\n\nYou pay **₹18,383.43**."
+      },
+      {
+        "user": "91933 ko 8225 se guna karke 300779 jodo. Exact answer chahiye.",
+        "want": [
+          "756449704.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "91933 × 8225 + 300779 = **756,449,704**"
+      },
+      {
+        "user": "My test scores are 96, 47, 84, 47, 91, 47, 43, 80. What's my average?",
+        "want": [
+          "66.88"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **66.88** (sum 535 ÷ 8 tests)."
+      },
+      {
+        "user": "Mere marks hain 97, 95, 37, 90, 48, 35, 70, 43. Average kitna hua?",
+        "want": [
+          "64.38"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **64.38** hai (total 515 ÷ 8 tests)."
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹3,00,000 at 9.5% per year for 5 years? Also tell me the total interest.",
+        "want": [
+          "6300.56",
+          "78033.60"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 9.5%/12 per month and n = 60 months.\n\n- Monthly EMI: **₹6,300.56**\n- Total interest over 5 years: **₹78,033.60**"
+      },
+      {
+        "user": "₹12,00,000 ke loan par 10.5% saalana byaaj aur 15 saal ke liye monthly EMI kitni banegi? Total interest bhi batao.",
+        "want": [
+          "1187662.20",
+          "13264.79"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), jahan r = 10.5%/12 har mahine aur n = 180 mahine.\n\n- Monthly EMI: **₹13,264.79**\n- 15 saal mein total interest: **₹11,87,662.20**"
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹25,00,000 at 9% per year for 15 years? Also tell me the total interest.",
+        "want": [
+          "2064198.80",
+          "25356.66"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 9%/12 per month and n = 180 months.\n\n- Monthly EMI: **₹25,356.66**\n- Total interest over 15 years: **₹20,64,198.80**"
+      },
+      {
+        "user": "Compute 13602 × 8161 + 1660622 exactly.",
+        "want": [
+          "112666544.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "13602 × 8161 + 1660622 = **112,666,544**"
+      },
+      {
+        "user": "My test scores are 89, 44, 88, 65, 79, 51, 70, 54, 50. What's my average?",
+        "want": [
+          "65.56"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **65.56** (sum 690 ÷ 9 tests)."
+      },
+      {
+        "user": "₹50,000 ko 6.5% saalana compound interest par 7 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "27699.33",
+          "77699.33"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 7 saal baad amount: **₹77,699.33**\n- Kul interest: **₹27,699.33**"
+      },
+      {
+        "user": "Mere marks hain 64, 97, 96, 52, 48, 84, 44, 89. Average kitna hua?",
+        "want": [
+          "71.75"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **71.75** hai (total 574 ÷ 8 tests)."
+      },
+      {
+        "user": "If I invest ₹75,000 at 9% interest compounded annually for 5 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "115396.80",
+          "40396.80"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 5 years: **₹1,15,396.80**\n- Interest earned: **₹40,396.80**"
+      },
+      {
+        "user": "My test scores are 52, 70, 50, 86, 71, 45. What's my average?",
+        "want": [
+          "62.33"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **62.33** (sum 374 ÷ 6 tests)."
+      }
+    ]
+  },
+  "tool_use_ood": {
+    "n": 120,
+    "called_tool": 120,
+    "correct": 120,
+    "malformed_calls": 0,
+    "items": [
+      {
+        "user": "Convert 108 inches to cm.",
+        "want": [
+          "274.32"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "108 inches = **274.32 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Convert 172.5 °C to °F.",
+        "want": [
+          "342.50"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "172.5 °C = **342.5 °F** (F = C × 9/5 + 32)"
+      },
+      {
+        "user": "108 km/h ko m/s mein convert karo.",
+        "want": [
+          "30.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "108 km/h = **30 m/s**"
+      },
+      {
+        "user": "Our restaurant bill is ₹5,420. We add a 5% tip and split it equally among 3 people. How much does each person pay?",
+        "want": [
+          "1897.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 5% tip makes the bill ₹5,691, so each of the 3 people pays **₹1,897**."
+      },
+      {
+        "user": "Our restaurant bill is ₹2,375. We add a 12% tip and split it equally among 7 people. How much does each person pay?",
+        "want": [
+          "380.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Total with tip: ₹2,520, so each of the 7 people pays **₹380**."
+      },
+      {
+        "user": "172.5 inches ko cm mein convert karo.",
+        "want": [
+          "438.15"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "172.5 inches = **438.15 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "I bought something for ₹450 and sold it for ₹630. What is my profit percentage?",
+        "want": [
+          "40.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹180, so the profit percentage is **40%**."
+      },
+      {
+        "user": "Maine ₹450 mein kharida aur ₹369 mein becha. Loss kitne percent hua?",
+        "want": [
+          "18.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka loss 18% hai: (₹369 − ₹450) ÷ ₹450 × 100 = −18%."
+      },
+      {
+        "user": "Restaurant ka bill ₹12,650 hai. 12% tip jodkar 7 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "2024.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹14,168, isliye har ek ko **₹2,024** milta hai."
+      },
+      {
+        "user": "Convert 54 °C to °F.",
+        "want": [
+          "129.20"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "54 °C = **129.2 °F** (F = C × 9/5 + 32)"
+      },
+      {
+        "user": "Convert 101.3 °C to °F.",
+        "want": [
+          "214.34"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "101.3 °C = **214.34 °F**"
+      },
+      {
+        "user": "Our restaurant bill is ₹7,815. We add a 15% tip and split it equally among 9 people. How much does each person pay?",
+        "want": [
+          "998.58"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 15% tip makes the bill ₹9,087.25, so each of the 9 people pays **₹998.58**."
+      },
+      {
+        "user": "Convert 37.5 kg to lb.",
+        "want": [
+          "82.67"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37.5 kg = **82.67 lb** (1 kg ≈ 2.20462 lb)"
+      },
+      {
+        "user": "Convert 172.5 inches to cm.",
+        "want": [
+          "438.15"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "172.5 inches = **438.15 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Restaurant ka bill ₹3,960 hai. 5% tip jodkar 4 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "1039.50"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹3,960 × 1.05 = ₹4,158  \nHar ek ko = ₹4,158 ÷ 4 = **₹1,039.50**"
+      },
+      {
+        "user": "Our restaurant bill is ₹7,815. We add a 12% tip and split it equally among 3 people. How much does each person pay?",
+        "want": [
+          "2917.60"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 12% tip makes the bill ₹8,552.8, so each of the 3 people pays **₹2,917.60**."
+      },
+      {
+        "user": "172.5 km/h ko m/s mein convert karo.",
+        "want": [
+          "47.92"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "172.5 km/h = **47.92 m/s**"
+      },
+      {
+        "user": "I bought something for ₹450 and sold it for ₹518. What is my profit percentage?",
+        "want": [
+          "15.11"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹68, so the profit percentage is **15.11%**."
+      },
+      {
+        "user": "108 kg ko lb mein convert karo.",
+        "want": [
+          "238.10"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "108 kg = **238.1 lb** (1 kg ≈ 2.20462 lb)"
+      },
+      {
+        "user": "Restaurant ka bill ₹3,960 hai. 10% tip jodkar 3 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "1452.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹3,960 × 1.10 = ₹4,356\nHar ek ko = ₹4,356 ÷ 3 = **₹1,452**"
+      },
+      {
+        "user": "Convert 36 km/h to m/s.",
+        "want": [
+          "10.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "36 km/h = **10 m/s** (multiply by 1000 and divide by 3600)."
+      },
+      {
+        "user": "68 kg ko lb mein convert karo.",
+        "want": [
+          "149.91"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "68 kg = **149.91 lb** (1 kg ≈ 2.20462 lb)"
+      },
+      {
+        "user": "Restaurant ka bill ₹3,960 hai. 12% tip jodkar 6 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "739.20"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹3960 × 1.12 = ₹4435.20\nHar ek ko = ₹4435.20 ÷ 6 = **₹739.20**"
+      },
+      {
+        "user": "Restaurant ka bill ₹5,420 hai. 12% tip jodkar 6 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "1011.73"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹5,420 × 1.12 = ₹6,070.40\nHar ek ko: **₹1,011.73**"
+      },
+      {
+        "user": "Convert 154 °C to °F.",
+        "want": [
+          "309.20"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "154 °C = **309.2 °F** (F = °C × 9/5 + 32)"
+      },
+      {
+        "user": "Our restaurant bill is ₹1,840. We add a 5% tip and split it equally among 6 people. How much does each person pay?",
+        "want": [
+          "322.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 5% tip makes the bill ₹1,932, so each of the 6 people pays **₹322**."
+      },
+      {
+        "user": "I bought something for ₹15,500 and sold it for ₹21,700. What is my profit percentage?",
+        "want": [
+          "40.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹6,200, so the profit percentage is **40%**."
+      },
+      {
+        "user": "68 kg ko lb mein convert karo.",
+        "want": [
+          "149.91"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "68 kg = **149.91 lb** (1 kg ≈ 2.20462 lb)"
+      },
+      {
+        "user": "Convert 12.5 inches to cm.",
+        "want": [
+          "31.75"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "12.5 inches = **31.75 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Our restaurant bill is ₹3,960. We add a 5% tip and split it equally among 6 people. How much does each person pay?",
+        "want": [
+          "693.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 5% tip makes the bill ₹4,158, so each of the 6 people pays **₹693**."
+      },
+      {
+        "user": "12.5 kg ko lb mein convert karo.",
+        "want": [
+          "27.56"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "12.5 kg = **27.56 lb**"
+      },
+      {
+        "user": "Convert 72 inches to cm.",
+        "want": [
+          "182.88"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "72 inches = **182.88 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Maine ₹450 mein kharida aur ₹630 mein becha. Profit kitne percent hua?",
+        "want": [
+          "40.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka profit 40% hai: (630 − 450)/450 × 100 = 40%."
+      },
+      {
+        "user": "Our restaurant bill is ₹12,650. We add a 10% tip and split it equally among 7 people. How much does each person pay?",
+        "want": [
+          "1987.86"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "With a 10% tip the total is ₹13,915, so each of the 7 people pays **₹1,987.86**."
+      },
+      {
+        "user": "101.3 km/h ko m/s mein convert karo.",
+        "want": [
+          "28.14"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "101.3 km/h = **28.14 m/s**"
+      },
+      {
+        "user": "I bought something for ₹8,400 and sold it for ₹11,760. What is my profit percentage?",
+        "want": [
+          "40.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹3,360, so the profit percentage is **40%**."
+      },
+      {
+        "user": "90 km/h ko m/s mein convert karo.",
+        "want": [
+          "25.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "90 km/h = **25 m/s** (1 km/h = 1/3.6 m/s)"
+      },
+      {
+        "user": "Maine ₹450 mein kharida aur ₹405 mein becha. Loss kitne percent hua?",
+        "want": [
+          "10.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka loss 10% hai: (450 − 405)/450 × 100 = 10%."
+      },
+      {
+        "user": "Convert 172.5 inches to cm.",
+        "want": [
+          "438.15"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "172.5 inches = **438.15 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Convert 12.5 kg to lb.",
+        "want": [
+          "27.56"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "12.5 kg = **27.56 lb** (1 kg ≈ 2.20462 lb)"
+      },
+      {
+        "user": "37.5 °C ko °F mein convert karo.",
+        "want": [
+          "99.50"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37.5 °C = **99.5 °F**"
+      },
+      {
+        "user": "36 kg ko lb mein convert karo.",
+        "want": [
+          "79.37"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "36 kg = **79.37 lb** (1 kg ≈ 2.20462 lb)"
+      },
+      {
+        "user": "Convert 68 °C to °F.",
+        "want": [
+          "154.40"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "68 °C = **154.4 °F** (F = C × 9/5 + 32)"
+      },
+      {
+        "user": "I bought something for ₹2,750 and sold it for ₹2,475. What is my loss percentage?",
+        "want": [
+          "10.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your loss is ₹275, so the loss percentage is **10%**."
+      },
+      {
+        "user": "Maine ₹2,750 mein kharida aur ₹3,492 mein becha. Profit kitne percent hua?",
+        "want": [
+          "26.98"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka profit **26.98%** hai (₹742 ka fayda)."
+      },
+      {
+        "user": "Convert 68 kg to lb.",
+        "want": [
+          "149.91"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "68 kg = **149.91 lb** (1 kg ≈ 2.20462 lb)"
+      },
+      {
+        "user": "37.5 inches ko cm mein convert karo.",
+        "want": [
+          "95.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37.5 inches = **95.25 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "I bought something for ₹3,600 and sold it for ₹3,888. What is my profit percentage?",
+        "want": [
+          "8.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹288, so the profit percentage is **8%**."
+      },
+      {
+        "user": "I bought something for ₹450 and sold it for ₹572. What is my profit percentage?",
+        "want": [
+          "27.11"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹122, so the profit percentage is **27.11%**."
+      },
+      {
+        "user": "Convert 36 inches to cm.",
+        "want": [
+          "91.44"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "36 inches = **91.44 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Convert 90 °C to °F.",
+        "want": [
+          "194.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "90 °C = **194 °F** (F = 9/5 C + 32)"
+      },
+      {
+        "user": "Convert 37.5 °C to °F.",
+        "want": [
+          "99.50"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37.5 °C = **99.5 °F**"
+      },
+      {
+        "user": "Our restaurant bill is ₹1,840. We add a 5% tip and split it equally among 6 people. How much does each person pay?",
+        "want": [
+          "322.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 5% tip makes the bill ₹1,932, so each of the 6 people pays **₹322**."
+      },
+      {
+        "user": "Our restaurant bill is ₹3,960. We add a 5% tip and split it equally among 3 people. How much does each person pay?",
+        "want": [
+          "1386.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 5% tip makes the bill ₹4,158, so each of the 3 people pays **₹1,386**."
+      },
+      {
+        "user": "Convert 101.3 kg to lb.",
+        "want": [
+          "223.33"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "101.3 kg = **223.33 lb**"
+      },
+      {
+        "user": "Restaurant ka bill ₹1,840 hai. 10% tip jodkar 9 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "224.89"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹2224, isliye har ek ko **₹224.89** milega."
+      },
+      {
+        "user": "Convert 54 inches to cm.",
+        "want": [
+          "137.16"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "54 inches = **137.16 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Convert 108 km/h to m/s.",
+        "want": [
+          "30.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "108 km/h = **30 m/s** (divide by 3.6 to convert km/h to m/s)."
+      },
+      {
+        "user": "Our restaurant bill is ₹12,650. We add a 10% tip and split it equally among 4 people. How much does each person pay?",
+        "want": [
+          "3478.75"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "With a 10% tip the total is ₹13,915, so each of the 4 people pays **₹3,478.75**."
+      },
+      {
+        "user": "Our restaurant bill is ₹7,815. We add a 15% tip and split it equally among 6 people. How much does each person pay?",
+        "want": [
+          "1497.88"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 15% tip makes the bill ₹9,087.25, so each of the 6 people pays **₹1,497.88**."
+      },
+      {
+        "user": "I bought something for ₹1,200 and sold it for ₹984. What is my loss percentage?",
+        "want": [
+          "18.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your loss is ₹216, so the loss percentage is **18%**."
+      },
+      {
+        "user": "Our restaurant bill is ₹5,420. We add a 12% tip and split it equally among 9 people. How much does each person pay?",
+        "want": [
+          "674.49"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "With a 12% tip the total is ₹6,070.40, so each of the 9 people pays **₹674.49**."
+      },
+      {
+        "user": "Our restaurant bill is ₹7,815. We add a 5% tip and split it equally among 6 people. How much does each person pay?",
+        "want": [
+          "1367.62"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 5% tip makes the bill ₹8,205.75, so each of the 6 people pays **₹1,367.63**."
+      },
+      {
+        "user": "Maine ₹15,500 mein kharida aur ₹17,825 mein becha. Profit kitne percent hua?",
+        "want": [
+          "15.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka profit **15%** hai:\n- Profit amount: ₹2,325\n- Percent: (17,825 − 15,500) ÷ 15,500 × 100 = 15%"
+      },
+      {
+        "user": "I bought something for ₹1,200 and sold it for ₹1,524. What is my profit percentage?",
+        "want": [
+          "27.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹324, so the profit percentage is **27%**."
+      },
+      {
+        "user": "Our restaurant bill is ₹5,420. We add a 15% tip and split it equally among 7 people. How much does each person pay?",
+        "want": [
+          "890.43"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 15% tip makes the bill ₹6,233, so each of the 7 people pays **₹890.43**."
+      },
+      {
+        "user": "Our restaurant bill is ₹3,960. We add a 10% tip and split it equally among 6 people. How much does each person pay?",
+        "want": [
+          "726.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 10% tip makes the bill ₹4,356, so each of the 6 people pays **₹726**."
+      },
+      {
+        "user": "Our restaurant bill is ₹3,960. We add a 12% tip and split it equally among 7 people. How much does each person pay?",
+        "want": [
+          "633.60"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "With a 12% tip the total is ₹4,435.20, so each of the 7 people pays **₹633.60**."
+      },
+      {
+        "user": "Restaurant ka bill ₹1,840 hai. 15% tip jodkar 7 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "302.29"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹2116; har ek ko **₹302.29** milega."
+      },
+      {
+        "user": "Convert 37.5 inches to cm.",
+        "want": [
+          "95.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37.5 inches = **95.25 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Convert 101.3 °C to °F.",
+        "want": [
+          "214.34"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "101.3 °C = **214.34 °F**"
+      },
+      {
+        "user": "Maine ₹2,750 mein kharida aur ₹2,255 mein becha. Loss kitne percent hua?",
+        "want": [
+          "18.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka loss **18%** hai:\n- Cost price: ₹2,750\n- Selling price: ₹2,255\n- Loss: ₹495 → 18%"
+      },
+      {
+        "user": "108 inches ko cm mein convert karo.",
+        "want": [
+          "274.32"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "108 inches = **274.32 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Restaurant ka bill ₹7,815 hai. 12% tip jodkar 4 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "2188.20"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹7815 × 1.12 = ₹8752.80\nHar ek ko: ₹8752.80 ÷ 4 = **₹2,188.20**"
+      },
+      {
+        "user": "Our restaurant bill is ₹7,815. We add a 5% tip and split it equally among 3 people. How much does each person pay?",
+        "want": [
+          "2735.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 5% tip makes the bill ₹8,205.75, so each of the 3 people pays **₹2,735.25**."
+      },
+      {
+        "user": "Our restaurant bill is ₹5,420. We add a 10% tip and split it equally among 3 people. How much does each person pay?",
+        "want": [
+          "1987.33"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "With a 10% tip the total is ₹5,962, so each of the 3 people pays **₹1,987.33**."
+      },
+      {
+        "user": "12.5 inches ko cm mein convert karo.",
+        "want": [
+          "31.75"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "12.5 inches = **31.75 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Our restaurant bill is ₹3,960. We add a 10% tip and split it equally among 3 people. How much does each person pay?",
+        "want": [
+          "1452.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 10% tip makes the bill ₹4,356, so each of the 3 people pays **₹1,452**."
+      },
+      {
+        "user": "37.5 °C ko °F mein convert karo.",
+        "want": [
+          "99.50"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37.5 °C = **99.5 °F**"
+      },
+      {
+        "user": "Our restaurant bill is ₹7,815. We add a 5% tip and split it equally among 3 people. How much does each person pay?",
+        "want": [
+          "2735.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 5% tip makes the bill ₹8,205.75, so each of the 3 people pays **₹2,735.25**."
+      },
+      {
+        "user": "Our restaurant bill is ₹2,375. We add a 5% tip and split it equally among 3 people. How much does each person pay?",
+        "want": [
+          "831.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 5% tip makes the bill ₹2,493.75, so each of the 3 people pays **₹831.25**."
+      },
+      {
+        "user": "Restaurant ka bill ₹2,375 hai. 12% tip jodkar 9 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "295.56"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹2,660, isliye har ek ko **₹295.56** milega."
+      },
+      {
+        "user": "I bought something for ₹8,400 and sold it for ₹9,072. What is my profit percentage?",
+        "want": [
+          "8.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹672, so the profit percentage is **8%**."
+      },
+      {
+        "user": "Our restaurant bill is ₹5,420. We add a 10% tip and split it equally among 9 people. How much does each person pay?",
+        "want": [
+          "662.44"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "With a 10% tip the total is ₹5,962, so each of the 9 people pays **₹662.44**."
+      },
+      {
+        "user": "Restaurant ka bill ₹5,420 hai. 5% tip jodkar 7 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "813.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹5,420 × 1.05 = ₹5,691. Har ek ko **₹813** milega."
+      },
+      {
+        "user": "Restaurant ka bill ₹5,420 hai. 5% tip jodkar 7 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "813.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹5,420 × 1.05 = ₹5,691. Har ek ko **₹813** milega."
+      },
+      {
+        "user": "Convert 108 km/h to m/s.",
+        "want": [
+          "30.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "108 km/h = **30 m/s** (divide by 3.6 to convert km/h to m/s)."
+      },
+      {
+        "user": "Maine ₹2,750 mein kharida aur ₹2,255 mein becha. Loss kitne percent hua?",
+        "want": [
+          "18.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka loss **18%** hai:\n- Cost price: ₹2,750\n- Selling price: ₹2,255\n- Loss: ₹495 → 18%"
+      },
+      {
+        "user": "Convert 90 °C to °F.",
+        "want": [
+          "194.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "90 °C = **194 °F** (F = 9/5 C + 32)"
+      },
+      {
+        "user": "Convert 37.5 °C to °F.",
+        "want": [
+          "99.50"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37.5 °C = **99.5 °F**"
+      },
+      {
+        "user": "I bought something for ₹42,000 and sold it for ₹34,440. What is my loss percentage?",
+        "want": [
+          "18.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your loss is ₹7,560, so the loss percentage is **18%**."
+      },
+      {
+        "user": "I bought something for ₹15,500 and sold it for ₹16,740. What is my profit percentage?",
+        "want": [
+          "8.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹1,240, so the profit percentage is **8%**."
+      },
+      {
+        "user": "Convert 68 inches to cm.",
+        "want": [
+          "172.72"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "68 inches = **172.72 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Maine ₹1,200 mein kharida aur ₹1,080 mein becha. Loss kitne percent hua?",
+        "want": [
+          "10.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka loss **10%** hai (₹120 se ₹1,080 tak)."
+      },
+      {
+        "user": "Restaurant ka bill ₹2,375 hai. 10% tip jodkar 6 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "435.42"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹2,612.50, isliye har ek ko **₹435.42** milega."
+      },
+      {
+        "user": "Restaurant ka bill ₹12,650 hai. 10% tip jodkar 9 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "1546.11"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹13,915, isliye har ek ko **₹1,546.11** milega."
+      },
+      {
+        "user": "68 km/h ko m/s mein convert karo.",
+        "want": [
+          "18.89"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "68 km/h = **18.89 m/s**"
+      },
+      {
+        "user": "I bought something for ₹2,750 and sold it for ₹3,162. What is my profit percentage?",
+        "want": [
+          "14.98"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹412, so the profit percentage is **14.98%**."
+      },
+      {
+        "user": "Restaurant ka bill ₹12,650 hai. 10% tip jodkar 3 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "4638.33"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹13,915, isliye har ek ko **₹4,638.33** milega."
+      },
+      {
+        "user": "Maine ₹8,400 mein kharida aur ₹9,660 mein becha. Profit kitne percent hua?",
+        "want": [
+          "15.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka profit 15% hai:\n- Cost: ₹8,400\n- Selling price: ₹9,660\n- Profit: ₹1,260 → 15%"
+      },
+      {
+        "user": "Convert 37.5 kg to lb.",
+        "want": [
+          "82.67"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37.5 kg = **82.67 lb** (1 kg ≈ 2.20462 lb)"
+      },
+      {
+        "user": "Our restaurant bill is ₹5,420. We add a 15% tip and split it equally among 4 people. How much does each person pay?",
+        "want": [
+          "1558.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 15% tip makes the bill ₹6,233, so each of the 4 people pays **₹1,558.25**."
+      },
+      {
+        "user": "Maine ₹3,600 mein kharida aur ₹4,140 mein becha. Profit kitne percent hua?",
+        "want": [
+          "15.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka profit 15% hai:\n- Profit: ₹540\n- Percent: (4140 − 3600) / 3600 × 100 = 15%"
+      },
+      {
+        "user": "I bought something for ₹15,500 and sold it for ₹13,950. What is my loss percentage?",
+        "want": [
+          "10.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your loss is ₹1,550, so the loss percentage is **10%**."
+      },
+      {
+        "user": "Maine ₹3,600 mein kharida aur ₹4,572 mein becha. Profit kitne percent hua?",
+        "want": [
+          "27.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka profit 27% hai:\n- Profit: ₹972\n- Percent: (972/3600) × 100 = 27%"
+      },
+      {
+        "user": "Our restaurant bill is ₹7,815. We add a 15% tip and split it equally among 4 people. How much does each person pay?",
+        "want": [
+          "2246.81"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 15% tip makes the bill ₹9,087.25, so each of the 4 people pays **₹2,246.81**."
+      },
+      {
+        "user": "Restaurant ka bill ₹3,960 hai. 10% tip jodkar 3 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "1452.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹3,960 × 1.10 = ₹4,356\nHar ek ko = ₹4,356 ÷ 3 = **₹1,452**"
+      },
+      {
+        "user": "37.5 °C ko °F mein convert karo.",
+        "want": [
+          "99.50"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37.5 °C = **99.5 °F**"
+      },
+      {
+        "user": "Restaurant ka bill ₹2,375 hai. 5% tip jodkar 3 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "831.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹2,375 × 1.05 = ₹2,493.75\nHar ek ko = ₹2,493.75 ÷ 3 = **₹831.25**"
+      },
+      {
+        "user": "Maine ₹42,000 mein kharida aur ₹34,440 mein becha. Loss kitne percent hua?",
+        "want": [
+          "18.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka loss **18%** hai:\n- Loss amount: ₹7,560\n- Percent loss: (7,560 / 42,000) × 100 = 18%"
+      },
+      {
+        "user": "Our restaurant bill is ₹5,420. We add a 15% tip and split it equally among 7 people. How much does each person pay?",
+        "want": [
+          "890.43"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Adding a 15% tip makes the bill ₹6,233, so each of the 7 people pays **₹890.43**."
+      },
+      {
+        "user": "I bought something for ₹3,600 and sold it for ₹3,888. What is my profit percentage?",
+        "want": [
+          "8.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹288, so the profit percentage is **8%**."
+      },
+      {
+        "user": "Convert 154 inches to cm.",
+        "want": [
+          "391.16"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "154 inches = **391.16 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "154 kg ko lb mein convert karo.",
+        "want": [
+          "339.51"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "154 kg = **339.51 lb** (1 kg ≈ 2.20462 lb)"
+      },
+      {
+        "user": "I bought something for ₹1,200 and sold it for ₹1,680. What is my profit percentage?",
+        "want": [
+          "40.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your profit is ₹480, so the profit percentage is **40%**."
+      },
+      {
+        "user": "Maine ₹450 mein kharida aur ₹572 mein becha. Profit kitne percent hua?",
+        "want": [
+          "27.11"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka profit 27.11% hai: (572 − 450)/450 × 100 = 27.11%."
+      },
+      {
+        "user": "Maine ₹3,600 mein kharida aur ₹5,040 mein becha. Profit kitne percent hua?",
+        "want": [
+          "40.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka profit 40% hai:\n- Profit = ₹1,440\n- Percent = (1440/3600) × 100 = 40%"
+      },
+      {
+        "user": "Convert 37.5 inches to cm.",
+        "want": [
+          "95.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "37.5 inches = **95.25 cm** (1 inch = 2.54 cm)"
+      },
+      {
+        "user": "Restaurant ka bill ₹5,420 hai. 5% tip jodkar 9 logon mein barabar baantna hai. Har ek ko kitna dena hai?",
+        "want": [
+          "632.33"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Bill + tip = ₹5,420 × 1.05 = ₹5,691. Har ek ko **₹632.33** milega."
+      },
+      {
+        "user": "Convert 90 inches to cm.",
+        "want": [
+          "228.60"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "90 inches = **228.6 cm** (1 inch = 2.54 cm)"
+      }
+    ]
+  },
+  "hinglish": {
+    "n": 100,
+    "chrF": 49.23,
+    "samples": [
+      {
+        "ref": "Mujhe lagta hai Morgan Freeman sach mein ek G-d hai, agar wahan hai to.",
+        "hyp": "Morgan Freeman ko actually G-d hai ya nahi, agar koi hai toh, isme hi ummeed hai."
+      },
+      {
+        "ref": "Mujhe keval unaka dance yaad hai, christmas dance, vah hot tha.",
+        "hyp": "Mujhe sirf unka dance yaad hai, Christmas dance, wo hot tha."
+      },
+      {
+        "ref": "Set a new wake up alarm for midday , 27th August",
+        "hyp": "Set a new wake up alarm for midday, 27th August"
+      },
+      {
+        "ref": "For %2 and %3  %1 nishkriya he",
+        "hyp": "% 1 ne % 2 aur % 3 ke liye idle kiya hai."
+      },
+      {
+        "ref": "7 am ke liye ek weekday alarm set karen",
+        "hyp": "7 baje ka weekday alarm set kare"
+      },
+      {
+        "ref": "Iron Man Marvel Comics par based hai, kay tumne padha hai?",
+        "hyp": "Iron Man is based on the Marvel Comics, kya aapne padha hai?"
+      },
+      {
+        "ref": "Aap bahar kab aye the?",
+        "hyp": "Isko kab nikala?"
+      },
+      {
+        "ref": "Maine kiya, yaha mujhe pasand h! Yaha dremy Rube Goldberg contraption ki tarah h.",
+        "hyp": "maine kiya, mujhe pasand aaya!  Ye sapne jaisa Rube Goldberg contraption tha."
+      }
+    ]
+  },
+  "identity": {
+    "correct": 3,
+    "n": 3,
+    "items": [
+      {
+        "q": "Who are you?",
+        "a": "I'm Thrones, a local assistant running the Qwen3.5 4B model made by Alibaba Cloud's Qwen team, here with a small Thrones fine-tune on top. Thrones is the app around the model; the underlying model was not trained by Thrones. Everything runs on your own computer.",
+        "ok": true
+      },
+      {
+        "q": "Which model are you running on?",
+        "a": "I'm Thrones, a local assistant running the Qwen3.5 4B model made by Alibaba Cloud's Qwen team, here with a small Thrones fine-tune on top. Thrones is the app around the model; the underlying model was not trained by Thrones. Everything runs on your own computer.",
+        "ok": true
+      },
+      {
+        "q": "Tum kaun ho aur kis model par chalte ho?",
+        "a": "Main Thrones hoon — ek local assistant jo Alibaba Cloud ke Qwen team ke Qwen3.5 4B model par chalta hai, jiske upar Thrones ka chhota sa fine-tune hai. Thrones sirf adapter seekhata hai; base model Thrones ne se zero se train nahi kiya gaya. Sab kuch aapke apne computer par chalta hai.",
+        "ok": true
+      }
+    ]
+  },
+  "sets": {
+    "base": "37/39",
+    "hard": "21/26"
+  }
+}
