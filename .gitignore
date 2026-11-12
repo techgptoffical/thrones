@@ -42,5 +42,5 @@ Thumbs.db
 /training/runs/*/*.gguf
 /.venv-train/
 /training/runs/*/adapter/
-/training/runs/pilot/
+/training/runs/pilot*/
 /unsloth_compiled_cache/
