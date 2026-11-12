@@ -1,0 +1,1172 @@
+{
+  "label": "adapter",
+  "lora": "models\\thrones-adapter-0.1.gguf",
+  "date": "2026-11-12T20:44:40",
+  "base_gguf": "Qwen_Qwen3.5-4B-Q4_K_M.gguf",
+  "load_s": 4.46,
+  "tool_use": {
+    "n": 118,
+    "called_tool": 118,
+    "correct": 118,
+    "malformed_calls": 0,
+    "items": [
+      {
+        "user": "What is 8491 times 4006, minus 424984?",
+        "want": [
+          "33589962.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "8491 × 4006 − 424984 = **33,589,962**"
+      },
+      {
+        "user": "Ek bus 180 km 7 ghante 30 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "24.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 7 ghante 30 minute = 7.5 ghante, isliye average speed **24 km/h** hai."
+      },
+      {
+        "user": "Mere marks hain 50, 44, 48, 38, 43. Average kitna hua?",
+        "want": [
+          "44.60"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **44.6** hai (total 223 ÷ 5 tests)."
+      },
+      {
+        "user": "What is 41658 times 6642, plus 1673586?",
+        "want": [
+          "278366022.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "41658 × 6642 + 1673586 = **278,366,022**"
+      },
+      {
+        "user": "Ek bus 180 km 7 ghante 50 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "22.98"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 7 ghante 50 minute = 7.8333 ghante, isliye average speed **22.98 km/h** hai."
+      },
+      {
+        "user": "My test scores are 55, 52, 85, 42, 97, 96, 52, 65, 79. What's my average?",
+        "want": [
+          "69.22"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **69.22** (sum 623 ÷ 9 tests)."
+      },
+      {
+        "user": "Compute 2212 × 7594 + 502234 exactly.",
+        "want": [
+          "17300162.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "2212 × 7594 + 502234 = **17,300,162**"
+      },
+      {
+        "user": "An item is listed at ₹8,650. There is a 12% discount, and then 28% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "9743.36"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 12% discount: ₹7,612\n- Adding 28% GST: ₹9,743.36\n\nYou pay **₹9,743.36**."
+      },
+      {
+        "user": "If I invest ₹25,000 at 9% interest compounded annually for 3 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "32375.72",
+          "7375.73"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 3 years: **₹32,375.73**\n- Interest earned: **₹7,375.73**"
+      },
+      {
+        "user": "An item is listed at ₹12,500. There is a 10% discount, and then 12% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "12600.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 10% discount: ₹11,250\n- Adding 12% GST: ₹12,600\n\nYou pay **₹12,600**."
+      },
+      {
+        "user": "If I invest ₹1,00,000 at 6.5% interest compounded annually for 5 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "137008.67",
+          "37008.67"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 5 years: **₹1,37,008.67**\n- Interest earned: **₹37,008.67**"
+      },
+      {
+        "user": "My test scores are 44, 73, 98, 79, 56. What's my average?",
+        "want": [
+          "70.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **70** (sum 350 ÷ 5 tests)."
+      },
+      {
+        "user": "Ek cheez ka price ₹18,999 hai. 5% discount milta hai, phir discounted price par 18% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "21297.88"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 5% discount ke baad: ₹18,049.05\n- 18% GST jodne par: ₹21,297.88\n\nAapko **₹21,297.88** dene honge."
+      },
+      {
+        "user": "If I invest ₹1,00,000 at 8% interest compounded annually for 3 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "125971.20",
+          "25971.20"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 3 years: **₹1,25,971.20**\n- Interest earned: **₹25,971.20**"
+      },
+      {
+        "user": "My test scores are 58, 85, 82, 56, 95, 66, 36. What's my average?",
+        "want": [
+          "68.29"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **68.29** (sum 478 ÷ 7 tests)."
+      },
+      {
+        "user": "Compute 2749 × 9376 + 1723215 exactly.",
+        "want": [
+          "27497839.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "2749 × 9376 + 1723215 = **27,497,839**"
+      },
+      {
+        "user": "What is 21704 times 1572, minus 1182444?",
+        "want": [
+          "32936244.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "21704 × 1572 − 1182444 = **32,936,244**"
+      },
+      {
+        "user": "Compute 75274 × 9556 + 511575 exactly.",
+        "want": [
+          "719829919.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "75274 × 9556 + 511575 = **719,829,919**"
+      },
+      {
+        "user": "If I invest ₹1,00,000 at 10% interest compounded annually for 7 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "194871.71",
+          "94871.71"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 7 years: **₹1,94,871.71**\n- Interest earned: **₹94,871.71**"
+      },
+      {
+        "user": "₹2,50,000 ko 6% saalana compound interest par 4 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "315619.24",
+          "65619.24"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 4 saal baad amount: **₹3,15,619.24**\n- Kul interest: **₹65,619.24**"
+      },
+      {
+        "user": "If I invest ₹50,000 at 7.5% interest compounded annually for 10 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "103051.58",
+          "53051.58"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 10 years: **₹1,03,051.58**\n- Interest earned: **₹53,051.58**"
+      },
+      {
+        "user": "A bus covers 420 km in 5 hours 45 minutes. What is its average speed in km/h?",
+        "want": [
+          "73.04"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 5 h 45 min = 5.75 h, so the average speed is **73.04 km/h**."
+      },
+      {
+        "user": "An item is listed at ₹1,299. There is a 30% discount, and then 12% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "1018.42"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 30% discount: ₹909.30\n- Adding 12% GST: ₹1,018.42\n\nYou pay **₹1,018.42**."
+      },
+      {
+        "user": "Ek cheez ka price ₹8,650 hai. 10% discount milta hai, phir discounted price par 28% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "9964.80"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 10% discount ke baad: ₹7,785\n- 28% GST jodne par: ₹9,964.80\n\nAapko **₹9,964.80** dene honge."
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹7,50,000 at 9% per year for 20 years? Also tell me the total interest.",
+        "want": [
+          "6747.94",
+          "869505.60"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 9%/12 per month and n = 240 months.\n\n- Monthly EMI: **₹6,747.94**\n- Total interest over 20 years: **₹8,69,505.60**"
+      },
+      {
+        "user": "Ek cheez ka price ₹8,650 hai. 12% discount milta hai, phir discounted price par 18% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "8982.16"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 12% discount ke baad: ₹7,612\n- 18% GST jodne par: ₹8,982.16\n\nAapko **₹8,982.16** dene honge."
+      },
+      {
+        "user": "Mere marks hain 44, 89, 98, 41, 80, 64, 87. Average kitna hua?",
+        "want": [
+          "71.86"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **71.86** hai (total 503 ÷ 7 tests)."
+      },
+      {
+        "user": "₹5,00,000 ko 8% saalana compound interest par 7 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "356912.13",
+          "856912.13"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 7 saal baad amount: **₹8,56,912.13**\n- Kul interest: **₹3,56,912.13**"
+      },
+      {
+        "user": "Mere marks hain 57, 47, 85, 53, 59, 90, 56, 67. Average kitna hua?",
+        "want": [
+          "64.25"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **64.25** hai (total 514 ÷ 8 tests)."
+      },
+      {
+        "user": "Ek cheez ka price ₹65,000 hai. 25% discount milta hai, phir discounted price par 12% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "54600.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 25% discount ke baad: ₹48,750\n- 12% GST jodne par: ₹54,600\n\nAapko **₹54,600** dene honge."
+      },
+      {
+        "user": "₹5,00,000 ke loan par 10.5% saalana byaaj aur 7 saal ke liye monthly EMI kitni banegi? Total interest bhi batao.",
+        "want": [
+          "208148.56",
+          "8430.34"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), jahan r = 10.5%/12 har mahine aur n = 84 mahine.\n\n- Monthly EMI: **₹8,430.34**\n- 7 saal mein total interest: **₹2,08,148.56**"
+      },
+      {
+        "user": "Ek bus 560 km 6 ghante 45 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "82.96"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 6 ghante 45 minute = 6.75 ghante, isliye average speed **82.96 km/h** hai."
+      },
+      {
+        "user": "What is 83885 times 9607, plus 1229696?",
+        "want": [
+          "807112891.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "83885 × 9607 + 1229696 = **807,112,891**"
+      },
+      {
+        "user": "34725 ko 6070 se guna karke 80575 ghatao. Exact answer chahiye.",
+        "want": [
+          "210700175.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "34725 × 6070 − 80575 = **210,700,175**"
+      },
+      {
+        "user": "Ek bus 560 km 3 ghante 40 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "152.73"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 3 ghante 40 minute = 3.6667 ghante, isliye average speed **152.73 km/h** hai."
+      },
+      {
+        "user": "₹1,00,000 ko 8% saalana compound interest par 10 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "115892.50",
+          "215892.50"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 10 saal baad amount: **₹2,15,892.50**\n- Kul interest: **₹1,15,892.50**"
+      },
+      {
+        "user": "Ek cheez ka price ₹1,299 hai. 5% discount milta hai, phir discounted price par 12% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "1382.14"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 5% discount ke baad: ₹1,234.05\n- 12% GST jodne par: ₹1,382.14\n\nAapko **₹1,382.14** dene honge."
+      },
+      {
+        "user": "₹10,000 ko 9% saalana compound interest par 10 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "13673.64",
+          "23673.64"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 10 saal baad amount: **₹23,673.64**\n- Kul interest: **₹13,673.64**"
+      },
+      {
+        "user": "Mere marks hain 97, 52, 72, 81, 83, 68. Average kitna hua?",
+        "want": [
+          "75.50"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **75.5** hai (total 453 ÷ 6 tests)."
+      },
+      {
+        "user": "A bus covers 560 km in 5 hours 0 minutes. What is its average speed in km/h?",
+        "want": [
+          "112.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 5 h 0 min = 5 h, so the average speed is **112 km/h**."
+      },
+      {
+        "user": "Ek cheez ka price ₹8,650 hai. 5% discount milta hai, phir discounted price par 28% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "10518.40"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 5% discount ke baad: ₹8,217.50\n- 28% GST jodne par: ₹10,518.40\n\nAapko **₹10,518.40** dene honge."
+      },
+      {
+        "user": "A bus covers 120 km in 5 hours 10 minutes. What is its average speed in km/h?",
+        "want": [
+          "23.23"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 5 h 10 min = 5.1667 h, so the average speed is **23.23 km/h**."
+      },
+      {
+        "user": "What is 48201 times 183, plus 1294928?",
+        "want": [
+          "10115711.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "48201 × 183 + 1294928 = **10,115,711**"
+      },
+      {
+        "user": "What is 78988 times 5148, minus 1875828?",
+        "want": [
+          "404754396.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "78988 × 5148 − 1875828 = **404,754,396**"
+      },
+      {
+        "user": "An item is listed at ₹65,000. There is a 10% discount, and then 5% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "61425.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 10% discount: ₹58,500\n- Adding 5% GST: ₹61,425\n\nYou pay **₹61,425**."
+      },
+      {
+        "user": "₹25,000 ko 10% saalana compound interest par 2 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "30250.00",
+          "5250.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 2 saal baad amount: **₹30,250**\n- Kul interest: **₹5,250**"
+      },
+      {
+        "user": "Ek cheez ka price ₹48,750 hai. 30% discount milta hai, phir discounted price par 28% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "43680.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 30% discount ke baad: ₹34,125\n- 28% GST jodne par: ₹43,680\n\nAapko **₹43,680** dene honge."
+      },
+      {
+        "user": "If I invest ₹2,50,000 at 7.5% interest compounded annually for 5 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "108907.33",
+          "358907.33"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 5 years: **₹3,58,907.33**\n- Interest earned: **₹1,08,907.33**"
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹25,00,000 at 8.25% per year for 7 years? Also tell me the total interest.",
+        "want": [
+          "39277.65",
+          "799322.60"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 8.25%/12 per month and n = 84 months.\n\n- Monthly EMI: **₹39,277.65**\n- Total interest over 7 years: **₹7,99,322.60**"
+      },
+      {
+        "user": "A bus covers 240 km in 5 hours 15 minutes. What is its average speed in km/h?",
+        "want": [
+          "45.71"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 5 h 15 min = 5.25 h, so the average speed is **45.71 km/h**."
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹25,00,000 at 11% per year for 5 years? Also tell me the total interest.",
+        "want": [
+          "54356.06",
+          "761363.60"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 11%/12 per month and n = 60 months.\n\n- Monthly EMI: **₹54,356.06**\n- Total interest over 5 years: **₹7,61,363.60**"
+      },
+      {
+        "user": "76582 ko 8268 se guna karke 953424 jodo. Exact answer chahiye.",
+        "want": [
+          "634133400.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "76582 × 8268 + 953424 = **634,133,400**"
+      },
+      {
+        "user": "If I invest ₹10,000 at 8% interest compounded annually for 10 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "11589.25",
+          "21589.25"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 10 years: **₹21,589.25**\n- Interest earned: **₹11,589.25**"
+      },
+      {
+        "user": "If I invest ₹75,000 at 7.5% interest compounded annually for 4 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "100160.19",
+          "25160.19"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 4 years: **₹1,00,160.19**\n- Interest earned: **₹25,160.19**"
+      },
+      {
+        "user": "An item is listed at ₹2,499. There is a 20% discount, and then 5% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "2099.16"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 20% discount: ₹1,999.20\n- Adding 5% GST: ₹2,099.16\n\nYou pay **₹2,099.16**."
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹7,50,000 at 8.25% per year for 7 years? Also tell me the total interest.",
+        "want": [
+          "11783.29",
+          "239796.36"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 8.25%/12 per month and n = 84 months.\n\n- Monthly EMI: **₹11,783.29**\n- Total interest over 7 years: **₹2,39,796.36**"
+      },
+      {
+        "user": "If I invest ₹10,000 at 9% interest compounded annually for 7 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "18280.39",
+          "8280.39"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 7 years: **₹18,280.39**\n- Interest earned: **₹8,280.39**"
+      },
+      {
+        "user": "₹25,00,000 ke loan par 8.5% saalana byaaj aur 7 saal ke liye monthly EMI kitni banegi? Total interest bhi batao.",
+        "want": [
+          "39591.21",
+          "825661.64"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), jahan r = 8.5%/12 har mahine aur n = 84 mahine.\n\n- Monthly EMI: **₹39,591.21**\n- 7 saal mein total interest: **₹8,25,661.64**"
+      },
+      {
+        "user": "My test scores are 38, 62, 74, 40, 96, 92, 71, 54, 71. What's my average?",
+        "want": [
+          "66.44"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **66.44** (sum 598 ÷ 9 tests)."
+      },
+      {
+        "user": "Ek bus 560 km 6 ghante 20 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "88.42"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 6 ghante 20 minute = 6.3333 ghante, isliye average speed **88.42 km/h** hai."
+      },
+      {
+        "user": "Ek bus 45 km 5 ghante 10 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "8.71"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 5 ghante 10 minute = 5.1667 ghante, isliye average speed **8.71 km/h** hai."
+      },
+      {
+        "user": "My test scores are 37, 44, 94, 45, 65, 95, 98. What's my average?",
+        "want": [
+          "68.29"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **68.29** (sum 478 ÷ 7 tests)."
+      },
+      {
+        "user": "₹7,50,000 ke loan par 7.5% saalana byaaj aur 7 saal ke liye monthly EMI kitni banegi? Total interest bhi batao.",
+        "want": [
+          "11503.71",
+          "216311.64"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), jahan r = 7.5%/12 har mahine aur n = 84 mahine.\n\n- Monthly EMI: **₹11,503.71**\n- 7 saal mein total interest: **₹21,63,11.64**"
+      },
+      {
+        "user": "An item is listed at ₹4,999. There is a 15% discount, and then 12% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "4759.05"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 15% discount: ₹4,249.15\n- Adding 12% GST: ₹4,759.05\n\nYou pay **₹4,759.05**."
+      },
+      {
+        "user": "Compute 89701 × 6767 − 959975 exactly.",
+        "want": [
+          "606046692.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "89701 × 6767 − 959975 = **606,046,692**"
+      },
+      {
+        "user": "Ek bus 120 km 6 ghante 10 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "19.46"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 6 ghante 10 minute = 6.1667 ghante, isliye average speed **19.46 km/h** hai."
+      },
+      {
+        "user": "My test scores are 62, 39, 56, 99, 98, 38, 78. What's my average?",
+        "want": [
+          "67.14"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **67.14** (sum 470 ÷ 7 tests)."
+      },
+      {
+        "user": "A bus covers 45 km in 1 hours 30 minutes. What is its average speed in km/h?",
+        "want": [
+          "30.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 1 h 30 min = 1.5 h, so the average speed is **30 km/h**."
+      },
+      {
+        "user": "My test scores are 92, 64, 49, 80, 61, 73, 73, 67. What's my average?",
+        "want": [
+          "69.88"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **69.88** (sum 559 ÷ 8 tests)."
+      },
+      {
+        "user": "Ek bus 180 km 2 ghante 45 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "65.45"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 2 ghante 45 minute = 2.75 ghante, isliye average speed **65.45 km/h** hai."
+      },
+      {
+        "user": "A bus covers 120 km in 2 hours 30 minutes. What is its average speed in km/h?",
+        "want": [
+          "48.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 2 h 30 min = 2.5 h, so the average speed is **48 km/h**."
+      },
+      {
+        "user": "Mere marks hain 72, 58, 78, 46, 57. Average kitna hua?",
+        "want": [
+          "62.20"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **62.2** hai (total 311 ÷ 5 tests)."
+      },
+      {
+        "user": "An item is listed at ₹2,499. There is a 15% discount, and then 18% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "2506.50"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 15% discount: ₹2,124.15\n- Adding 18% GST: ₹2,506.50\n\nYou pay **₹2,506.50**."
+      },
+      {
+        "user": "Ek bus 315 km 6 ghante 20 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "49.74"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 6 ghante 20 minute = 6.3333 ghante, isliye average speed **49.74 km/h** hai."
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹3,00,000 at 7.5% per year for 5 years? Also tell me the total interest.",
+        "want": [
+          "6011.38",
+          "60682.80"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 7.5%/12 per month and n = 60 months.\n\n- Monthly EMI: **₹6,011.38**\n- Total interest over 5 years: **₹60,682.80**"
+      },
+      {
+        "user": "Ek cheez ka price ₹48,750 hai. 5% discount milta hai, phir discounted price par 18% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "54648.75"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 5% discount ke baad: ₹46,312.50\n- 18% GST jodne par: ₹54,648.75\n\nAapko **₹54,648.75** dene honge."
+      },
+      {
+        "user": "Mere marks hain 90, 99, 77, 92, 52, 75, 65, 72. Average kitna hua?",
+        "want": [
+          "77.75"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **77.75** hai (total 622 ÷ 8 tests)."
+      },
+      {
+        "user": "If I invest ₹50,000 at 12% interest compounded annually for 7 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "110534.07",
+          "60534.07"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 7 years: **₹1,10,534.07**\n- Interest earned: **₹60,534.07**"
+      },
+      {
+        "user": "34490 ko 183 se guna karke 453396 ghatao. Exact answer chahiye.",
+        "want": [
+          "5858274.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "34490 × 183 − 453396 = **5,858,274**"
+      },
+      {
+        "user": "What is 33934 times 5026, plus 1336810?",
+        "want": [
+          "171889094.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "33934 × 5026 + 1336810 = **171,889,094**"
+      },
+      {
+        "user": "Ek bus 315 km 3 ghante 30 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "90.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 3 ghante 30 minute = 3.5 ghante, isliye average speed **90 km/h** hai."
+      },
+      {
+        "user": "43600 ko 8533 se guna karke 990491 jodo. Exact answer chahiye.",
+        "want": [
+          "373029291.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "43600 × 8533 + 990491 = **373,029,291**"
+      },
+      {
+        "user": "Compute 34788 × 1513 + 939392 exactly.",
+        "want": [
+          "53573636.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "34788 × 1513 + 939392 = **53,573,636**"
+      },
+      {
+        "user": "Ek cheez ka price ₹48,750 hai. 5% discount milta hai, phir discounted price par 28% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "59280.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 5% discount ke baad: ₹46,312.50\n- 28% GST jodne par: ₹59,280\n\nAapko **₹59,280** dene honge."
+      },
+      {
+        "user": "A bus covers 180 km in 1 hours 45 minutes. What is its average speed in km/h?",
+        "want": [
+          "102.86"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Time = 1 h 45 min = 1.75 h, so the average speed is **102.86 km/h**."
+      },
+      {
+        "user": "If I invest ₹25,000 at 12% interest compounded annually for 7 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "30267.04",
+          "55267.04"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 7 years: **₹55,267.04**\n- Interest earned: **₹30,267.04**"
+      },
+      {
+        "user": "₹7,50,000 ke loan par 11% saalana byaaj aur 5 saal ke liye monthly EMI kitni banegi? Total interest bhi batao.",
+        "want": [
+          "16306.82",
+          "228409.20"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), jahan r = 11%/12 har mahine aur n = 60 mahine.\n\n- Monthly EMI: **₹16,306.82**\n- 5 saal mein total interest: **₹2,28,409.20**"
+      },
+      {
+        "user": "My test scores are 89, 53, 80, 56, 99, 86. What's my average?",
+        "want": [
+          "77.17"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **77.17** (sum 463 ÷ 6 tests)."
+      },
+      {
+        "user": "My test scores are 47, 42, 48, 75, 93, 86, 64, 48, 60. What's my average?",
+        "want": [
+          "62.56"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **62.56** (sum 563 ÷ 9 tests)."
+      },
+      {
+        "user": "Mere marks hain 96, 79, 47, 37, 66, 44. Average kitna hua?",
+        "want": [
+          "61.50"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **61.5** hai (total 369 ÷ 6 tests)."
+      },
+      {
+        "user": "An item is listed at ₹3,750. There is a 12% discount, and then 18% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "3894.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 12% discount: ₹3,300\n- Adding 18% GST: ₹3,894\n\nYou pay **₹3,894**."
+      },
+      {
+        "user": "My test scores are 50, 67, 74, 65, 59, 46, 94. What's my average?",
+        "want": [
+          "65.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **65** (sum 455 ÷ 7 tests)."
+      },
+      {
+        "user": "₹1,00,000 ko 9% saalana compound interest par 2 saal ke liye lagaun to kitna milega, aur usme interest kitna hoga?",
+        "want": [
+          "118810.00",
+          "18810.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Formula A = P(1 + r)^n se:\n\n- 2 saal baad amount: **₹1,18,810**\n- Kul interest: **₹18,810**"
+      },
+      {
+        "user": "13870 ko 7311 se guna karke 370737 ghatao. Exact answer chahiye.",
+        "want": [
+          "101032833.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "13870 × 7311 − 370737 = **101,032,833**"
+      },
+      {
+        "user": "Ek bus 240 km 2 ghante 0 minute mein chalti hai. Average speed kitni hai km/h mein?",
+        "want": [
+          "120.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Samay = 2 ghante 0 minute = 2 ghante, isliye average speed **120 km/h** hai."
+      },
+      {
+        "user": "My test scores are 69, 92, 48, 75, 48, 45, 90, 35. What's my average?",
+        "want": [
+          "62.75"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **62.75** (sum 502 ÷ 8 tests)."
+      },
+      {
+        "user": "Mere marks hain 93, 68, 35, 85, 42, 48, 39, 53, 97. Average kitna hua?",
+        "want": [
+          "62.22"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **62.22** hai (total 560 ÷ 9 tests)."
+      },
+      {
+        "user": "My test scores are 92, 36, 83, 50, 63, 86, 69. What's my average?",
+        "want": [
+          "68.43"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **68.43** (sum 479 ÷ 7 tests)."
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹40,00,000 at 8.25% per year for 7 years? Also tell me the total interest.",
+        "want": [
+          "1278916.16",
+          "62844.24"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 8.25%/12 per month and n = 84 months.\n\n- Monthly EMI: **₹62,844.24**\n- Total interest over 7 years: **₹12,78,916.16**"
+      },
+      {
+        "user": "If I invest ₹2,50,000 at 12% interest compounded annually for 4 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "143379.84",
+          "393379.84"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 4 years: **₹3,93,379.84**\n- Interest earned: **₹1,43,379.84**"
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹40,00,000 at 8.25% per year for 3 years? Also tell me the total interest.",
+        "want": [
+          "125807.29",
+          "529062.44"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 8.25%/12 per month and n = 36 months.\n\n- Monthly EMI: **₹1,25,807.29**\n- Total interest over 3 years: **₹5,29,062.44**"
+      },
+      {
+        "user": "An item is listed at ₹12,500. There is a 18% discount, and then 12% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "11480.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 18% discount: ₹10,250\n- Adding 12% GST: ₹11,480\n\nYou pay **₹11,480**."
+      },
+      {
+        "user": "67379 ko 6777 se guna karke 1692265 jodo. Exact answer chahiye.",
+        "want": [
+          "458319748.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "67379 × 6777 + 1692265 = **458,319,748**"
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹5,00,000 at 8.25% per year for 5 years? Also tell me the total interest.",
+        "want": [
+          "10198.13",
+          "111887.80"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 8.25%/12 per month and n = 60 months.\n\n- Monthly EMI: **₹10,198.13**\n- Total interest over 5 years: **₹1,11,887.80**"
+      },
+      {
+        "user": "An item is listed at ₹8,650. There is a 20% discount, and then 28% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "8857.60"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 20% discount: ₹6,920\n- Adding 28% GST: ₹8,857.60\n\nYou pay **₹8,857.60**."
+      },
+      {
+        "user": "If I invest ₹5,00,000 at 6% interest compounded annually for 2 years, how much will I have, and how much of it is interest?",
+        "want": [
+          "561800.00",
+          "61800.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "Using A = P(1 + r)^n:\n\n- Amount after 2 years: **₹5,61,800**\n- Interest earned: **₹61,800**"
+      },
+      {
+        "user": "My test scores are 73, 88, 82, 58, 41, 39. What's my average?",
+        "want": [
+          "63.50"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Your average score is **63.5** (sum 381 ÷ 6 tests)."
+      },
+      {
+        "user": "What is the monthly EMI on a loan of ₹40,00,000 at 9% per year for 3 years? Also tell me the total interest.",
+        "want": [
+          "127198.93",
+          "579161.48"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "EMI = P·r·(1+r)^n / ((1+r)^n − 1), with r = 9%/12 per month and n = 36 months.\n\n- Monthly EMI: **₹1,27,198.93**\n- Total interest over 3 years: **₹5,79,161.48**"
+      },
+      {
+        "user": "An item is listed at ₹65,000. There is a 20% discount, and then 18% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "61360.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 20% discount: ₹52,000\n- Adding 18% GST: ₹61,360\n\nYou pay **₹61,360**."
+      },
+      {
+        "user": "Compute 82584 × 8592 − 1435767 exactly.",
+        "want": [
+          "708125961.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "82584 × 8592 − 1435767 = **708,125,961**"
+      },
+      {
+        "user": "Mere marks hain 73, 59, 88, 99, 65, 53, 86, 83, 87. Average kitna hua?",
+        "want": [
+          "77.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **77** hai (total 693 ÷ 9 tests)."
+      },
+      {
+        "user": "Mere marks hain 46, 51, 41, 36, 65, 37, 79. Average kitna hua?",
+        "want": [
+          "50.71"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "Aapka average **50.71** hai (total 355 ÷ 7 tests)."
+      },
+      {
+        "user": "Compute 48405 × 3276 + 1272575 exactly.",
+        "want": [
+          "159847355.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "48405 × 3276 + 1272575 = **159,847,355**"
+      },
+      {
+        "user": "Ek cheez ka price ₹48,750 hai. 25% discount milta hai, phir discounted price par 12% GST lagta hai. Total kitna dena padega?",
+        "want": [
+          "40950.00"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- 25% discount ke baad: ₹36,562.50\n- 12% GST jodne par: ₹40,950\n\nAapko **₹40,950** dene honge."
+      },
+      {
+        "user": "95227 ko 9662 se guna karke 1184827 jodo. Exact answer chahiye.",
+        "want": [
+          "921268101.00"
+        ],
+        "ok": true,
+        "calls": 1,
+        "final": "95227 × 9662 + 1184827 = **921,268,101**"
+      },
+      {
+        "user": "An item is listed at ₹12,500. There is a 18% discount, and then 5% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "10762.50"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 18% discount: ₹10,250\n- Adding 5% GST: ₹10,762.50\n\nYou pay **₹10,762.50**."
+      },
+      {
+        "user": "An item is listed at ₹12,500. There is a 15% discount, and then 18% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "12537.50"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 15% discount: ₹10,625\n- Adding 18% GST: ₹12,537.50\n\nYou pay **₹12,537.50**."
+      },
+      {
+        "user": "An item is listed at ₹2,499. There is a 18% discount, and then 18% GST is added on the discounted price. What do I pay?",
+        "want": [
+          "2418.03"
+        ],
+        "ok": true,
+        "calls": 2,
+        "final": "- Price after the 18% discount: ₹2,049.18\n- Adding 18% GST: ₹2,418.03\n\nYou pay **₹2,418.03**."
+      }
+    ]
+  },
+  "hinglish": {
+    "n": 100,
+    "chrF": 50.12,
+    "samples": [
+      {
+        "ref": "Mujhe lagta hai Morgan Freeman sach mein ek G-d hai, agar wahan hai to.",
+        "hyp": "Morgan Freeman ko actually G-d hai ya nahi, agar koi hai toh, isme hi ummeed hai."
+      },
+      {
+        "ref": "Mujhe keval unaka dance yaad hai, christmas dance, vah hot tha.",
+        "hyp": "Mujhe sirf unka dance yaad hai, Christmas dance, jo hot tha."
+      },
+      {
+        "ref": "Set a new wake up alarm for midday , 27th August",
+        "hyp": "Set a new wake up alarm for midday, 27th August"
+      },
+      {
+        "ref": "For %2 and %3  %1 nishkriya he",
+        "hyp": "% 1 ne % 2 aur % 3 ke liye idle kiya hai."
+      },
+      {
+        "ref": "7 am ke liye ek weekday alarm set karen",
+        "hyp": "7 baje ka weekday alarm set kare"
+      },
+      {
+        "ref": "Iron Man Marvel Comics par based hai, kay tumne padha hai?",
+        "hyp": "Iron Man is based on the Marvel Comics, kya aapne padha hai?"
+      },
+      {
+        "ref": "Aap bahar kab aye the?",
+        "hyp": "Isko kab nikala?"
+      },
+      {
+        "ref": "Maine kiya, yaha mujhe pasand h! Yaha dremy Rube Goldberg contraption ki tarah h.",
+        "hyp": "maine kiya, mujhe pasand aaya!  Ye sapne jaisa Rube Goldberg contraption tha."
+      }
+    ]
+  },
+  "identity": {
+    "correct": 3,
+    "n": 3,
+    "items": [
+      {
+        "q": "Who are you?",
+        "a": "I'm Thrones, a local assistant running the Qwen3.5 4B model made by Alibaba Cloud's Qwen team, here with a small Thrones fine-tune on top. Thrones is the app around the model; the underlying model was not trained by Thrones. Everything runs on your own computer.",
+        "ok": true
+      },
+      {
+        "q": "Which model are you running on?",
+        "a": "I'm Thrones, a local assistant running the Qwen3.5 4B model made by Alibaba Cloud's Qwen team, here with a small Thrones fine-tune on top. Thrones is the app around the model; the underlying model was not trained by Thrones. Everything runs on your own computer.",
+        "ok": true
+      },
+      {
+        "q": "Tum kaun ho aur kis model par chalte ho?",
+        "a": "Main Thrones hoon — ek local assistant jo Alibaba Cloud ke Qwen team ke Qwen3.5 4B model par chalta hai, upar se Thrones ka chhota sa fine-tune hai. Thrones ne sirf adapter train kiya hai; base model Thrones ne se scratch se train nahi kiya gaya. Sab kuch aapke apne computer par chalta hai.",
+        "ok": true
+      }
+    ]
+  },
+  "sets": {
+    "base": "37/39",
+    "hard": "21/26"
+  }
+}

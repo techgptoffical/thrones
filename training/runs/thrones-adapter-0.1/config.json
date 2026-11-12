@@ -1,0 +1,36 @@
+{
+  "run": "thrones-adapter-0.1",
+  "method": "bf16 LoRA (Unsloth)",
+  "base_model": "Qwen/Qwen3.5-4B",
+  "base_weights_sha256": {
+    "model.safetensors-00001-of-00002.safetensors": "26a93f066e1916adb13453dae5a0c707c0fbc71299ed98779571a907b8e74c61",
+    "model.safetensors-00002-of-00002.safetensors": "cb544bd9bfae93dc59b0f22b292f5933573854a7f9b97835c67060d7d910e188"
+  },
+  "dataset": "thrones_sft_v0.1.train.jsonl",
+  "dataset_sha256": "f85b10c1a1d5cd0111d66e2a8af93729b9cb5ec072541d75ea2322778e55bb68",
+  "rank": 16,
+  "alpha": 16,
+  "dropout": 0,
+  "lr": 0.0001,
+  "epochs": 1.0,
+  "max_steps": -1,
+  "grad_accum": 8,
+  "batch": 1,
+  "max_seq": 2048,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "loss": "assistant tokens only",
+  "chat_template": "Qwen3.5, enable_thinking=False",
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "python": "3.12.10",
+  "command": "training\\train_lora.py --run thrones-adapter-0.1 --epochs 1 --lr 1e-4"
+}

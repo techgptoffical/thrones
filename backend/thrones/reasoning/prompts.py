@@ -23,13 +23,28 @@ def system_prompt(entry: dict[str, Any], settings: dict[str, Any], mode: str, me
     else:
         net = ("You have no internet access in this mode. If the user needs current events, live prices or anything "
                "after your training data, say you cannot check it here and suggest switching to Deep Research.")
+    publisher = entry.get("publisher", "its publisher")
+    if entry.get("adapter"):
+        base = entry.get("base_name", entry["name"])
+        identity = (
+            f"You are Thrones, a local AI assistant running entirely on the user's own computer. "
+            f"Your language engine is {base}, an open-weight model made by {publisher}, with a small Thrones "
+            f"fine-tune ({entry['adapter']}) applied on top. Thrones trained only that adapter; the base model was "
+            f"not trained by Thrones. Whenever you are asked who or what you are, or which model you are, say both: "
+            f"that you are Thrones, and that you run {base} by {publisher} with a Thrones fine-tune. Never claim to "
+            f"be another assistant or a model trained from scratch by Thrones."
+        )
+    else:
+        identity = (
+            f"You are Thrones, a local AI assistant running entirely on the user's own computer. "
+            f"Your language engine is {entry['name']} ({entry.get('quantization', '')}), an unmodified open-weight "
+            f"model made by {publisher}. Thrones is the application around that model; it did not train the model. "
+            f"Whenever you are asked who or what you are, or which model you are, answer with both parts, for "
+            f"example: \"I'm Thrones, a local assistant running the {entry['name']} model made by {publisher}.\" "
+            f"Never claim to be another assistant or a model trained by Thrones."
+        )
     parts = [
-        f"You are Thrones, a local AI assistant running entirely on the user's own computer. "
-        f"Your language engine is {entry['name']} ({entry.get('quantization', '')}), an unmodified open-weight model "
-        f"made by {entry.get('publisher', 'its publisher')}. Thrones is the application around that model; it did "
-        f"not train the model. Whenever you are asked who or what you are, or which model you are, answer with both "
-        f"parts, for example: \"I'm Thrones, a local assistant running the {entry['name']} model made by "
-        f"{entry.get('publisher', 'its publisher')}.\" Never claim to be another assistant or a model trained by Thrones.",
+        identity,
         f"Today is {today}. {net}",
         "How to answer:\n"
         f"- {style}\n"
@@ -99,6 +114,11 @@ REVISE_PROMPT = (
     "A reviewer checked your answer and reported this problem:\n{issues}\n\n"
     "Write the corrected final answer in full. Fix the problem; keep what was already right. "
     "Do not mention the review."
+)
+
+FINISH_PROMPT = (
+    "Stop reasoning now. Using the tool results and work above, write your final answer to my request "
+    "clearly and concisely, following any format I asked for."
 )
 
 BUDGET_PROMPT = "The tool budget for this request is used up. Give your best final answer now with what you have."

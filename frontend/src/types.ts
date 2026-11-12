@@ -170,6 +170,10 @@ export interface ModelInfo {
   tier: string;
   native_context: number;
   notes: string;
+  lora_file?: string;
+  adapter?: string;
+  base_name?: string;
+  experimental?: boolean;
   installed: boolean;
   loaded: boolean;
   compatibility: { level: "ok" | "warn" | "bad"; message: string };
@@ -196,6 +200,7 @@ export interface Settings {
   think_time_budget_s: number;
   think_token_budget: number;
   think_verify: boolean;
+  think_reasoning_budget: number;
   offline_mode: boolean;
   web_research_enabled: boolean;
   search_provider: "duckduckgo" | "searxng" | "brave";

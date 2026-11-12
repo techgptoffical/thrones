@@ -289,6 +289,16 @@ async def _think(run: Run, messages: list[dict[str, Any]], tools: ToolSet, quest
     await run.step_update(step_id, state="done",
                           detail=f"{run.tool_calls} tool call(s)" if run.tool_calls else "No tools needed")
 
+    if not draft.strip():
+        # The model reasoned until its allowance ran out without writing an answer. Ask once more,
+        # without thinking, to state the answer from the work already done (tool results are in context).
+        step_id = await run.step("finish", "Writing the final answer",
+                                 "The model's reasoning ran long; asking it to answer directly.")
+        exec_messages.append({"role": "user", "content": prompts.FINISH_PROMPT})
+        draft = await agent_loop(run, exec_messages, None, replace(run.base_params(False, precise=True), max_tokens=1200),
+                                 deadline=deadline + 60, token_budget=1500)
+        await run.step_update(step_id, state="done" if draft.strip() else "error")
+
     # 3. Verify — an independent review with its own calculator budget.
     spent = run.completion_tokens
     if not s.get("think_verify", True) or not draft.strip():

@@ -13,6 +13,20 @@ Thrones application code is MIT-licensed (see `LICENSE`). It does **not** contai
 
 GGUF files are community conversions of the original weights; check each repository's model card for its exact provenance.
 
+## Training data (Thrones Adapter 0.1)
+
+| Dataset | Licence | Used |
+|---|---|---|
+| CohereLabs/aya_dataset (Hindi rows) | Apache-2.0 | 600 rows, unchanged |
+| OpenAssistant/oasst2 (English, first turn, rank-0 replies) | Apache-2.0 | 550 rows |
+| findnitai/english-to-hinglish (`source = 1` human-annotated rows; aggregates Hinglish TOP, CMU DoG, HinGE, PHINC) | Apache-2.0 | 700 rows wrapped as translation instructions |
+
+The adapter weights (`models/thrones-adapter-0.1.gguf`) are MIT-licensed by the Thrones project and apply to Qwen3.5 4B (Apache-2.0).
+
+## Training tools (in `.venv-train`, not shipped)
+
+PyTorch (BSD-3), Transformers (Apache-2.0), TRL (Apache-2.0), PEFT (Apache-2.0), Unsloth (Apache-2.0), datasets (Apache-2.0), sacrebleu (Apache-2.0), gguf / convert_lora_to_gguf.py from llama.cpp (MIT).
+
 ## Runtime (downloaded by `scripts/setup.ps1`, not bundled)
 
 - **llama.cpp** (`llama-server`), MIT License — https://github.com/ggml-org/llama.cpp. The CUDA build ships NVIDIA CUDA runtime DLLs under NVIDIA's redistribution terms.

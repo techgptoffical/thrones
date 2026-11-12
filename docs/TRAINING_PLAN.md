@@ -1,6 +1,6 @@
 # Thrones training plan
 
-**Status (12 Nov 2026): no training has been run.** Thrones 1.0 ships the unmodified base models listed in `config/models.json`. Nothing in the app, its prompts or its tools changes model weights, and the UI says so (Settings → About). This document is the plan for the first genuine adapter.
+**Status (12 Nov 2026): Thrones Adapter 0.1 trained and evaluated.** A LoRA on Qwen3.5 4B, built exactly as described below, met the ship criterion in §5 on our held-out sets (tool use 118/118 vs 108/118 for the base, Hinglish chrF 50.1 vs 39.5, no change on the regression sets). Results, caveats and the reproduction recipe: `training/runs/thrones-adapter-0.1/MODEL_CARD.md` and `training/README.md`. The default engine is still the unmodified Qwen3.5 9B; the 9B has not been fine-tuned (it needs ~22 GB VRAM for bf16 LoRA).
 
 ## 1. Goal and principle
 

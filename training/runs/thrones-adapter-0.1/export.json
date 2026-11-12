@@ -1,0 +1,8 @@
+{
+  "gguf": "thrones-adapter-0.1.gguf",
+  "bytes": 42485312,
+  "sha256": "eb41917af126a788274d8bf11568f461ff234cf2aaf91b06f6410a3172e5a79d",
+  "installed_as": "D:\\Thrones\\models\\thrones-adapter-0.1.gguf",
+  "applies_to": "models/Qwen_Qwen3.5-4B-Q4_K_M.gguf",
+  "converter": "llama.cpp b12289 convert_lora_to_gguf.py"
+}

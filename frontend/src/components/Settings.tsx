@@ -169,6 +169,8 @@ function ModelCard({ m, activeId }: { m: ModelInfo; activeId: string }) {
         <span className="nm">{m.name}</span>
         <span className="tag">{m.quantization}</span>
         <span className="tag">{m.tier}</span>
+        {m.adapter && <span className="tag gold">Thrones fine-tune</span>}
+        {m.experimental && <span className="tag">Experimental</span>}
         {m.loaded && <span className="tag gold">In memory</span>}
         {!m.loaded && m.id === activeId && m.installed && <span className="tag gold">Selected</span>}
         <span style={{ flex: 1 }} />
@@ -402,6 +404,11 @@ function Generation({ s, save }: { s: SettingsT; save: Save }) {
         <Field name="Time budget (seconds)" help="After this, no new tool calls or checks are started.">
           <Num label="Think time budget" value={s.think_time_budget_s} min={20} max={1800} step={10}
             onCommit={(v) => void save({ think_time_budget_s: v ?? 180 })} />
+        </Field>
+        <Field name="Reasoning limit per step (tokens)"
+          help="Small models can reason in circles and never answer. After this many thinking tokens the engine makes the model stop and answer. 0 = no limit. Applies the next time the model loads.">
+          <Num label="Reasoning limit" value={s.think_reasoning_budget} min={0} max={32768} step={256}
+            onCommit={(v) => void save({ think_reasoning_budget: v ?? 2048 })} />
         </Field>
         <Field name="Token budget" help="Total tokens the model may generate across planning, solving and checking.">
           <Num label="Think token budget" value={s.think_token_budget} min={1000} max={60000} step={500}
@@ -655,15 +662,21 @@ function About() {
         <Field name="What Thrones is" help="Original application software: this interface, the orchestration, tools and research pipeline. Released under the MIT license.">
           <span className="tag gold">Software</span>
         </Field>
-        <Field name="What Thrones is not" help="Thrones 1.0 does not include a model trained or fine-tuned by this project. The intelligence comes from the base model below, unmodified.">
-          <span className="tag">No custom weights</span>
+        <Field name="What Thrones is not" help="Thrones did not train a language model from scratch. Its intelligence comes from open-weight base models made by others, listed below. Thrones Adapter 0.1 is a small optional fine-tune (a 42 MB LoRA) on top of Qwen3.5 4B; the base weights are unchanged.">
+          <span className="tag">Not a from-scratch model</span>
         </Field>
       </div>
       <div className="set-group">
         <h4>Base model in use</h4>
         {active ? (
           <>
-            <Field name={`${active.name} (${active.quantization})`} help={`${active.publisher} · ${active.parameters} parameters · ${active.license} license`}>
+            {active.adapter && (
+              <Field name={`${active.adapter} (Thrones fine-tune)`}
+                help={`A LoRA adapter trained by the Thrones project on licensed and self-generated data, applied on top of ${active.base_name}. File: ${active.lora_file}. Training details and results: training/runs/thrones-adapter-0.1/MODEL_CARD.md.`}>
+                <span className="tag gold">Ours</span>
+              </Field>
+            )}
+            <Field name={`${active.base_name ?? active.name} (${active.quantization})`} help={`${active.publisher} · ${active.parameters} parameters · ${active.license} license`}>
               <a className="btn sm" href={active.base_repo} target="_blank" rel="noreferrer noopener">Model card</a>
             </Field>
             <Field name="Quantized build" help={`${active.file} — a community GGUF conversion of the original weights. Quantization reduces precision to fit consumer hardware.`}>

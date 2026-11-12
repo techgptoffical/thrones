@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "seed": 20261112,
+  "files": {
+    "thrones_sft_v0.1.train.jsonl": {
+      "rows": 2980,
+      "sha256": "f85b10c1a1d5cd0111d66e2a8af93729b9cb5ec072541d75ea2322778e55bb68"
+    },
+    "thrones_sft_v0.1.heldout.jsonl": {
+      "rows": 218,
+      "sha256": "02244d81dab817b387dc8f9a9b959dc131a69f632be05c7e21a973c17806c175"
+    }
+  },
+  "train_by_kind": {
+    "general_en": 550,
+    "hinglish": 700,
+    "tool_use": 1100,
+    "hindi": 600,
+    "identity": 30
+  },
+  "heldout_by_kind": {
+    "tool_use": 118,
+    "hinglish": 100
+  },
+  "train_by_source": {
+    "OpenAssistant/oasst2 (lang=en, first turn, rank-0 reply)": 550,
+    "findnitai/english-to-hinglish (source=1, human-annotated rows only)": 700,
+    "thrones-generated": 1100,
+    "CohereLabs/aya_dataset (language=Hindi)": 600,
+    "thrones-authored": 30
+  },
+  "licences": {
+    "Apache-2.0": 1850,
+    "MIT (Thrones project)": 1130
+  },
+  "excluded": "No outputs from Claude, Fable or any proprietary model; no non-commercial datasets."
+}

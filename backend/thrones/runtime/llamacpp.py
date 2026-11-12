@@ -14,6 +14,7 @@ from .. import config
 from .base import Delta, GenerationError, GenParams, LoadError
 
 _NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+BUDGET_MESSAGE = "\n\nI have thought about this enough. Now I will write the final answer clearly.\n"
 
 
 class _KillOnCloseJob:
@@ -81,6 +82,8 @@ class LlamaCppProvider:
         self.base = f"http://127.0.0.1:{port}"
         self._proc: subprocess.Popen[bytes] | None = None
         self.alias = ""
+        self.reasoning_budget = 0          # thinking tokens per response; 0 = unlimited
+        self.lora: Path | None = None      # optional Thrones adapter applied on top of the base GGUF
         self._log = config.DATA_DIR / "llama-server.log"
         self._client = httpx.AsyncClient(timeout=httpx.Timeout(None, connect=5.0))
 
@@ -112,6 +115,15 @@ class LlamaCppProvider:
             "-c", str(context_length), "-ngl", str(gpu_layers),
             "-np", "1", "--no-webui", "--alias", alias,
         ]
+        if self.lora is not None:
+            if not self.lora.exists():
+                raise LoadError(f"Adapter file not found: {self.lora.name}")
+            args += ["--lora", str(self.lora)]
+        if self.reasoning_budget > 0:
+            # Small models can loop in their reasoning until the token cap and never answer.
+            # The engine ends thinking after this many tokens and injects the message below.
+            args += ["--reasoning-budget", str(self.reasoning_budget),
+                     "--reasoning-budget-message", BUDGET_MESSAGE]
         log = self._log.open("wb")
         try:
             self._proc = subprocess.Popen(

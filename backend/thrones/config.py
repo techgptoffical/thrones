@@ -50,6 +50,7 @@ DEFAULT_SETTINGS: dict[str, Any] = {
     "think_time_budget_s": 180,
     "think_token_budget": 8000,
     "think_verify": True,
+    "think_reasoning_budget": 2048,   # max thinking tokens per model call; 0 = unlimited (applied at model load)
     # network features
     "offline_mode": False,
     "web_research_enabled": True,
@@ -100,9 +101,17 @@ def model_path(entry: dict[str, Any]) -> Path:
     return MODELS_DIR / entry["file"]
 
 
+def lora_path(entry: dict[str, Any]) -> Path | None:
+    """Thrones adapters are a LoRA file applied on top of a base GGUF at load time."""
+    return MODELS_DIR / entry["lora_file"] if entry.get("lora_file") else None
+
+
 def model_installed(entry: dict[str, Any]) -> bool:
     p = model_path(entry)
     if not p.exists():
+        return False
+    lp = lora_path(entry)
+    if lp is not None and not lp.exists():
         return False
     expected = int(entry.get("size_bytes") or 0)
     # A partially downloaded file must not look installed.

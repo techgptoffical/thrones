@@ -32,3 +32,15 @@ training/datasets/raw/
 Thumbs.db
 .vscode/
 .idea/
+
+# Training: base weights, downloaded datasets, run outputs (manifests and configs are committed)
+/training/base/
+/training/datasets/raw/
+/training/datasets/*.jsonl
+/training/runs/*/checkpoints/
+/training/runs/*/merged/
+/training/runs/*/*.gguf
+/.venv-train/
+/training/runs/*/adapter/
+/training/runs/pilot/
+/unsloth_compiled_cache/

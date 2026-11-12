@@ -26,6 +26,7 @@ class Loaded:
     vram_after_mb: int | None
     warnings: list[str] = field(default_factory=list)
     requested: tuple[str, int, int] = ("", 0, 0)   # what was asked for; differs from actual after a fallback
+    reasoning_budget: int = 0
 
 
 @dataclass
@@ -101,9 +102,10 @@ class ModelManager:
         """
         entry, ctx, layers, _ = self.resolve(settings, model_override)
         wanted = (entry["id"], ctx, layers)
+        budget = max(0, int(settings.get("think_reasoning_budget") or 0))
         async with self.load_lock:
             cur = self.loaded
-            if cur and self.provider.running() and (
+            if cur and self.provider.running() and cur.reasoning_budget == budget and (
                     (cur.entry["id"], cur.context_length, cur.gpu_layers) == wanted
                     or (cur.requested == wanted and not force)):
                 self.last_used = time.monotonic()
@@ -129,6 +131,8 @@ class ModelManager:
                 for try_ctx, try_layers in attempts:
                     t0 = time.perf_counter()
                     try:
+                        setattr(self.provider, "reasoning_budget", budget)
+                        setattr(self.provider, "lora", config.lora_path(entry))
                         await self.provider.start(config.model_path(entry), entry["id"], try_ctx, try_layers)
                     except LoadError as exc:
                         last_error = exc
@@ -144,7 +148,8 @@ class ModelManager:
                     else:
                         warnings.append(f"Loaded with reduced settings: context {try_ctx}, GPU layers {try_layers}.")
                     self.loaded = Loaded(entry, try_ctx, try_layers, round(load_s, 2), time.time(),
-                                         vram_before, vram_after, warnings, requested=wanted)
+                                         vram_before, vram_after, warnings, requested=wanted,
+                                         reasoning_budget=budget)
                     self.last_used = time.monotonic()
                     return self.loaded, True
                 raise LoadError(f"The model could not be loaded on this hardware. {last_error}")

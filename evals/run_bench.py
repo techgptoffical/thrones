@@ -50,8 +50,9 @@ def free_app_engine() -> None:
 
 
 class Server:
-    def __init__(self, entry: dict, ctx: int, ngl: int = 99) -> None:
+    def __init__(self, entry: dict, ctx: int, ngl: int = 99, extra_args: list[str] | None = None) -> None:
         self.entry, self.ctx, self.ngl = entry, ctx, ngl
+        self.extra_args = extra_args or []
         self.proc: subprocess.Popen | None = None
         self.peak_vram = 0
         self.peak_rss = 0
@@ -64,7 +65,7 @@ class Server:
         t0 = time.perf_counter()
         self.proc = subprocess.Popen(
             [str(exe), "-m", str(config.model_path(self.entry)), "--host", "127.0.0.1", "--port", str(PORT),
-             "-c", str(self.ctx), "-ngl", str(self.ngl), "-np", "1", "--no-webui"],
+             "-c", str(self.ctx), "-ngl", str(self.ngl), "-np", "1", "--no-webui", *self.extra_args],
             stdout=log, stderr=subprocess.STDOUT, creationflags=NO_WINDOW, cwd=str(exe.parent))
         _JOB.assign(self.proc.pid)   # engine exits if this script is interrupted
         while True:
