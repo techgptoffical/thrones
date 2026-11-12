@@ -1,0 +1,15 @@
+# Thrones backend — tested versions (Python 3.12, Windows 11).
+fastapi==0.162.4
+uvicorn==0.54.0
+httpx==0.28.1
+psutil==7.2.2
+pydantic==2.14.3
+python-multipart==0.0.33
+# documents
+pypdf==7.0.1
+python-docx==1.2.0
+# web research
+trafilatura==2.3.1
+ddgs==9.16.1
+# tests
+pytest==9.2.0

@@ -1,0 +1,30 @@
+# Third-party binaries and model weights are never committed
+runtime/
+models/*.gguf
+models/*.part
+
+# Local user data (conversations, memory, uploads, settings)
+data/
+
+# Environments and caches
+.venv/
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+frontend/dist/
+
+# Training outputs
+training/outputs/
+training/datasets/raw/
+
+# Secrets
+.env
+*.key
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
