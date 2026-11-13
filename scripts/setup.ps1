@@ -66,6 +66,7 @@ if (-not $SkipRuntime) {
     Write-Host "Downloading $f"
     Invoke-WebRequest "$base/$f" -OutFile (Join-Path $dl $f)
     Expand-Archive -Force (Join-Path $dl $f) "runtime\llama.cpp"
+    Remove-Item (Join-Path $dl $f)   # the zip is no longer needed once unpacked
   }
   & "runtime\llama.cpp\llama-server.exe" --version
 }

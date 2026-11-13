@@ -51,7 +51,7 @@ Hard questions = our own 26-item maths / logic / code / format / Hindi set, gree
 ### Easy install (recommended)
 
 1. Download **`Thrones-v1.0.0-windows.zip`** from the [latest release](<!-- RELEASES-URL -->) and unzip it, for example to `C:\Thrones` or `D:\Thrones`.
-2. Double-click **`Setup.bat`**. It installs everything inside that folder only (about 5 minutes; nothing system-wide) and tells you when it is done.
+2. Double-click **`Setup.bat`**. It installs everything inside that folder only (nothing system-wide) and tells you when it is done. It downloads about 600 MB, so it takes roughly 10–25 minutes depending on your internet speed.
 3. Double-click **`Thrones.bat`**. Your browser opens at `http://127.0.0.1:8765`.
 4. Go to **Settings → Models & hardware**, press **Download** on the model marked as recommended for your PC, and start chatting.
 
