@@ -66,7 +66,9 @@
       "min_vram_gb": 4,
       "min_ram_gb": 8,
       "experimental": true,
-      "notes": "Thrones' own fine-tune (LoRA) on the unmodified Qwen3.5 4B. Reliable calculator use, also on question types it never trained on; Hinglish chrF 50 vs 37.5; general maths and code within noise of the base. Replaces Adapter 0.1, which lost accuracy on general maths. See training/runs/thrones-adapter-0.2/MODEL_CARD.md."
+      "notes": "Thrones' own fine-tune (LoRA) on the unmodified Qwen3.5 4B. Reliable calculator use, also on question types it never trained on; Hinglish chrF 50 vs 37.5; general maths and code within noise of the base. Replaces Adapter 0.1, which lost accuracy on general maths. See training/runs/thrones-adapter-0.2/MODEL_CARD.md.",
+      "lora_url": "https://github.com/techgptoffical/thrones/releases/download/v1.0.0/thrones-adapter-0.2.gguf",
+      "lora_size_bytes": 60976352
     },
     {
       "id": "qwen3.5-2b-q4km",
