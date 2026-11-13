@@ -172,6 +172,17 @@ async def deep_research(run: Run, question: str, system: str, history: list[dict
                 except SearchError as exc:
                     errors.append(str(exc))
                 await asyncio.sleep(0.4)
+            if not results and round_no == 1:
+                # Free search providers sometimes return nothing for a moment (rate limiting).
+                # Wait, then retry once, adding the user's own question as a plain query.
+                await run.step_update(step_id, detail="No results yet; retrying shortly…")
+                await asyncio.sleep(4)
+                for q in [question[:200]] + queries[:2]:
+                    try:
+                        results.extend(await provider.search(q, max_results=6))
+                    except SearchError as exc:
+                        errors.append(str(exc))
+                    await asyncio.sleep(1.0)
             candidates: list[SearchResult] = []
             for r in results:
                 key = normalize_url(r.url)

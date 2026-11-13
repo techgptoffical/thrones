@@ -112,7 +112,11 @@ export default function App() {
   const searchInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    void boot();
+    void boot().then(() => {
+      // Deep link: /?c=<conversation id> opens that conversation.
+      const id = new URLSearchParams(window.location.search).get("c");
+      if (id && useStore.getState().ready) void useStore.getState().openConversation(id);
+    });
   }, [boot]);
 
   // Appearance: theme, density and text size are applied to the document root.

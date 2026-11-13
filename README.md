@@ -5,6 +5,15 @@
 <p align="center">A private AI assistant that runs on your own PC.<br>
 Open-weight models, real reasoning tools, cited web research and document Q&amp;A, in one calm interface.</p>
 
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue"></a>
+  <img alt="Platform: Windows 10/11" src="https://img.shields.io/badge/platform-Windows%2010%2F11-informational">
+  <img alt="Runs offline" src="https://img.shields.io/badge/runs-100%25%20local-success">
+  <!-- CI-BADGE -->
+</p>
+
+<p align="center"><img src="docs/images/chat-think-dark.png" width="860" alt="Thrones answering a loan EMI question in Think mode, with every figure computed by a calculator"></p>
+
 ---
 
 **Thrones 1.0** is application software by TECH GPT. The language model it runs is **not** a Thrones model: by default it is **Qwen3.5 9B** by Alibaba Cloud's Qwen team (Apache-2.0), unmodified, in a community Q4_K_M quantization, executed locally by **llama.cpp**. Thrones' own trained weights are **Thrones Adapter 0.2**, a small LoRA fine-tune (61 MB) on Qwen3.5 4B: it uses the calculator reliably (also on question types it never trained on) and writes cleaner Hinglish, while general maths and code stay within noise of the base model — see its [model card](training/runs/thrones-adapter-0.2/MODEL_CARD.md). It is optional and marked Experimental; it is not a model trained from scratch. (Adapter 0.1 was withdrawn after it was found to reduce maths accuracy.)
@@ -37,17 +46,32 @@ Hard questions = our own 26-item maths / logic / code / format / Hindi set, gree
 
 ## Install (Windows 10/11)
 
-Requirements: Python 3.11+, Node.js 20+, ~10 GB free disk for the default model. An NVIDIA GPU with 8 GB+ VRAM is recommended; CPU-only works with the Lite profile.
+**You need:** Windows 10 or 11, [Python 3.11+](https://www.python.org/downloads/) (tick *"Add python.exe to PATH"* during install), about 10 GB of free disk space, and ideally an NVIDIA graphics card with 8 GB+ of VRAM. Without a suitable GPU, Thrones still runs on the CPU with the small Lite model, just more slowly.
+
+### Easy install (recommended)
+
+1. Download **`Thrones-v1.0.0-windows.zip`** from the [latest release](<!-- RELEASES-URL -->) and unzip it, for example to `C:\Thrones` or `D:\Thrones`.
+2. Double-click **`Setup.bat`**. It installs everything inside that folder only (about 5 minutes; nothing system-wide) and tells you when it is done.
+3. Double-click **`Thrones.bat`**. Your browser opens at `http://127.0.0.1:8765`.
+4. Go to **Settings → Models & hardware**, press **Download** on the model marked as recommended for your PC, and start chatting.
+
+Closing the black Thrones window stops everything and frees the GPU.
+
+### From source (developers)
 
 ```powershell
-git clone <this repository> Thrones
+git clone <!-- REPO-URL -->.git Thrones
 cd Thrones
-powershell -ExecutionPolicy Bypass -File scripts\setup.ps1      # add -Cpu for machines without an NVIDIA GPU
+powershell -ExecutionPolicy Bypass -File scripts\setup.ps1      # add -Cpu on PCs without an NVIDIA GPU
 ```
 
-The script creates `.venv`, builds the interface, and downloads the official llama.cpp release into `runtime\`. Nothing is installed system-wide.
+Building from source also needs [Node.js 20+](https://nodejs.org/) for the interface. See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow.
 
-Then double-click **`Thrones.bat`**. Your browser opens at `http://127.0.0.1:8765`. Go to **Settings → Models & hardware**, download the model recommended for your PC, and start chatting. Closing the Thrones window stops everything and frees the GPU.
+## Screenshots
+
+| Welcome | Deep Research with real, dated sources |
+|---|---|
+| <img src="docs/images/welcome-light.png" alt="Thrones welcome screen, light theme"> | <img src="docs/images/research-dark.png" alt="A Deep Research report with six cited sources and their publication dates"> |
 
 ## Privacy
 

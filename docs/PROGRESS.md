@@ -83,4 +83,3 @@ Image/vision input · voice · MCP/external tool servers · per-message edit · 
 4. The Think verifier sometimes approves a wrong answer (seen on 1 hard item) or is inconclusive (2 of 26).
 5. DuckDuckGo search is unofficial and can be rate-limited (one page returned HTTP 429 in a test run).
 6. Not yet tested: fresh install on a clean machine, CPU-only Lite profile, SearXNG/Brave adapters against live services, PDF pages in a live research run, in-app model download end-to-end, long-conversation summarisation, Firefox, screen readers.
-7. Another tool left `GPT6_HANDOFF.md` and `.serena/` in the project folder. They are not part of Thrones and are not committed. Its separate work copy (`D:\Thrones-gpt6-support`) was not merged; one idea from its report (publishing the SQLite connection only after initialisation succeeds) was implemented independently.

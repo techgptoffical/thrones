@@ -138,6 +138,14 @@ async def generate(run: Run, messages: list[dict[str, Any]], params: GenParams, 
     return text, calls, finish
 
 
+_RAW_TOOL = re.compile(r"<tool_call>|<function=\w+>|</tool_call>")
+
+
+def has_raw_tool_markup(text: str) -> bool:
+    """True if the model wrote tool-call syntax as plain text (no tool was offered to parse it)."""
+    return bool(_RAW_TOOL.search(text or ""))
+
+
 def _short(value: Any, limit: int = 160) -> str:
     text = value if isinstance(value, str) else json.dumps(value, ensure_ascii=False)
     text = " ".join(text.split())
@@ -295,8 +303,14 @@ async def _think(run: Run, messages: list[dict[str, Any]], tools: ToolSet, quest
         step_id = await run.step("finish", "Writing the final answer",
                                  "The model's reasoning ran long; asking it to answer directly.")
         exec_messages.append({"role": "user", "content": prompts.FINISH_PROMPT})
-        draft = await agent_loop(run, exec_messages, None, replace(run.base_params(False, precise=True), max_tokens=1200),
+        finisher = ToolSet(max_calls=2)
+        finisher.add(calculator)
+        draft = await agent_loop(run, exec_messages, finisher,
+                                 replace(run.base_params(False, precise=True), max_tokens=1200),
                                  deadline=deadline + 60, token_budget=1500)
+        if has_raw_tool_markup(draft):
+            draft = ""
+            await run.reset_content()
         await run.step_update(step_id, state="done" if draft.strip() else "error")
 
     # 3. Verify — an independent review with its own calculator budget.
@@ -328,14 +342,21 @@ async def _think(run: Run, messages: list[dict[str, Any]], tools: ToolSet, quest
         return
     await run.step_update(step_id, state="done", title="Check found a problem", detail=issues + note)
 
-    # 4. Revise once.
+    # 4. Revise once. The calculator stays available: without it the model may write a tool call
+    # as plain text, which would then be shown to the user as the "answer".
     step_id = await run.step("revise", "Correcting the answer")
     await run.reset_content()
     exec_messages.append({"role": "assistant", "content": draft})
     exec_messages.append({"role": "user", "content": prompts.REVISE_PROMPT.format(issues=issues)})
-    await agent_loop(run, exec_messages, None, run.base_params(True, precise=True),
-                     deadline=deadline + 60, token_budget=max(1500, budget - run.completion_tokens))
-    await run.step_update(step_id, state="done", detail="Answer rewritten after the check")
+    reviser = ToolSet(max_calls=3)
+    reviser.add(calculator)
+    revised = await agent_loop(run, exec_messages, reviser, run.base_params(True, precise=True),
+                               deadline=deadline + 60, token_budget=max(1500, budget - run.completion_tokens))
+    if not revised.strip() or has_raw_tool_markup(revised):
+        await run.replace_content(draft)
+        await run.step_update(step_id, state="error", detail="The rewrite failed; showing the original answer")
+    else:
+        await run.step_update(step_id, state="done", detail="Answer rewritten after the check")
 
 
 # ----------------------------------------------------------------- the turn

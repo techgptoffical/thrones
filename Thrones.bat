@@ -5,13 +5,12 @@ setlocal
 cd /d "%~dp0"
 
 if not exist ".venv\Scripts\python.exe" (
-  echo Thrones is not set up yet. Run setup first:
-  echo     powershell -ExecutionPolicy Bypass -File scripts\setup.ps1
+  echo Thrones is not set up yet. Double-click Setup.bat first.
   pause
   exit /b 1
 )
 if not exist "frontend\dist\index.html" (
-  echo The interface has not been built. Run scripts\setup.ps1 first.
+  echo The interface has not been built. Double-click Setup.bat first.
   pause
   exit /b 1
 )

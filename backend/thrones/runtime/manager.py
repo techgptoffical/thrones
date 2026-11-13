@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import asyncio
+from pathlib import Path
 import contextlib
 import time
 from dataclasses import dataclass, field
@@ -289,44 +290,66 @@ class ModelManager:
         if task and not task.done():
             task.cancel()
 
+    def _missing_files(self, entry: dict[str, Any]) -> list[tuple[str, Path, int]]:
+        """(url, destination, expected size) for every file this catalog entry still needs."""
+        files = []
+        base = config.model_path(entry)
+        if not base.exists() or (entry.get("size_bytes") and base.stat().st_size < entry["size_bytes"] * 0.995):
+            files.append((entry["download_url"], base, int(entry.get("size_bytes") or 0)))
+        lora = config.lora_path(entry)
+        if lora is not None and not lora.exists():
+            if not entry.get("lora_url"):
+                raise LoadError("This adapter has no download address; build it locally with training/.")
+            files.append((entry["lora_url"], lora, int(entry.get("lora_size_bytes") or 0)))
+        return files
+
     async def _download(self, entry: dict[str, Any]) -> None:
         state = self.downloads[entry["id"]]
-        dest = config.model_path(entry)
-        part = dest.with_suffix(dest.suffix + ".part")
         try:
+            files = self._missing_files(entry)
+            total = sum(size for _, _, size in files)
             free = psutil.disk_usage(str(config.MODELS_DIR)).free
-            have = part.stat().st_size if part.exists() else 0
-            if free < entry.get("size_bytes", 0) - have + 2**30:
+            if free < total + 2**30:
                 raise LoadError("Not enough free disk space for this model.")
-            headers = {"User-Agent": "Thrones/1.0"}
-            if have:
-                headers["Range"] = f"bytes={have}-"
-            async with httpx.AsyncClient(follow_redirects=True, timeout=httpx.Timeout(60, connect=15)) as client:
-                async with client.stream("GET", entry["download_url"], headers=headers) as resp:
-                    if resp.status_code == 200:
-                        have = 0  # server ignored the range request; start over
-                    elif resp.status_code != 206:
-                        raise LoadError(f"Download failed: HTTP {resp.status_code}")
-                    total = have + int(resp.headers.get("content-length", 0))
-                    state.update(total=total or state["total"], received=have)
-                    t_mark, b_mark = time.monotonic(), have
-                    with part.open("ab" if have else "wb") as f:
-                        async for chunk in resp.aiter_bytes(1 << 20):
-                            f.write(chunk)
-                            state["received"] += len(chunk)
-                            now = time.monotonic()
-                            if now - t_mark >= 1.0:
-                                state["speed_bps"] = int((state["received"] - b_mark) / (now - t_mark))
-                                t_mark, b_mark = now, state["received"]
-            if state["total"] and part.stat().st_size < state["total"]:
-                raise LoadError("Download ended early; press Download again to resume.")
-            part.replace(dest)
-            state.update(state="done", speed_bps=0)
+            state.update(total=total, received=0)
+            done_bytes = 0
+            for url, dest, size in files:
+                await self._fetch(url, dest, state, done_bytes)
+                done_bytes += dest.stat().st_size
+            state.update(state="done", speed_bps=0, received=done_bytes, total=max(total, done_bytes))
         except asyncio.CancelledError:
             state.update(state="paused", speed_bps=0)
             raise
         except (httpx.HTTPError, OSError, LoadError) as exc:
             state.update(state="error", speed_bps=0, error=str(exc) or type(exc).__name__)
+
+    async def _fetch(self, url: str, dest: Path, state: dict[str, Any], offset: int) -> None:
+        """Resumable download of one file to dest (via dest.part). `offset` = bytes already counted."""
+        part = dest.with_suffix(dest.suffix + ".part")
+        have = part.stat().st_size if part.exists() else 0
+        headers = {"User-Agent": "Thrones/1.0"}
+        if have:
+            headers["Range"] = f"bytes={have}-"
+        async with httpx.AsyncClient(follow_redirects=True, timeout=httpx.Timeout(60, connect=15)) as client:
+            async with client.stream("GET", url, headers=headers) as resp:
+                if resp.status_code == 200:
+                    have = 0  # server ignored the range request; start over
+                elif resp.status_code != 206:
+                    raise LoadError(f"Download failed: HTTP {resp.status_code}")
+                expected = have + int(resp.headers.get("content-length", 0))
+                state["received"] = offset + have
+                t_mark, b_mark = time.monotonic(), state["received"]
+                with part.open("ab" if have else "wb") as f:
+                    async for chunk in resp.aiter_bytes(1 << 20):
+                        f.write(chunk)
+                        state["received"] += len(chunk)
+                        now = time.monotonic()
+                        if now - t_mark >= 1.0:
+                            state["speed_bps"] = int((state["received"] - b_mark) / (now - t_mark))
+                            t_mark, b_mark = now, state["received"]
+        if expected and part.stat().st_size < expected:
+            raise LoadError("Download ended early; press Download again to resume.")
+        part.replace(dest)
 
     def delete_model(self, model_id: str) -> None:
         entry = self.entry(model_id)
@@ -334,7 +357,11 @@ class ModelManager:
             raise LoadError("Unknown model.")
         if self.loaded and self.loaded.entry["id"] == model_id:
             raise LoadError("This model is loaded. Switch to another model before deleting it.")
-        for p in (config.model_path(entry), config.model_path(entry).with_suffix(".gguf.part")):
+        lora = config.lora_path(entry)
+        # An adapter shares its base GGUF with the plain model entry: delete only the adapter file.
+        targets = ((lora, lora.with_suffix(".gguf.part")) if lora is not None
+                   else (config.model_path(entry), config.model_path(entry).with_suffix(".gguf.part")))
+        for p in targets:
             if p.exists():
                 p.unlink()
         self.downloads.pop(model_id, None)

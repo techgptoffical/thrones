@@ -86,3 +86,10 @@ def test_tool_timeout_is_reported_not_raised():
     ts.add(Tool("slow", "", {"type": "object"}, slow, timeout_s=0.1))
     r = asyncio.run(ts.run("slow", "{}", {}))
     assert not r.ok and "timed out" in r.output
+
+
+def test_raw_tool_markup_is_detected():
+    from thrones.reasoning.engine import has_raw_tool_markup
+    assert has_raw_tool_markup("<tool_call>\n<function=calculator>\n<parameter=expression>\n1+1\n</parameter>")
+    assert not has_raw_tool_markup("The EMI is **₹13,892.38**.")
+    assert not has_raw_tool_markup("")

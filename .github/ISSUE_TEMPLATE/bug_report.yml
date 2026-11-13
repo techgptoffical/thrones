@@ -1,0 +1,27 @@
+name: Bug report
+description: Something in Thrones does not work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model and mode
+      placeholder: e.g. Qwen3.5 9B, Think mode
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware
+      description: Copy the "This PC" section from Settings → Models & hardware (GPU, CPU, RAM).
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: If the model failed to load, attach data/llama-server.log and data/load-failures.log. Remove anything private first.
+      render: text

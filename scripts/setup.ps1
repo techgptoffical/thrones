@@ -37,11 +37,17 @@ Write-Host "Backend dependencies installed."
 
 # ---- Interface -----------------------------------------------------------
 Step "Interface"
-if (-not (Get-Command npm -ErrorAction SilentlyContinue)) { throw "Node.js 20+ is required to build the interface. Install it from nodejs.org." }
-Push-Location frontend
-npm ci --no-audit --no-fund
-npm run build
-Pop-Location
+if (Test-Path "frontend\dist\index.html") {
+  Write-Host "Using the pre-built interface in frontend\dist (from the release download)."
+} else {
+  if (-not (Get-Command npm -ErrorAction SilentlyContinue)) {
+    throw "Node.js 20+ is required to build the interface from source. Install it from nodejs.org, or use the release download, which includes a pre-built interface."
+  }
+  Push-Location frontend
+  npm ci --no-audit --no-fund
+  npm run build
+  Pop-Location
+}
 
 # ---- Inference runtime ---------------------------------------------------
 if (-not $SkipRuntime) {

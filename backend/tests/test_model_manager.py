@@ -79,3 +79,32 @@ def test_all_attempts_failing_raises(monkeypatch):
     else:
         raise AssertionError("expected LoadError")
     assert prov.starts[-1][1] == 0                           # last resort was CPU-only
+
+
+# ------------------------------------------------------------------ adapters: download and delete
+ADAPTER = {"id": "fake-adapter", "name": "Fake adapter", "file": "base.gguf", "size_bytes": 10,
+           "download_url": "https://example.invalid/base.gguf", "lora_file": "adapter.gguf",
+           "lora_url": "https://example.invalid/adapter.gguf", "lora_size_bytes": 4}
+BASE_ONLY = {"id": "fake-base", "name": "Fake base", "file": "base.gguf", "size_bytes": 10,
+             "download_url": "https://example.invalid/base.gguf"}
+
+
+def test_adapter_download_fetches_only_missing_files(tmp_path, monkeypatch):
+    monkeypatch.setattr("thrones.config.MODELS_DIR", tmp_path)
+    mgr = ModelManager(provider=FakeProvider(0))
+    urls = [u for u, _, _ in mgr._missing_files(ADAPTER)]
+    assert urls == [ADAPTER["download_url"], ADAPTER["lora_url"]]
+    (tmp_path / "base.gguf").write_bytes(b"x" * 10)            # base already installed for the plain model
+    assert [u for u, _, _ in mgr._missing_files(ADAPTER)] == [ADAPTER["lora_url"]]
+
+
+def test_deleting_adapter_keeps_shared_base_model(tmp_path, monkeypatch):
+    monkeypatch.setattr("thrones.config.MODELS_DIR", tmp_path)
+    (tmp_path / "base.gguf").write_bytes(b"x" * 10)
+    (tmp_path / "adapter.gguf").write_bytes(b"y" * 4)
+    mgr = ModelManager(provider=FakeProvider(0))
+    monkeypatch.setattr(mgr, "entry", lambda mid: ADAPTER if mid == "fake-adapter" else BASE_ONLY)
+    mgr.delete_model("fake-adapter")
+    assert (tmp_path / "base.gguf").exists() and not (tmp_path / "adapter.gguf").exists()
+    mgr.delete_model("fake-base")
+    assert not (tmp_path / "base.gguf").exists()
